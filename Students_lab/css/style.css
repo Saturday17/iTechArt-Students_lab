@@ -57,7 +57,7 @@ li:nth-last-of-type(n+2) a:hover {
 	text-transform: uppercase;
 }
 .sign-in-btn:hover {
-	color: #312A6C;
+	color: rgba(235, 28, 35, 1);
 	background-color: rgba(255, 255, 255, 1);
 	transition: 0.4s;
 }
@@ -132,7 +132,7 @@ li:nth-last-of-type(n+2) a:hover {
 	content: '';
 	width: 20px;
 	height: 1px;
-	background-color: #6e45e2;
+	background-color: rgba(235, 28, 35, 1);
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 10px;
@@ -141,7 +141,7 @@ li:nth-last-of-type(n+2) a:hover {
 	content: '';
 	width: 20px;
 	height: 1px;
-	background-color: #6e45e2;
+	background-color: rgba(235, 28, 35, 1);
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 10px;
@@ -212,7 +212,7 @@ li:nth-last-of-type(n+2) a:hover {
 	border-radius: 100px;
 }
 .price-btn:hover {
-	background-color: #6e45e2;
+	background-color: rgba(235, 28, 35, 1);
 	color: rgba(255, 255, 255, 1);
 	transition: 0.3s;
 }
@@ -243,7 +243,7 @@ li:nth-last-of-type(n+2) a:hover {
 	display: inline-block;
 	border: none;
 	background-color: rgba(255, 255, 255, 1);
-	color: #6e45e2;
+	color: rgba(235, 28, 35, 1);
 	width: 20rem;
 	font-style: 1.4rem;
 	text-transform: uppercase;
@@ -254,7 +254,7 @@ li:nth-last-of-type(n+2) a:hover {
 	transition: 0.3s;
 }
 .cta-btn:hover {
-	background-color: #6e45e2;
+	background-color: rgba(235, 28, 35, 1);
 	color: rgba(255, 255, 255, 1);
 	cursor: pointer;
 }
@@ -282,15 +282,15 @@ li:nth-last-of-type(n+2) a:hover {
 	font-weight: 500;
 }
 .footer-sign-in {
-	border: 1px solid #6e45e2;
-	background-color: #6e45e2;
+	border: 1px solid rgba(235, 28, 35, 1);
+	background-color: rgba(235, 28, 35, 1);
 	border-radius: 100px;
 	color: rgba(255, 255, 255, 1);
 	padding: 10px 20px;
 	text-transform: uppercase;
 }
 .footer-sign-in:hover {
-	color: #6e45e2;
+	color: rgba(235, 28, 35, 1);
 	background-color: rgba(255, 255, 255, 1);
 	transition: 0.4s;
 }
