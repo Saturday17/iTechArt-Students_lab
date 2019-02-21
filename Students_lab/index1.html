@@ -9,13 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/media.css">
 </head>
-<body>
-	<ul class="m-menu">
-		<li class="close-menu">&times;</li>
-		<li><a href="#" class="menu-link">Афиша</a></li>
-		<li><a href="#" class="menu-link">Кинотеатры</a></li>
-		<li><a href="#" class="menu-link">Еда и напитки</a></li>
-		<li><a href="#" class="menu-link">Инфо</a></li>
+<body id="body">
+	<ul class="m-menu" id="m-menu">
+		<li class="close-menu" id="close-menu">&times;</li>
+		<li><a href="#" class="menu-link">Affiche</a></li>
+		<li><a href="#" class="menu-link">Cinemas</a></li>
+		<li><a href="#" class="menu-link">Food and Drinks</a></li>
+		<li><a href="#" class="menu-link">Info</a></li>
 		<li><a href="#" class="sign-in-btn menu-link">Sign in</a></li>
 	</ul>
 	
@@ -24,26 +24,32 @@
 			<div class="logo">
 				<img src="img/beats.png" alt="logo" style="height: 70px;">
 			</div>
-			<a href="#" class="m-menu-link">
+			<a href="#" class="m-menu-link" id="m-menu-link">
 				<i class="fa fa-bars"></i>	
 			</a>
 			<div class="menu visible-lg">
-				<ul><li><a href="#" class="menu-link">Афиша</a></li>
-				<li><a href="#" class="menu-link">Кинотеатры</a></li>
-				<li><a href="#" class="menu-link">Еда и напитки</a></li>
-				<li><a href="#" class="menu-link">Инфо</a></li>
+				<ul><li><a href="#" class="menu-link">Affiche</a></li>
+				<li><a href="#" class="menu-link">Cinemas</a></li>
+				<li><a href="#" class="menu-link">Food and Drinks</a></li>
+				<li><a href="#" class="menu-link">Info</a></li>
+				<li>
+					<form class="form-search">
+						<input type="text" placeholder="Поиск по сайту" class="input-search" id="input-search">
+					</form>
+				</li>
+				<li><i class="fa fa-search search-icon" id="search-icon"></i></li>
 				<li><a href="#" class="sign-in-btn menu-link">Sign in</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="slider">
-			<div class="item item-1"><span>Фильм 1</span></div>
-			<div class="item item-2"><span>Фильм 2</span></div>
-			<div class="item item-3"><span>Фильм 3</span></div>
-			<div class="item item-4"><span>Фильм 4</span></div>
+			<div class="item item-1"><span>Film 1</span></div>
+			<div class="item item-2"><span>Film 2</span></div>
+			<div class="item item-3"><span>Film 3</span></div>
+			<div class="item item-4"><span>Film 4</span></div>
 		</div>
 		<a href="#table" class="main-arrow">
-			<div class="arrow-down">
+			<div class="arrow-down" id="arrow-down">
 				<svg height="100%" viewBox="0 0 24 24" width="100%"><path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" fill="#fff"></path></svg>
 			</div>
 		</a>
@@ -81,20 +87,20 @@
 	</div>
 	
 	<div class="text-info">
-		<h3>Интернет-магазин электротехники с доставкой по РБ</h3>
-		<p>Мы искренне рады приветствовать вас в нашем интернет-магазине. У нас вы найдете то, что Вам нужно! В широком ассортименте представлены телефоны, пк, телевизоры и аксессуары к ним. Все в наличии! У нас выгодно покупать: мы отслеживаем рынок цен и уверяем Вас, наши цены, самые низкие! SubyStore.by — интернет-магазин техники и аксессуаров, где можно выгодно купить мобильные и стационарные устройства по самым низким ценам, а также получить высокое качество приобретенного товара. Согласитесь, что это достаточно проблематично сделать в настоящее время, часто нам продают «кота в мешке».</p>
-		<h3>Почему SubyStore.by ?</h3>
-		<p>Всё просто! У нас высококвалифицированные специалисты, которые ответят на все Ваши вопросы связанные с выбором телефона, либо иного продукта с нашего сайта, что позволит вам выбрать отличный, многофункциональный гаджет и наиболее эффективно потратить ваши деньги. К тому же любой недавно выпущенный смартфон – это сертифицированный продукт, который мы тщательно проверяем и проводим необходимую экспертизу!</p>
-		<h3>Принципы работы нашего интернет-магазина</h3>
-		<p>Мы работаем под девизом «Никто лучше нас!». Эти слова означают не только надлежащее качество представленных у нас товаров, но и высокий уровень сервиса— приветливые, вежливые операторы, высококвалифицированные специалисты по продажам, пунктуальные и ответственные курьеры. Все, что вы видите на экране нашего сайта, пришло к нам напрямую от производителя. Мы против китайского ширпотреба, поэтому работаем только с надежными поставщиками.<br>
-		Мы дорожим каждым клиентом и сделаем все, чтобы Вы остались довольны покупкой!</p>
+		<h3>Cinema is cinema</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat dicta animi reprehenderit voluptatem optio ipsa. Atque aliquam harum adipisci voluptas, eos ex, dignissimos voluptates cum illum quae tempora officia fuga.</p>
+		<h3>Why SubyScreen ?</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus cupiditate placeat eum repudiandae aperiam, velit tenetur voluptatum et consequatur minima. Placeat cupiditate ipsum officiis ex reiciendis dicta magnam maiores accusamus obcaecati a, quos saepe harum error quo quidem, eos temporibus.</p>
+		<h3>Our main rules</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam obcaecati, ullam consequatur nemo eaque quod pariatur veritatis cupiditate delectus, odio natus necessitatibus voluptatem deleniti qui nam facilis velit, nisi ipsum inventore, dignissimos eius voluptates! Sit.</p>
 	</div>
 
 	<div class="call-to-action">
-		<span>А вы уже с нами?</span>
+		<span>Are you with us?</span>
 		<h4>Go GO !</h4>
-		<button class="cta-btn">Войти</button>
-		<button class="cta-btn">Зарегистрироваться</button>
+		<button class="cta-btn">Sign in</button>
+		<button class="cta-btn">Registration
+</button>
 	</div>
 	
 	<div class="footer">
@@ -103,10 +109,10 @@
 		</div>
 		<div class="footer-menu">
 			<ul>
-				<li><a href="#" class="footer-menu-link">Афиша</a></li>
-				<li><a href="#" class="footer-menu-link">Кинотеатры</a></li>
-				<li><a href="#" class="footer-menu-link">Еда и напитки</a></li>
-				<li><a href="#" class="footer-menu-link">Инфо</a></li>
+				<li><a href="#" class="footer-menu-link">Affiche</a></li>
+				<li><a href="#" class="footer-menu-link">Cinemas</a></li>
+				<li><a href="#" class="footer-menu-link">Food and Drinks</a></li>
+				<li><a href="#" class="footer-menu-link">Info</a></li>
 				<li><a href="#" class="footer-sign-in footer-menu-link">Sign in</a></li>
 			</ul>
 		</div>
@@ -125,26 +131,27 @@
 	</div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-	$(function() {
-		var link = $('.m-menu-link');
-		var close = $('.close-menu');
-		var menu = $('.m-menu');
-		link.on('click', function(event) {
-			event.preventDefault();
-			menu.toggleClass('m-menu__active');
-		});
-		close.on('click', function(event) {
-			event.preventDefault();
-			menu.toggleClass('m-menu__active');
-		});
+	var link = document.getElementById('m-menu-link');
+	var close = document.getElementById('close-menu');
+	var menu = document.getElementById('m-menu');
+	link.addEventListener('click', function(event) {
+		event.preventDefault();
+		menu.classList.toggle('m-menu__active');
 	});
-	$(document).ready(function() {
-		$('.arrow-down').on('click', function(event) {
-			event.preventDefault();
-			var id = $(this).attr('href'),
-				top = $(table).offset().top;
-			$('body,html').animate({scrollTop: top}, 1000);
-		});
+	close.addEventListener('click', function(event) {
+		event.preventDefault();
+		menu.classList.toggle('m-menu__active');
+	});
+
+	var search = document.getElementById('search-icon');
+	var formSearch = document.getElementById('input-search');
+	search.addEventListener('click', function(){
+		event.preventDefault();
+		if(formSearch.style.display == 'flex'){
+			formSearch.style.display = 'none';
+		} else if(formSearch.style.display = 'none'){
+			formSearch.style.display = 'flex';
+		}
 	});
 </script>
 </body>
