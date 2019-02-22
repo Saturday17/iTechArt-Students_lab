@@ -16,7 +16,7 @@
 		flex-grow: 30%;
 	}
 }
-@media (max-width: 1199px) {
+@media (max-width: 1299px) {
 	html {
 		font-size: 8px;
 	}
