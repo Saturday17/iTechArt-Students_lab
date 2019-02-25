@@ -39,6 +39,9 @@ i:hover {
 	border-radius: 5px;
 	z-index: 2;
 }
+.logo img {
+	height: 30px;
+}
 .menu {
 	width: 60%;
 }
@@ -180,6 +183,9 @@ li:nth-last-of-type(n+2) a:hover {
 	cursor: pointer;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
+.price-tag img {
+	width: 100px;
+}
 .price-tag span {
 	font-size: 1.4rem;
 	text-transform: uppercase;
@@ -292,7 +298,7 @@ li:nth-last-of-type(n+2) a:hover {
 	display: block;
 	width: 90%;
 	height: 1px;
-	background-color: #333;
+	background-color: rgba(51, 51, 51, 1);
 	margin: 1rem auto;
 }
 .legal {
@@ -328,7 +334,7 @@ li:nth-last-of-type(n+2) a:hover {
 	font-size: 3rem;
 	line-height: 6rem;
 	background-color: rgba(51, 51, 51, 1);
-	z-index: 99;
+	z-index: 3;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -349,4 +355,139 @@ li:nth-last-of-type(n+2) a:hover {
 }
 .close-menu:hover {
 	cursor: pointer;
+}
+
+
+.form-container {
+	display: none;
+	z-index: 4;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.7);
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+#form-authorization[opened]{
+	display: flex;
+}
+#form-registration[opened]{
+	display: flex;
+}
+.form-container h2 {
+	text-align: center;
+	font-size: 3rem;
+}
+.form-container form {
+	flex-basis: 100vh;
+	padding: 6rem;
+	background: rgba(249, 250, 252, 1);
+	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+	border-radius: 2rem;
+}
+.form-container input {
+	padding: 0.5em;
+	font-size: 2em;
+	background: rgba(244, 244, 244, 1);
+	border: 1px solid rgba(204, 204, 204, 1);
+	border-width: 1px 1px 1px 0;
+	border-radius: 0.5em;
+}
+.form-container button {
+	padding: 1em;
+	font-size: 0.9em;
+	background: rgba(244, 244, 244, 1);
+	border: 1px solid #ccc;
+	border-width: 1px 1px 1px 0;
+	border-radius: 0.5em;
+}
+.form-container input:focus {
+	background: rgba(255, 255, 255, 1);
+	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
+	outline: 0;
+}
+.form-container .form-field {
+	margin-bottom: 1em;
+	display: flex;
+}
+.form-container .form-field label {
+	flex: 0 1 4em;
+	padding: 1em;
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid #ccc;
+	font-size: 1.5em;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+	line-height: 1;
+	border-radius: 0.25em 0 0 0.25em;
+}
+.form-container .form-field input {
+	flex-grow: 1;
+}
+.form-container .input-right input, .multi-input input:last-child {
+	border-radius: 0 0.25em 0.25em 0;
+	flex-direction: row;
+	justify-content: center; 
+}
+.form-container .multi-input > input {
+	border-radius: 0;
+}
+.form-container .submit-field {
+	display: flex;
+	justify-content: center;
+}
+.form-container button {
+	flex: 0 1 40%;
+	padding: 1em;
+	font-size: 2rem;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(212, 7, 84, 1);
+	border-radius:  2em;
+	border: 1px solid rgba(212, 7, 84, 1);
+	transition: 0.3s;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+.form-container button:hover {
+	color: rgba(212, 7, 84, 1);
+	background-color: rgba(255, 255, 255, 1);
+}
+.form-container .reg-link {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}
+.form-container .reg-link a {
+	text-decoration: none;
+	font-size: 2rem;
+	width: 12rem;
+	border: 1px solid rgba(212, 7, 84, 1);
+	border-radius: 0.5rem;
+	padding: 0.5rem 0.5rem;
+}
+.form-container .reg-link a:hover {
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(212, 7, 84, 1);
+	transition: 0.5s;
+}
+.auto-link {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}
+.auto-link a {
+	text-decoration: none;
+	font-size: 2rem;
+	width: 13rem;
+	border: 1px solid rgba(212, 7, 84, 1);
+	border-radius: 0.5rem;
+	padding: 0.5rem 0.5rem;
+}
+.auto-link a:hover {
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(212, 7, 84, 1);
+	transition: 0.5s;
 }

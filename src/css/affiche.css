@@ -53,6 +53,9 @@ body {
 	cursor: pointer;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
+.price-tag img {
+	width: 100px;
+}
 .price-tag span {
 	font-size: 1.4rem;
 	text-transform: uppercase;
