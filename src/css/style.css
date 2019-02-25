@@ -41,6 +41,7 @@ i:hover {
 }
 .logo img {
 	height: 30px;
+	cursor: pointer;
 }
 .menu {
 	width: 60%;
@@ -370,6 +371,7 @@ li:nth-last-of-type(n+2) a:hover {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
+	transition: all 2s ease;
 }
 #form-authorization[opened]{
 	display: flex;
@@ -393,14 +395,6 @@ li:nth-last-of-type(n+2) a:hover {
 	font-size: 2em;
 	background: rgba(244, 244, 244, 1);
 	border: 1px solid rgba(204, 204, 204, 1);
-	border-width: 1px 1px 1px 0;
-	border-radius: 0.5em;
-}
-.form-container button {
-	padding: 1em;
-	font-size: 0.9em;
-	background: rgba(244, 244, 244, 1);
-	border: 1px solid #ccc;
 	border-width: 1px 1px 1px 0;
 	border-radius: 0.5em;
 }
@@ -441,11 +435,11 @@ li:nth-last-of-type(n+2) a:hover {
 }
 .form-container button {
 	flex: 0 1 40%;
-	padding: 1em;
+	padding: 0.5em;
 	font-size: 2rem;
 	color: rgba(255, 255, 255, 1);
 	background-color: rgba(212, 7, 84, 1);
-	border-radius:  2em;
+	border-radius:  0.5em;
 	border: 1px solid rgba(212, 7, 84, 1);
 	transition: 0.3s;
 	cursor: pointer;

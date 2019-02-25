@@ -59,3 +59,10 @@ formRegistration.addEventListener('click', function(e){
         formRegistration.removeAttribute('opened');
     }
 });
+
+window.addEventListener('keydown', function(e){
+    if(e.key == 'Escape'){
+        formAuthorization.removeAttribute('opened');
+        formRegistration.removeAttribute('opened');
+    }
+});   
