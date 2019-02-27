@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './media.css';
 import './script.js';
-import './img/..';
 
 
 
@@ -22,11 +21,12 @@ class App extends React.Component {
         event.preventDefault();
         let formSearches = document.querySelectorAll('.input-search');
         [].forEach.call(formSearches, function(item){
-            if(item.style.display === 'flex'){
-                item.style.display = 'none';
-            } else if(item.style.display === 'none'){
-                item.style.display = 'flex';
+            if(item.opened) {
+                item.removeAttribute('opened');
+            } else if(!item.opened) {
+                item.setAttribute('opened', 'true');
             }
+            console.log(item);
         });
     }
     render() {
@@ -40,12 +40,14 @@ class App extends React.Component {
                     <li><a href="#" className="menu-link">Info</a></li>
                     <li>
                         <form className="form-search">
-                            <input type="text" placeholder="Поиск по сайту" className="input-search" />
+                            <input type="text" placeholder="Поиск по сайту" className="input-search"/>
                         </form>
                     </li>
                     <li><i className="fa fa-search search-icon" style={{color: 'rgba(255, 255, 255, 1)'}} onClick={ this.searchInput }></i></li>
                     <li><a href="#" className="sign-in-btn menu-link">Sign in</a></li>
                 </ul>
+            </>,
+            <>
                 <div className="main" id="main">
                     <div className="header">
                         <div className="logo">
@@ -64,7 +66,7 @@ class App extends React.Component {
                                     <input type="text" placeholder="Поиск по сайту" className="input-search" />
                                 </form>
                             </li>
-                            <li><i className="fa fa-search search-icon"></i></li>
+                            <li><i className="fa fa-search search-icon" onClick={ this.searchInput }></i></li>
                             <li><a href="#" className="sign-in-btn menu-link">Sign in</a></li>
                             </ul>
                         </div>

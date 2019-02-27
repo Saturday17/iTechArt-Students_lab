@@ -59,13 +59,16 @@ li:nth-last-of-type(n+2) a:hover {
 	color: rgba(255, 255, 255, 1); 
 	text-decoration: none;
 }
+
 .input-search {
 	display: none;
 	font-size: 0.9em;
 	background: #f4f4f4;
 	border: 1px solid #ccc;
 	border-radius: 0.3em;
-	transform: translateX(100%);
+}
+.input-search[opened] {
+	display: flex;
 }
 
 .input-search:focus {
