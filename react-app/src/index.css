@@ -65,7 +65,9 @@ li:nth-last-of-type(n+2) a:hover {
 	background: #f4f4f4;
 	border: 1px solid #ccc;
 	border-radius: 0.3em;
+	transform: translateX(100%);
 }
+
 .input-search:focus {
 	background: #fff;
 	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
@@ -111,19 +113,19 @@ li:nth-last-of-type(n+2) a:hover {
 	text-shadow: 0px 0px 10px #000;
 }
 .item-1 {
-	background-image: url(img/hulk.jpg);
+	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/hulk.jpg);
 	background-repeat: no-repeat;
 }
 .item-2 {
-	background-image: url(img/ironman.jpg);
+	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/ironman.jpg);
 	background-repeat: no-repeat;
 }
 .item-3 {
-	background-image: url(img/tor.jpg);
+	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/tor.jpg);
 	background-repeat: no-repeat;
 }
 .item-4 {
-	background-image: url(img/america.jpg);
+	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/america.jpg);
 	background-repeat: no-repeat;
 }
 .item:hover {
