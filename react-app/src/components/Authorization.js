@@ -15,7 +15,6 @@ class Authorization extends React.Component {
   }
   render(){
     return (
-      <>
         <div className="form-container" id="form-authorization">
           <form action="">
             <h2>Authorization</h2>
@@ -35,7 +34,6 @@ class Authorization extends React.Component {
             </div>
           </form>
         </div>
-      </>
     );
   }
 }
