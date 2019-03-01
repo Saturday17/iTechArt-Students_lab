@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Calltoaction extends React.Component {
+class Calltoaction extends Component {
 
   openAuthorization(event){
     event.preventDefault();
@@ -28,14 +28,12 @@ class Calltoaction extends React.Component {
   }
   render(){
     return (
-      <>
-        <div className="call-to-action">
-          <span>Are you with us?</span>
-          <h4>Go GO !</h4>
-          <button className="cta-btn sign-in-btn" onClick={ this.openAuthorization }>Sign in</button>
-          <button className="cta-btn reg-btn" onClick={ this.openRegistration }>Registration</button>
-        </div>
-      </>
+      <div className="call-to-action">
+        <span>Are you with us?</span>
+        <h4>Go GO !</h4>
+        <button className="cta-btn sign-in-btn" onClick={ this.openAuthorization }>Sign in</button>
+        <button className="cta-btn reg-btn" onClick={ this.openRegistration }>Registration</button>
+      </div>
     );
   }
 }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from '../img/logomin.png';
 import Minimenu from './Minimenu'
 
-class Menu extends React.Component {
+class Menu extends Component {
 
   openMmenu(event){
     let menu = document.getElementById('m-menu');

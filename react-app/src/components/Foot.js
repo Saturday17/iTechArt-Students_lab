@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../img/logomin.png';
 
-class Foot extends React.Component {
+class Foot extends Component {
   openAuthorization(event){
     event.preventDefault();
     let formAuthorization = document.getElementById('form-authorization');

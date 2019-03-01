@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Minimenu extends React.Component {
+class Minimenu extends Component {
   closeMmenu(event){
     let menu = document.getElementById('m-menu');
     event.preventDefault();
@@ -31,22 +31,20 @@ class Minimenu extends React.Component {
   } 
   render(){
     return (
-      <>
-        <ul className="m-menu" id="m-menu">
-          <li className="close-menu" onClick={ this.closeMmenu }>&times;</li>
-          <li><a href="#" className="menu-link">Affiche</a></li>
-          <li><a href="#" className="menu-link">Cinemas</a></li>
-          <li><a href="#" className="menu-link">Food and Drinks</a></li>
-          <li><a href="#" className="menu-link">Info</a></li>
-          <li>
-              <form className="form-search">
-                  <input type="text" placeholder="Поиск по сайту" className="input-search"/>
-              </form>
-          </li>
-          <li><i className="fa fa-search search-icon" style={{color: 'rgba(255, 255, 255, 1)'}} onClick={ this.searchInput }></i></li>
-          <li><a href="#" className="sign-in-btn menu-link" onClick={ this.openAuthorization }>Sign in</a></li>
-        </ul>
-      </>
+      <ul className="m-menu" id="m-menu">
+        <li className="close-menu" onClick={ this.closeMmenu }>&times;</li>
+        <li><a href="#" className="menu-link">Affiche</a></li>
+        <li><a href="#" className="menu-link">Cinemas</a></li>
+        <li><a href="#" className="menu-link">Food and Drinks</a></li>
+        <li><a href="#" className="menu-link">Info</a></li>
+        <li>
+            <form className="form-search">
+                <input type="text" placeholder="Поиск по сайту" className="input-search"/>
+            </form>
+        </li>
+        <li><i className="fa fa-search search-icon" style={{color: 'rgba(255, 255, 255, 1)'}} onClick={ this.searchInput }></i></li>
+        <li><a href="#" className="sign-in-btn menu-link" onClick={ this.openAuthorization }>Sign in</a></li>
+      </ul>
     );
   }
 }
