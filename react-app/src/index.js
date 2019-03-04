@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route} from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 import './index.css';
 import './media.css';
+import './affiche.css';
+import Home from './components/Home';
 import Menu from './components/Menu';
-import Slider from './components/Slider';
-import Arrowdown from './components/Arrowdown';
-import Table from './components/Table';
-import Textinfo from './components/Textinfo';
-import Calltoaction from './components/Calltoaction';
-import Authorization from './components/Authorization';
-import Registration from './components/Registration';
+import Affiche from './components/Affiche';
 import Foot from './components/Foot';
+
+const history = createBrowserHistory();
 
 class Index extends React.Component {
     componentDidMount(){
@@ -25,19 +25,14 @@ class Index extends React.Component {
     } 
     render() {
         return (
-            <>
-                <div className="main" id="main">
+            <Router history={history}>
+                <>
                     <Menu />
-                    <Slider />
-                    <Arrowdown />
-                </div>
-                <Table />
-                <Textinfo />
-                <Calltoaction />
-                <Authorization />
-                <Registration />
-                <Foot />
-            </>
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/affiche" component={Affiche}/>
+                    <Foot />
+                </>
+            </Router>
         ); 
     }
 }

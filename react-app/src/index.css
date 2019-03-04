@@ -78,6 +78,7 @@ li:nth-last-of-type(n+2) a:hover {
 }
 .search-icon {
 	cursor: pointer;
+	color: rgba(255, 255, 255, 1);
 }
 .search-icon:hover {
 	color: rgba(212, 7, 84, 1);
@@ -227,6 +228,7 @@ li:nth-last-of-type(n+2) a:hover {
 .text-info {
 	padding: 2rem;
 	font-size: 1.5rem;
+	background-color: rgba(255, 255, 255, 1);
 }
 .call-to-action {
 	position: relative;
@@ -268,10 +270,11 @@ li:nth-last-of-type(n+2) a:hover {
 	font-size: 20px;
 	height: 10vh;
 	align-items: center;
-	width: 90%;
+	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	background-color: rgba(255, 255, 255, 1);
 }
 .footer-menu {
 	width: 50%;
@@ -303,9 +306,7 @@ li:nth-last-of-type(n+2) a:hover {
 .line {
 	display: block;
 	width: 90%;
-	height: 1px;
-	background-color: rgba(51, 51, 51, 1);
-	margin: 1rem auto;
+	margin: 0.1rem auto;
 }
 .legal {
 	padding-left: 5%;
@@ -313,6 +314,7 @@ li:nth-last-of-type(n+2) a:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: rgba(255, 255, 255, 1);
 }
 .copy {
 	font-size: 1.4rem;

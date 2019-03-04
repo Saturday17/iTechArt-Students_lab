@@ -38,4 +38,4 @@ class Calltoaction extends Component {
   }
 }
 
-export default Calltoaction
+export default Calltoaction;

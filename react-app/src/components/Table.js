@@ -24,7 +24,7 @@ class Table extends Component {
             <button className="price-btn">select a film</button>
           </div>
           <div className="price-tag">
-            <img src="./img/green_book.jpg" />
+            <img src="./img/greenBook.jpg" />
             <span>Green Book</span>
             <h4>135<sub>minutes</sub></h4>
             <p>Dolorem ducimus voluptatum praesentium! Quibusdam doloremque, qui amet nemo ipsam sint distinctio, culpa in magni quo, hic sapiente! Blanditiis dolor quibusdam provident officiis veritatis accusamus sapiente deleniti cupiditate repellat temporibus.</p>

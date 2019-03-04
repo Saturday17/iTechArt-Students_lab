@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../img/logomin.png';
+import {Link} from 'react-router-dom';
 
 class Foot extends Component {
   openAuthorization(event){
@@ -19,11 +20,12 @@ class Foot extends Component {
       <>
         <div className="footer">
           <div className="logo">
-            <a href="#"> <img src={logo} alt="logo"/> </a>
+            <a href="#"> <img src={logo} alt="logo" /> </a>
           </div>
           <div className="footer-menu">
             <ul>
-              <li><a href="#" className="footer-menu-link">Affiche</a></li>
+              <li><Link to="/" className="footer-menu-link">Home</Link></li>
+              <li><Link to="/affiche" className="footer-menu-link">Affiche</Link></li>
               <li><a href="#" className="footer-menu-link">Cinemas</a></li>
               <li><a href="#" className="footer-menu-link">Food and Drinks</a></li>
               <li><a href="#" className="footer-menu-link">Info</a></li>
@@ -31,7 +33,8 @@ class Foot extends Component {
             </ul>
           </div>
         </div>
-        <div className="line"></div>
+        <div className="line">
+        </div>
         <div className="legal">
           <div className="copy">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, animi!</p>
@@ -48,4 +51,4 @@ class Foot extends Component {
   }
 }
 
-export default Foot
+export default Foot;

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import logo from '../img/logomin.png';
+import {Link} from 'react-router-dom';
 
 class Minimenu extends Component {
   closeMmenu(event){
@@ -10,9 +12,9 @@ class Minimenu extends Component {
     event.preventDefault();
     let formSearches = document.querySelectorAll('.input-search');
     [].forEach.call(formSearches, function(item){
-        if(item.className == 'input-search'){
+        if(item.className === 'input-search'){
             item.classList.add('input-search__active');
-        } else if(item.className == 'input-search input-search__active'){
+        } else if(item.className === 'input-search input-search__active'){
             item.classList.remove('input-search__active');
         }
     });
@@ -33,7 +35,8 @@ class Minimenu extends Component {
     return (
       <ul className="m-menu" id="m-menu">
         <li className="close-menu" onClick={ this.closeMmenu }>&times;</li>
-        <li><a href="#" className="menu-link">Affiche</a></li>
+        <li><Link to="/" className="menu-link">Home</Link></li>
+        <li><Link to="/affiche" className="menu-link">Affiche</Link></li>
         <li><a href="#" className="menu-link">Cinemas</a></li>
         <li><a href="#" className="menu-link">Food and Drinks</a></li>
         <li><a href="#" className="menu-link">Info</a></li>
@@ -49,4 +52,4 @@ class Minimenu extends Component {
   }
 }
 
-export default Minimenu
+export default Minimenu;
