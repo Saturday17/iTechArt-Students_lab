@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import logo from '../img/logomin.png';
 import Minimenu from './Minimenu';
 import {Link} from 'react-router-dom';
-import Authorization from './Authorization';
-import Registration from './Registration';
+
 
 class Menu extends Component {
 
-  openMmenu(event){
+  openMmenu(event) {
     let menu = document.getElementById('m-menu');
     event.preventDefault();
     menu.classList.toggle('m-menu__active');
   }
-  searchInput(event){
+
+  searchInput(event) {
     event.preventDefault();
     let formSearches = document.querySelectorAll('.input-search');
     [].forEach.call(formSearches, function(item){
@@ -23,28 +23,19 @@ class Menu extends Component {
         }
     });
   }
-  openAuthorization(event){
-    event.preventDefault();
-    let formAuthorization = document.getElementById('form-authorization');
-    let formRegistration = document.getElementById('form-registration');
-    formAuthorization.setAttribute('opened', 'true');
-    formRegistration.removeAttribute('opened');
-    formAuthorization.addEventListener('click', function(e){
-        if(this === e.target){
-            formAuthorization.removeAttribute('opened');
-        }
-    });
-  }
+
   render(){
+    const { onHandleTriggerModal } = this.props;
+
     return (
       <>
-        <Minimenu />
+        <Minimenu onHandleTriggerModal={ onHandleTriggerModal } />
         <div className="header">
           <div className="logo">
-              <a href="#"><img src={logo} alt="logo" /> </a>
+            <a href="#"><img src={logo} alt="logo" /> </a>
           </div>
           <a href="#" className="m-menu-link" onClick={ this.openMmenu }>
-              <i className="fa fa-bars"></i>	
+            <i className="fa fa-bars"></i>	
           </a>
           <div className="menu visible-lg">
               <ul>
@@ -54,21 +45,18 @@ class Menu extends Component {
                 <li><a href="#" className="menu-link">Food and Drinks</a></li>
                 <li><a href="#" className="menu-link">Info</a></li>
                 <li>
-                    <form className="form-search">
-                        <input type="text" placeholder="Поиск по сайту" className="input-search" />
-                    </form>
+                  <form className="form-search">
+                    <input type="text" placeholder="Поиск по сайту" className="input-search" />
+                  </form>
                 </li>
                 <li><i className="fa fa-search search-icon" onClick={ this.searchInput }></i></li>
-                <li><a href="#" className="sign-in-btn menu-link" onClick={ this.openAuthorization }>Sign in</a></li>
+                <li><a href="#" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</a></li>
               </ul>
           </div>
         </div>
-        <Authorization />
-        <Registration />
       </>
     );
   }
-
 }
 
 export default Menu;

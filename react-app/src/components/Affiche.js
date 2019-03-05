@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import Menu from './Menu';
 
 class Affiche extends Component {
   render() {
     return(
       <>
-        <Menu />
         <div className="table" id="table">
           <div className="table-header">
             <h2>Select a Film</h2>

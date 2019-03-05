@@ -303,10 +303,11 @@ li:nth-last-of-type(n+2) a:hover {
 	background-color: rgba(255, 255, 255, 1);
 	transition: 0.4s;
 }
-.line {
-	display: block;
-	width: 90%;
-	margin: 0.1rem auto;
+hr {
+	height: 0;
+	border: 0;
+	box-shadow: 0 0 0.1rem 0.1rem #6a6a77;
+	margin: 0 auto;
 }
 .legal {
 	padding-left: 5%;
@@ -365,9 +366,8 @@ li:nth-last-of-type(n+2) a:hover {
 	cursor: pointer;
 }
 
-
 .form-container {
-	display: none;
+	display: flex;
 	z-index: 4;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -378,12 +378,6 @@ li:nth-last-of-type(n+2) a:hover {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
-}
-#form-authorization[opened]{
-	display: flex;
-}
-#form-registration[opened]{
-	display: flex;
 }
 .form-container h2 {
 	text-align: center;

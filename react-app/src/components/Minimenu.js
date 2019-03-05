@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import logo from '../img/logomin.png';
 import {Link} from 'react-router-dom';
 
 class Minimenu extends Component {
+
   closeMmenu(event){
     let menu = document.getElementById('m-menu');
     event.preventDefault();
@@ -19,19 +19,10 @@ class Minimenu extends Component {
         }
     });
   }
-  openAuthorization(event){
-    event.preventDefault();
-    let formAuthorization = document.getElementById('form-authorization');
-    let formRegistration = document.getElementById('form-registration');
-    formAuthorization.setAttribute('opened', 'true');
-    formRegistration.removeAttribute('opened');
-    formAuthorization.addEventListener('click', function(e){
-        if(this === e.target){
-            formAuthorization.removeAttribute('opened');
-        }
-    });
-  } 
   render(){
+
+    const { onHandleTriggerModal } = this.props;
+
     return (
       <ul className="m-menu" id="m-menu">
         <li className="close-menu" onClick={ this.closeMmenu }>&times;</li>
@@ -46,7 +37,7 @@ class Minimenu extends Component {
             </form>
         </li>
         <li><i className="fa fa-search search-icon" style={{color: 'rgba(255, 255, 255, 1)'}} onClick={ this.searchInput }></i></li>
-        <li><a href="#" className="sign-in-btn menu-link" onClick={ this.openAuthorization }>Sign in</a></li>
+        <li><a href="#" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</a></li>
       </ul>
     );
   }

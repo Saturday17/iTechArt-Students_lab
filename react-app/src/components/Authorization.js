@@ -1,21 +1,12 @@
 import React, {Component} from 'react';
 
 class Authorization extends Component {
-  openRegistration(event){
-    event.preventDefault();
-    let formAuthorization = document.getElementById('form-authorization');
-    let formRegistration = document.getElementById('form-registration');
-    formRegistration.setAttribute('opened', 'true');
-    formAuthorization.removeAttribute('opened');
-    formRegistration.addEventListener('click', function(e){
-      if(this === e.target){
-          formRegistration.removeAttribute('opened');
-      }
-    });
-  }
-  render(){
+
+  render() {
+    const { onTriggerModal } = this.props;
+
     return (
-      <div className="form-container" id="form-authorization">
+      <div className="form-container">
         <form action="">
           <h2>Authorization</h2>
           <div className="form-field input-right">
@@ -30,7 +21,7 @@ class Authorization extends Component {
             <button>Sign in</button>
           </div>
           <div className="reg-link reg-btn">
-            <a href="#" onClick={ this.openRegistration }>Registration</a>
+            <a href="#" onClick={ onTriggerModal }>Registration</a>
           </div>
         </form>
       </div>
@@ -38,4 +29,4 @@ class Authorization extends Component {
   }
 }
 
-export default Authorization
+export default Authorization;
