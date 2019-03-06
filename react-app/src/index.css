@@ -61,14 +61,11 @@ li:nth-last-of-type(n+2) a:hover {
 }
 
 .input-search {
-	display: none;
+	display: flex;
 	font-size: 0.9em;
 	background: #f4f4f4;
 	border: 1px solid #ccc;
 	border-radius: 0.3em;
-}
-.input-search__active {
-	display: flex;
 }
 
 .input-search:focus {
@@ -351,9 +348,11 @@ hr {
 	transition: 0.2s;
 	transform: translateX(100%);
 }
-.m-menu__active {
+.animated {
 	transform: translateX(0%);
+	transition: 0.2s;
 }
+
 .close-menu {
 	position: fixed;
 	right: 5rem;

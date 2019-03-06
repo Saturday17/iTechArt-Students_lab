@@ -11,7 +11,7 @@ import Affiche from './components/Affiche';
 import Footer from './components/Footer';
 import Authorization from './components/Authorization';
 import Registration from './components/Registration';
-import Footerdown from './components/Footerdown'
+import FooterDown from './components/FooterDown'
 
 const history = createBrowserHistory();
 
@@ -32,13 +32,6 @@ class Index extends Component {
           }
         });
     } 
-    
-    handleCloseModals = e => {
-        this.setState({
-            isOpenAuthorizationModal: false,
-            isOpenRegistrationModal: false,
-        })
-    }
 
     handleTriggerModal = e => {
         e.preventDefault();
@@ -71,7 +64,7 @@ class Index extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/affiche" component={Affiche}/>
                     <Footer onHandleTriggerModal={ this.handleTriggerModal }/>
-                    <Footerdown />
+                    <FooterDown />
                     { isOpenRegistrationModal && <Registration onTriggerModal={this.onTriggerAuthorizationModal} /> }
                     { isOpenAuthorizationModal && <Authorization onTriggerModal={this.onTriggerRegistrationModal} /> }
                 </>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Arrowdown() {
+function ArrowDown() {
   return (
     <a href="#table" className="main-arrow">
       <div className="arrow-down" id="arrow-down">
@@ -10,4 +10,4 @@ function Arrowdown() {
   );
 }
 
-export default Arrowdown;
+export default ArrowDown;

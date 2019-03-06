@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footerdown() {
+function FooterDown() {
   return (
     <div className="legal">
       <div className="copy">
@@ -16,4 +16,4 @@ function Footerdown() {
   );
 }
 
-export default Footerdown;
+export default FooterDown;

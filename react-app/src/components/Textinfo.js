@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Textinfo() {
+function TextInfo() {
   return (
     <div className="text-info">
       <h3>Cinema is cinema</h3>
@@ -13,4 +13,4 @@ function Textinfo() {
   );
 }
 
-export default Textinfo;
+export default TextInfo;

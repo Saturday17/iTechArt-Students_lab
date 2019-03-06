@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Calltoaction extends Component {
+class CallToAction extends Component {
   
   render(){
     const { onHandleTriggerAuthorizationModal, onHandleTriggerRegistrationModal } = this.props;
@@ -15,4 +15,4 @@ class Calltoaction extends Component {
   }
 }
 
-export default Calltoaction;
+export default CallToAction;

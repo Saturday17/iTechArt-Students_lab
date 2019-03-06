@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import '../index.css';
 import '../media.css';
 import Slider from './Slider';
-import Arrowdown from './Arrowdown';
+import ArrowDown from './ArrowDown';
 import Table from './Table';
-import Textinfo from './Textinfo';
-import Calltoaction from './Calltoaction';
+import TextInfo from './TextInfo';
+import CallToAction from './CallToAction';
 import Authorization from './Authorization';
 import Registration from './Registration';
 
@@ -60,11 +60,11 @@ onTriggerAuthorizationModal = e => {
       <>
         <div className="main" id="main">
           <Slider />
-          <Arrowdown />
+          <ArrowDown />
         </div>
         <Table />
-        <Textinfo />
-        <Calltoaction onHandleTriggerAuthorizationModal={ this.handleTriggerAuthorizationModal } onHandleTriggerRegistrationModal={ this.handleTriggerRegistrationModal }/>
+        <TextInfo />
+        <CallToAction onHandleTriggerAuthorizationModal={ this.handleTriggerAuthorizationModal } onHandleTriggerRegistrationModal={ this.handleTriggerRegistrationModal }/>
         { isOpenRegistrationModal && <Registration onTriggerModal={this.onTriggerAuthorizationModal} /> }
         { isOpenAuthorizationModal && <Authorization onTriggerModal={this.onTriggerRegistrationModal} /> }
       </>
