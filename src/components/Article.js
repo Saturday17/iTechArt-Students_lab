@@ -2,7 +2,6 @@ import React from 'react';
 
 function Article(props) {
     const {article} = props;
-    console.log(article);
     return (
       <div className="price-tag">
         <img src="./img/dragon.jpg" alt="img"/>

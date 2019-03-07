@@ -114,19 +114,19 @@ li:nth-last-of-type(n+2) a:hover {
 	text-shadow: 0px 0px 10px #000;
 }
 .item-1 {
-	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/hulk.jpg);
+	background-image: url(D:/iTechArt-Students_lab/src/img/hulk.jpg);
 	background-repeat: no-repeat;
 }
 .item-2 {
-	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/ironman.jpg);
+	background-image: url(D:/iTechArt-Students_lab/src/img/ironman.jpg);
 	background-repeat: no-repeat;
 }
 .item-3 {
-	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/tor.jpg);
+	background-image: url(D:/iTechArt-Students_lab/src/img/tor.jpg);
 	background-repeat: no-repeat;
 }
 .item-4 {
-	background-image: url(D:/iTechArt-Students_lab/react-app/src/img/america.jpg);
+	background-image: url(D:/iTechArt-Students_lab/src/img/america.jpg);
 	background-repeat: no-repeat;
 }
 .item:hover {
