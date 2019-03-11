@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {Router} from 'react-router-dom';
+import {Router, Route} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import Menu from './components/Menu';
-import Footer from './components/Footer';
-import Authorization from './components/Authorization';
-import Registration from './components/Registration';
-import AppRouting from './components/AppRouting';
 import './index.css';
 import './media.css';
 import './affiche.css';
+import Home from './components/Home';
+import Menu from './components/Menu';
+import Affiche from './components/Affiche';
+import Footer from './components/Footer';
+import Authorization from './components/Authorization';
+import Registration from './components/Registration';
+import FooterDown from './components/FooterDown'
 
 const history = createBrowserHistory();
 
@@ -23,7 +25,7 @@ class Index extends Component {
     componentDidMount(){
         window.addEventListener('keydown', e => {
           if(e.key === 'Escape'){
-              this.setState ({
+              this.setState({
               isOpenAuthorizationModal: false,
               isOpenRegistrationModal: false
             })
@@ -33,20 +35,22 @@ class Index extends Component {
 
     handleTriggerModal = e => {
         e.preventDefault();
-        this.setState ({
+        this.setState({
             isOpenAuthorizationModal: true
         })
     }
 
     onTriggerRegistrationModal = e => {
         e.preventDefault();
-        this.setState (({ isOpenRegistrationModal }) => ({ isOpenAuthorizationModal: false, isOpenRegistrationModal: !isOpenRegistrationModal }))
+        // this.setState({ isOpenAuthorizationModal: !this.state.isOpenAuthorizationModal }); // don't do like this if you need change value in state directlry
+        this.setState(({ isOpenRegistrationModal }) => ({ isOpenAuthorizationModal: false, isOpenRegistrationModal: !isOpenRegistrationModal }))
 
     }
 
     onTriggerAuthorizationModal = e => {
         e.preventDefault();
-        this.setState (({ isOpenAuthorizationModal }) => ({ isOpenRegistrationModal: false, isOpenAuthorizationModal: !isOpenAuthorizationModal }))
+        // this.setState({ isOpenAuthorizationModal: !this.state.isOpenAuthorizationModal }); // don't do like this if you need change value in state directlry
+        this.setState(({ isOpenAuthorizationModal }) => ({ isOpenRegistrationModal: false, isOpenAuthorizationModal: !isOpenAuthorizationModal }))
 
     }
 
@@ -57,8 +61,10 @@ class Index extends Component {
             <Router history={history}>
                 <>
                     <Menu onHandleTriggerModal={ this.handleTriggerModal }/>
-                    <AppRouting />
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/affiche" component={Affiche}/>
                     <Footer onHandleTriggerModal={ this.handleTriggerModal }/>
+                    <FooterDown />
                     { isOpenRegistrationModal && <Registration onTriggerModal={this.onTriggerAuthorizationModal} /> }
                     { isOpenAuthorizationModal && <Authorization onTriggerModal={this.onTriggerRegistrationModal} /> }
                 </>

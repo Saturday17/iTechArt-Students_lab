@@ -114,19 +114,19 @@ li:nth-last-of-type(n+2) a:hover {
 	text-shadow: 0px 0px 10px #000;
 }
 .item-1 {
-	background-image: url(D:/iTechArt-Students_lab/src/img/hulk.jpg);
+	background-image: url(img/hulk.jpg);
 	background-repeat: no-repeat;
 }
 .item-2 {
-	background-image: url(D:/iTechArt-Students_lab/src/img/ironman.jpg);
+	background-image: url(img/ironman.jpg);
 	background-repeat: no-repeat;
 }
 .item-3 {
-	background-image: url(D:/iTechArt-Students_lab/src/img/tor.jpg);
+	background-image: url(img/tor.jpg);
 	background-repeat: no-repeat;
 }
 .item-4 {
-	background-image: url(D:/iTechArt-Students_lab/src/img/america.jpg);
+	background-image: url(img/america.jpg);
 	background-repeat: no-repeat;
 }
 .item:hover {
@@ -184,7 +184,6 @@ li:nth-last-of-type(n+2) a:hover {
 	transition: 0.5s;
 }
 .price-tag:hover {
-	cursor: pointer;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
 .price-tag img {
@@ -218,6 +217,7 @@ li:nth-last-of-type(n+2) a:hover {
 	border-radius: 100px;
 }
 .price-btn:hover {
+	cursor: pointer;
 	background-color: rgba(212, 7, 84, 1);
 	color: rgba(255, 255, 255, 1);
 	transition: 0.3s;

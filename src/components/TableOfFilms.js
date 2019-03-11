@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import TableHeader from './TableHeader';
+import TableOfFilmsHeader from './TableOfFilmsHeader';
 import AfficheList from './AfficheList';
 import articles from './AfficheList';
 
-class Table extends Component {
+class TableOfFilms extends Component {
   render() {
     return (
       <div className="table" id="table">
-        <TableHeader />
+        <TableOfFilmsHeader />
         <AfficheList articles = {articles} />
       </div>
     );
   }
 }
 
-export default Table;
+export default TableOfFilms;

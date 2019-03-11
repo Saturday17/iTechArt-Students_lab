@@ -14,7 +14,7 @@ class Menu extends Component {
 
   handleOpenMiniMenu = e => {
     e.preventDefault();
-    this.setState({
+    this.setState ({
       isOpenMiniMenu: true
     });
     setTimeout(() => this.setState({
@@ -24,7 +24,7 @@ class Menu extends Component {
 
   handleRemoveMiniMenu = e => {
     e.preventDefault();
-    this.setState({
+    this.setState ({
       isOpenMiniMenu: false,
       animatedClass: ''
     });
@@ -32,7 +32,7 @@ class Menu extends Component {
 
   handleTriggerSearch = e => {
     e.preventDefault();
-    this.setState({
+    this.setState ({
       isOpenSearchInput: !this.state.isOpenSearchInput
     })
   }

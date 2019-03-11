@@ -3,9 +3,9 @@ import '../index.css';
 import '../media.css';
 import Slider from './Slider';
 import ArrowDown from './ArrowDown';
-import Table from './Table';
+import TableOfPremiere from './TableOfPremiere';
 import TextInfo from './TextInfo';
-import CallToAction from './CallToAction';
+import SignInBlock from './SignInBlock';
 import Authorization from './Authorization';
 import Registration from './Registration';
 
@@ -16,10 +16,10 @@ state = {
   isOpenAuthorizationModal: false,
 }
 
-componentDidMount(){
+componentDidMount() {
   window.addEventListener('keydown', e => {
     if(e.key === 'Escape'){
-        this.setState({
+        this.setState ({
         isOpenAuthorizationModal: false,
         isOpenRegistrationModal: false
       })
@@ -27,30 +27,39 @@ componentDidMount(){
   });
 } 
 
-handleTriggerAuthorizationModal = e => {
+componentWillUnmount() {
+  window.removeEventListener('keydown', e => {
+    if(e.key === 'Escape'){
+        this.setState ({
+        isOpenAuthorizationModal: false,
+        isOpenRegistrationModal: false
+      })
+    }
+  });
+}
+
+handleOpenAuthorizationModal = e => {
   e.preventDefault();
-  this.setState({
+  this.setState ({
       isOpenAuthorizationModal: true
   })
 }
-handleTriggerRegistrationModal = e => {
+handleOpenRegistrationModal = e => {
   e.preventDefault();
-  this.setState({
+  this.setState ({
       isOpenRegistrationModal: true
   })
 }
 
 onTriggerRegistrationModal = e => {
   e.preventDefault();
-  // this.setState({ isOpenAuthorizationModal: !this.state.isOpenAuthorizationModal }); // don't do like this if you need change value in state directlry
-  this.setState(({ isOpenRegistrationModal }) => ({ isOpenAuthorizationModal: false, isOpenRegistrationModal: !isOpenRegistrationModal }))
+  this.setState (({ isOpenRegistrationModal }) => ({ isOpenAuthorizationModal: false, isOpenRegistrationModal: !isOpenRegistrationModal }))
 
 }
 
 onTriggerAuthorizationModal = e => {
   e.preventDefault();
-  // this.setState({ isOpenAuthorizationModal: !this.state.isOpenAuthorizationModal }); // don't do like this if you need change value in state directlry
-  this.setState(({ isOpenAuthorizationModal }) => ({ isOpenRegistrationModal: false, isOpenAuthorizationModal: !isOpenAuthorizationModal }))
+  this.setState (({ isOpenAuthorizationModal }) => ({ isOpenRegistrationModal: false, isOpenAuthorizationModal: !isOpenAuthorizationModal }))
 
 }
   
@@ -62,9 +71,9 @@ onTriggerAuthorizationModal = e => {
           <Slider />
           <ArrowDown />
         </div>
-        <Table />
+        <TableOfPremiere />
         <TextInfo />
-        <CallToAction onHandleTriggerAuthorizationModal={ this.handleTriggerAuthorizationModal } onHandleTriggerRegistrationModal={ this.handleTriggerRegistrationModal }/>
+        <SignInBlock onHandleOpenAuthorizationModal={ this.handleOpenAuthorizationModal } onHandleOpenRegistrationModal={ this.handleOpenRegistrationModal }/>
         { isOpenRegistrationModal && <Registration onTriggerModal={this.onTriggerAuthorizationModal} /> }
         { isOpenAuthorizationModal && <Authorization onTriggerModal={this.onTriggerRegistrationModal} /> }
       </>

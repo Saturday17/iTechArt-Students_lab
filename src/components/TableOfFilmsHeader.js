@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TableHeader() {
+function TableOfFilmsHeader() {
   return (
     <div className="table-header">
       <h2>Select a Film</h2>
@@ -9,4 +9,4 @@ function TableHeader() {
   );
 }
 
-export default TableHeader;
+export default TableOfFilmsHeader;
