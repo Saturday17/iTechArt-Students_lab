@@ -6,12 +6,10 @@ import TableHeader from './TableHeader';
 class Affiche extends Component {
   render() {
     return(
-      <>
-        <div className="table" id="table">
-          <TableHeader />
-          <AfficheList articles = {articles} />
-        </div>
-      </>
+      <div className="table" id="table">
+        <TableHeader />
+        <AfficheList articles={articles} />
+      </div>
     );
   }
 }

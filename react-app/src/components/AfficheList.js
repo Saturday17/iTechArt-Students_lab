@@ -5,7 +5,9 @@ import articles from './films';
 function AfficheList() {
   return (
     <div className="price-tags">
-      <Article article={ articles[0] }/>
+      { 
+        articles.map(article => <Article article={article} />) 
+      }
     </div>
   );
 }
