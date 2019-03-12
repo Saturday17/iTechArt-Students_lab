@@ -24,12 +24,23 @@ class Index extends Component {
         window.addEventListener('keydown', e => {
           if(e.key === 'Escape'){
               this.setState ({
-              isOpenAuthorizationModal: false,
-              isOpenRegistrationModal: false
-            })
+                isOpenAuthorizationModal: false,
+                isOpenRegistrationModal: false
+             })
           }
         });
     } 
+
+    componentWillUnmount() {
+        window.removeEventListener('keydown', e => {
+            if(e.key === 'Escape'){
+                this.setState ({
+                    isOpenAuthorizationModal: false,
+                    isOpenRegistrationModal: false
+                })
+            }
+        });
+    }
 
     handleTriggerModal = e => {
         e.preventDefault();

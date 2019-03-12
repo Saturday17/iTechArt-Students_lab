@@ -17,16 +17,12 @@ class Menu extends Component {
     this.setState ({
       isOpenMiniMenu: true
     });
-    setTimeout(() => this.setState({
-      animatedClass: 'animated'
-    }), 0);
   }
 
   handleRemoveMiniMenu = e => {
     e.preventDefault();
     this.setState ({
-      isOpenMiniMenu: false,
-      animatedClass: ''
+      isOpenMiniMenu: false
     });
   }
 
@@ -39,7 +35,8 @@ class Menu extends Component {
 
   render(){
     const { onHandleTriggerModal } = this.props;
-    const { isOpenMiniMenu, animatedClass, isOpenSearchInput } =  this.state;
+    const { isOpenMiniMenu, isOpenSearchInput } =  this.state;
+    const animatedClass = isOpenMiniMenu ? 'animated' : '';
 
     return (
       <>
