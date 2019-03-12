@@ -52,18 +52,16 @@ class Index extends Component {
     onTriggerRegistrationModal = e => {
         e.preventDefault();
         this.setState (({ isOpenRegistrationModal }) => ({ isOpenAuthorizationModal: false, isOpenRegistrationModal: !isOpenRegistrationModal }))
-
     }
 
     onTriggerAuthorizationModal = e => {
         e.preventDefault();
         this.setState (({ isOpenAuthorizationModal }) => ({ isOpenRegistrationModal: false, isOpenAuthorizationModal: !isOpenAuthorizationModal }))
-
     }
 
     render() {
         const { isOpenRegistrationModal, isOpenAuthorizationModal } = this.state;
-
+        this.performSearch();
         return (
             <Router history={history}>
                 <>
