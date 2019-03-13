@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Article from './Article';
 import articles from './films';
 import $ from 'jquery';
+import uniqueId from 'lodash.uniqueid';
 
 class AfficheList extends Component {
   performSearch() { 
@@ -18,8 +19,8 @@ class AfficheList extends Component {
 
           results.forEach( movie => {
               console.log(movie.title);
-              const movie = <Article article={article} key={article.id} />;
-              movieRows.push(movie);
+              const movieRow = <Article movie={movie} key={movie.id} />;
+              movieRows.push(movieRow);
           }) 
           this.setState()
         }, 
@@ -29,10 +30,11 @@ class AfficheList extends Component {
     }) 
   }
   render() {
+    this.performSearch();
     return (
       <div className="price-tags">
         { 
-          articles.map(article => <Article article={article} key={article.id} />) 
+          articles.map(article => <Article article={article} key={uniqueId('movie_')} />) 
         }
       </div>
     );

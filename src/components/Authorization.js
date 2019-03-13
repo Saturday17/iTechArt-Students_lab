@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Authorization extends Component {
 
@@ -27,6 +28,10 @@ class Authorization extends Component {
       </div>
     );
   }
+}
+
+Authorization.propTypes = {
+  onTriggerModal: PropTypes.func
 }
 
 export default Authorization;

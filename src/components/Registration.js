@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Registration extends Component {
 
@@ -32,6 +33,10 @@ class Registration extends Component {
       </div>
     );
   }
+}
+
+Registration.propTypes = {
+  onTriggerModal: PropTypes.func
 }
 
 export default Registration;

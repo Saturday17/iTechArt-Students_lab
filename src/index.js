@@ -61,7 +61,6 @@ class Index extends Component {
 
     render() {
         const { isOpenRegistrationModal, isOpenAuthorizationModal } = this.state;
-        this.performSearch();
         return (
             <Router history={history}>
                 <>

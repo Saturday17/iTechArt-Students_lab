@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class FooterNavigation extends Component {
   render() {
@@ -16,6 +17,10 @@ class FooterNavigation extends Component {
       </ul>
     );
   }
+}
+
+FooterNavigation.propTypes = {
+  onHandleTriggerModal: PropTypes.func
 }
 
 export default FooterNavigation;

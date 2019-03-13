@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class SignInBlock extends Component {
   
@@ -13,6 +14,11 @@ class SignInBlock extends Component {
       </div>
     );
   }
+}
+
+SignInBlock.propTypes = {
+  onHandleOpenAuthorizationModal: PropTypes.func,
+  onHandleOpenRegistrationModal: PropTypes.func
 }
 
 export default SignInBlock;

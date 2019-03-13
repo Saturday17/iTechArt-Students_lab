@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import SearchInput from './SearchInput';
+import PropTypes from 'prop-types';
 
 class MiniMenu extends Component {
 
   render(){
 
-    const { onHandleTriggerModal, onAnimatedClass, handleRemoveMiniMenu, handleTriggerSearch, isOpenSearchInput } = this.props;
+    const { onHandleTriggerModal, handleRemoveMiniMenu, handleTriggerSearch, isOpenSearchInput } = this.props;
 
     return (
-      <ul className={`m-menu ${onAnimatedClass}`} id="m-menu">
+      <ul className="m-menu" id="m-menu">
         <li className="close-menu" onClick={ handleRemoveMiniMenu }>&times;</li>
         <li><Link to="/" className="menu-link">Home</Link></li>
         <li><Link to="/affiche" className="menu-link">Affiche</Link></li>
@@ -24,6 +25,13 @@ class MiniMenu extends Component {
       </ul>
     );
   }
+}
+
+MiniMenu.propTypes = {
+  onHandleTriggerModal: PropTypes.func,
+  handleRemoveMiniMenu: PropTypes.func,
+  handleTriggerSearch: PropTypes.func,
+  isOpenSearchInput: PropTypes.bool
 }
 
 export default MiniMenu;

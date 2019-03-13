@@ -3,12 +3,12 @@ import logo from '../img/logomin.png';
 import MiniMenu from './MiniMenu';
 import {Link} from 'react-router-dom';
 import SearchInput from './SearchInput';
+import PropTypes from 'prop-types';
 
 class Menu extends Component {
 
   state = {
     isOpenMiniMenu: false,
-    animatedClass: '',
     isOpenSearchInput: false
   }
 
@@ -36,11 +36,10 @@ class Menu extends Component {
   render(){
     const { onHandleTriggerModal } = this.props;
     const { isOpenMiniMenu, isOpenSearchInput } =  this.state;
-    const animatedClass = isOpenMiniMenu ? 'animated' : '';
 
     return (
       <>
-        { isOpenMiniMenu && <MiniMenu onHandleTriggerModal={ onHandleTriggerModal } handleRemoveMiniMenu={ this.handleRemoveMiniMenu } onAnimatedClass={ animatedClass } handleTriggerSearch={ this.handleTriggerSearch } isOpenSearchInput={ isOpenSearchInput } /> }
+        { isOpenMiniMenu && <MiniMenu onHandleTriggerModal={ onHandleTriggerModal } handleRemoveMiniMenu={ this.handleRemoveMiniMenu } handleTriggerSearch={ this.handleTriggerSearch } isOpenSearchInput={ isOpenSearchInput } /> }
         <div className="header">
           <div className="logo">
             <a href="#"><img src={logo} alt="logo" /> </a>
@@ -66,6 +65,10 @@ class Menu extends Component {
       </>
     );
   }
+}
+
+Menu.propTypes = {
+  onHandleTriggerModal: PropTypes.func
 }
 
 export default Menu;
