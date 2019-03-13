@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../img/logomin.png';
 import FooterNavigation from './FooterNavigation';
+import PropTypes from 'prop-types';
 
 class FooterTop extends Component {
   render() {
@@ -16,7 +17,11 @@ class FooterTop extends Component {
         </div>
       </div>
     );
-    }
+  }
+}
+
+FooterTop.propsType = {
+  onHandleTriggerModal: PropTypes.func
 }
 
 export default FooterTop;

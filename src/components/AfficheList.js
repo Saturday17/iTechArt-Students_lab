@@ -6,7 +6,7 @@ function AfficheList() {
   return (
     <div className="price-tags">
       { 
-        articles.map(article => <Article article={article} key={article.id} />) 
+        articles.map((article, index) => <Article key={index} article={article} />) 
       }
     </div>
   );
