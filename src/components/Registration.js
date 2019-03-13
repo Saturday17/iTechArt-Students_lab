@@ -1,21 +1,13 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Registration extends Component {
-  openAuthorization(event){
-    event.preventDefault();
-    let formAuthorization = document.getElementById('form-authorization');
-    let formRegistration = document.getElementById('form-registration');
-    formAuthorization.setAttribute('opened', 'true');
-    formRegistration.removeAttribute('opened');
-    formAuthorization.addEventListener('click', function(e){
-        if(this === e.target){
-            formAuthorization.removeAttribute('opened');
-        }
-    });
-  }
+
   render(){
+    const { onTriggerModal } = this.props;
+
     return (
-      <div className="form-container" id="form-registration">
+      <div className="form-container">
         <form action="">
           <h2>Registration</h2>
           <div className="form-field multi-input">
@@ -35,7 +27,7 @@ class Registration extends Component {
             <button>Check in</button>
           </div>
           <div className="auto-link">
-            <a href="#" onClick={ this.openAuthorization }>Authorization</a>
+            <a href="#" onClick={ onTriggerModal }>Authorization</a>
           </div>
         </form>
       </div>
@@ -43,4 +35,8 @@ class Registration extends Component {
   }
 }
 
-export default Registration
+Registration.propTypes = {
+  onTriggerModal: PropTypes.func
+}
+
+export default Registration;
