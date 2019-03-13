@@ -7,19 +7,16 @@ class FooterTop extends Component {
     const { onHandleTriggerModal } = this.props;
     
     return (
-      <>
-        <div className="footer">
-          <div className="logo">
-            <a href="#"> <img src={logo} alt="logo" /> </a>
-          </div>
-          <div className="footer-menu">
-            <FooterNavigation onHandleTriggerModal={ onHandleTriggerModal }/>
-          </div>
+      <div className="footer">
+        <div className="logo">
+          <a href="#"> <img src={logo} alt="logo" /> </a>
         </div>
-        <hr />
-      </>
+        <div className="footer-menu">
+          <FooterNavigation onHandleTriggerModal={ onHandleTriggerModal }/>
+        </div>
+      </div>
     );
-    }
+  }
 }
 
 export default FooterTop;
