@@ -189,7 +189,7 @@ li:nth-last-of-type(n+2) a:hover {
 .price-tag img {
 	width: 100px;
 }
-.price-tag span {
+.price-tag h2 {
 	font-size: 1.4rem;
 	text-transform: uppercase;
 	margin: 3rem auto 1rem;
