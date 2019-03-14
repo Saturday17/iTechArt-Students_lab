@@ -9,14 +9,14 @@ class AfficheList extends Component {
     super(props);
     this.state = {}
 
-    this.performSearch();
+    this.performSearch('avengers');
   }
 
-  performSearch() { 
+  performSearch(searchWord) { 
     console.log('Perform search using moviedb');
-    const urlString = 'https://api.themoviedb.org/3/search/movie?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&query=woman&page=1&include_adult=false'; 
+    const urlString = 'https://api.themoviedb.org/3/search/movie?api_key=0db50d1e81184cc04e761a3e55b0ee62&query=' + searchWord;
     $.ajax({ 
-        url: urlString, 
+        url: urlString,
         success: searchResults => { 
           console.log("success!");
           const movies = searchResults.results;
@@ -37,12 +37,21 @@ class AfficheList extends Component {
     }) 
   }
 
+  searchChangeHandler = e => {
+    console.log(e.target.value);
+    const searchWord = e.target.value;
+    this.performSearch(searchWord)
+  }
+
   render() {
     const { rows } = this.state
     return (
-      <div className="price-tags">
-        { rows }
-      </div>
+      <>
+        <input onChange={this.searchChangeHandler} placeholder="Search"/>
+        <div className="price-tags">
+          { rows }
+        </div>
+      </>
     );
   }
 }
