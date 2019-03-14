@@ -31,7 +31,7 @@ class Authorization extends Component {
 }
 
 Authorization.propTypes = {
-  onTriggerModal: PropTypes.func
+  onTriggerModal: PropTypes.func.isRequired
 }
 
 export default Authorization;

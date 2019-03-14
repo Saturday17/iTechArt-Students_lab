@@ -54,20 +54,20 @@ body {
 	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.price-tag img {
+.price-tag .movie-img {
 	border-radius: 2rem;
 }
-.price-tag img:hover {
+.price-tag .movie-img:hover {
 	cursor: pointer;
 	opacity: 0.9;
 }
-.price-tag h2 {
+.price-tag .movie-title {
 	font-size: 2rem;
 	text-transform: uppercase;
 	margin: 0 auto;
 	color: #4f4f6f;
 }
-.price-tag h4 {
+.price-tag .movie-release {
 	font-size: 2rem;
 	color: #4f4f6f;
 }

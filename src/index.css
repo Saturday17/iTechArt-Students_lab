@@ -46,18 +46,22 @@ i:hover {
 .menu {
 	width: 60%;
 }
-.menu ul{
+.menu .menu-navigation{
 	display: flex;
 	justify-content: space-around;
 	list-style: none;
 }
-li:nth-last-of-type(n+2) a:hover {
+
+.menu-link {
+	font-style: 1.4rem;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
+	font-weight: 500;
+}
+.menu-link:hover {
 	color: rgba(212, 7, 84, 1);
 	transition: 0.2s;
-}
-.menu-link {
-	color: rgba(255, 255, 255, 1); 
-	text-decoration: none;
+	font-weight: 500;
 }
 
 .input-search {
@@ -167,14 +171,7 @@ li:nth-last-of-type(n+2) a:hover {
 	text-align: center;
 	margin-bottom: 5rem;
 }
-.table-header p {
-	font-size: 1.8rem;
-	display: inline-block;
-	width: 40rem;
-	line-height: 1.4rem;
-	color: rgba(159, 164, 175, 1);
-}
-.table-header h2 {
+.table-header .table-header__title {
 	color: #4f4f6f;
 	font-size: 6rem;
 	margin: 0;
@@ -200,20 +197,20 @@ li:nth-last-of-type(n+2) a:hover {
 	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.price-tag img {
+.price-tag .movie-img {
 	border-radius: 2rem;
 }
-.price-tag img:hover {
+.price-tag .movie-img:hover {
 	cursor: pointer;
 	opacity: 0.9;
 }
-.price-tag h2 {
+.price-tag .movie-title {
 	font-size: 2rem;
 	text-transform: uppercase;
 	margin: 0 auto;
 	color: #4f4f6f;
 }
-.price-tag h4 {
+.price-tag .movie-release {
 	font-size: 2rem;
 	color: #4f4f6f;
 }
@@ -290,16 +287,20 @@ li:nth-last-of-type(n+2) a:hover {
 .footer-top__menu {
 	width: 50%;
 }
-.footer-top__menu ul {
+.footer-top__menu .footer-navigation {
 	display: flex;
 	justify-content: space-around;
 	list-style: none;
 }
-.footer-top__menu__link {
+.footer-top__menu--link {
 	font-style: 1.4rem;
 	text-decoration: none;
 	color: #6a6a77;
 	font-weight: 500;
+}
+.footer-top__menu--link:hover {
+	color: rgba(212, 7, 84, 1);
+	transition: 0.2s;
 }
 .footer-sign-in {
 	border: 1px solid rgba(212, 7, 84, 1);
@@ -313,12 +314,6 @@ li:nth-last-of-type(n+2) a:hover {
 	color: rgba(212, 7, 84, 1);
 	background-color: rgba(255, 255, 255, 1);
 	transition: 0.4s;
-}
-hr {
-	height: 0;
-	border: 0;
-	box-shadow: 0 0 0.1rem 0.1rem #6a6a77;
-	margin: 0 auto;
 }
 .legal {
 	padding-left: 5%;

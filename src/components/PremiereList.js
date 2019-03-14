@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Article from './Article';
-import $ from 'jquery';
-import uniqueId from 'lodash.uniqueid';
+import axios from 'axios';
+import uniqueId from 'lodash/uniqueId';
 
 class PremiereList extends Component {
   
@@ -13,12 +13,9 @@ class PremiereList extends Component {
 
   performSearch() { 
     console.log('Perform search using moviedb');
-    const urlString = 'https://api.themoviedb.org/3/movie/popular?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1';
-    $.ajax({ 
-        url: urlString,
-        success: searchResults => { 
-          console.log("success!");
-          const movies = searchResults.results;
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
+      .then(searchResults => {
+          const movies = searchResults.data.results;
           var movieRows = [];
           movies.forEach( movie => {
             movie.poster_src = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
@@ -29,21 +26,20 @@ class PremiereList extends Component {
             }
           })
           this.setState({
-            rows: movieRows
+            movieRows: movieRows
           })
-        }, 
-        error: (xhr, status, err) => { 
-            console.error('faild!'); 
-        } 
-    }) 
-  }
+      })
+      .catch((xhr, status, err) => { 
+        console.error('faild!'); 
+      })
+    }
 
   render() {
-    const { rows } = this.state
+    const { movieRows } = this.state
 
     return (
       <div className="price-tags">
-        { rows }
+        { movieRows }
       </div>
     );
   }

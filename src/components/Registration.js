@@ -8,7 +8,7 @@ class Registration extends Component {
 
     return (
       <div className="form-container">
-        <form action="">
+        <form className="form-container__form" action="">
           <h2>Registration</h2>
           <div className="form-field multi-input">
             <label htmlFor="name">Name</label>
@@ -36,7 +36,7 @@ class Registration extends Component {
 }
 
 Registration.propTypes = {
-  onTriggerModal: PropTypes.func
+  onTriggerModal: PropTypes.func.isRequired
 }
 
 export default Registration;

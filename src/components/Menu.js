@@ -39,7 +39,10 @@ class Menu extends Component {
 
     return (
       <>
-        { isOpenMiniMenu && <MiniMenu onHandleTriggerModal={ onHandleTriggerModal } handleRemoveMiniMenu={ this.handleRemoveMiniMenu } handleTriggerSearch={ this.handleTriggerSearch } isOpenSearchInput={ isOpenSearchInput } /> }
+        { isOpenMiniMenu && ( <MiniMenu onHandleTriggerModal={ onHandleTriggerModal }
+          handleRemoveMiniMenu={ this.handleRemoveMiniMenu }
+          handleTriggerSearch={ this.handleTriggerSearch } 
+          isOpenSearchInput={ isOpenSearchInput } /> )}
         <div className="header">
           <div className="logo">
             <a href="#"><img src={logo} alt="logo" /> </a>
@@ -48,12 +51,12 @@ class Menu extends Component {
             <i className="fa fa-bars"></i>	
           </a>
           <div className="menu visible-lg">
-            <ul>
+            <ul className="menu-navigation">
               <li><Link to="/" className="menu-link">Home</Link></li>
               <li><Link to="/affiche" className="menu-link">Affiche</Link></li>
-              <li><a href="#" className="menu-link">Cinemas</a></li>
-              <li><a href="#" className="menu-link">Food and Drinks</a></li>
-              <li><a href="#" className="menu-link">Info</a></li>
+              <li><Link to="/" className="menu-link">Cinemas</Link></li>
+              <li><Link to="/" className="menu-link">Food and Drinks</Link></li>
+              <li><Link to="/" className="menu-link">Info</Link></li>
               <li>
                 { isOpenSearchInput && <SearchInput />}
               </li>
@@ -69,10 +72,6 @@ class Menu extends Component {
 
 Menu.propTypes = {
   onHandleTriggerModal: PropTypes.func
-<<<<<<< HEAD
-};
-=======
 }
->>>>>>> TheMovieDb
 
 export default Menu;
