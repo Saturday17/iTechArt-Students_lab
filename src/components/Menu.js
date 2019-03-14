@@ -69,6 +69,10 @@ class Menu extends Component {
 
 Menu.propTypes = {
   onHandleTriggerModal: PropTypes.func
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> TheMovieDb
 
 export default Menu;

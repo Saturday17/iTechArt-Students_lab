@@ -8,7 +8,7 @@ class Affiche extends Component {
     return(
       <div className="table" id="table">
         <TableOfFilmsHeader />
-        <AfficheList articles={articles} />
+        <AfficheList articles={articles}/>
       </div>
     );
   }
