@@ -5,10 +5,9 @@ import uniqueId from 'lodash.uniqueid';
 
 class PremiereList extends Component {
   
-  constructor(props) {
-    super(props);
-    this.state = {}
-
+  state = {}
+  
+  componentDidMount() {
     this.performSearch();
   }
 
@@ -25,7 +24,6 @@ class PremiereList extends Component {
             movie.poster_src = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
             var movieRow = <Article key={ uniqueId('movie_') } movie={ movie }/>;
             movieRows.push(movieRow);
-            console.log(movieRows.length);
             for (var i=0; i<3; i++) {
               movieRows.splice(3, movieRows.length);
             }

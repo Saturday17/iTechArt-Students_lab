@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import Article from './Article';
 import $ from 'jquery';
-import uniqueId from 'lodash.uniqueid';
+import uniqueId from 'lodash/uniqueId';
 
 class AfficheList extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {}
+  state = {}
 
-    this.performSearch('avengers');
+  componentDidMount() {
+    this.performSearch();
   }
 
   performSearch(searchWord) { 
@@ -23,7 +22,6 @@ class AfficheList extends Component {
           var movieRows = [];
           movies.forEach( movie => {
             movie.poster_src = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
-            console.log(movie);
             var movieRow = <Article key={ uniqueId('movie_') } movie={ movie }/>;
             movieRows.push(movieRow);
           })
@@ -38,7 +36,6 @@ class AfficheList extends Component {
   }
 
   searchChangeHandler = e => {
-    console.log(e.target.value);
     const searchWord = e.target.value;
     this.performSearch(searchWord)
   }

@@ -197,16 +197,24 @@ li:nth-last-of-type(n+2) a:hover {
 	transition: 0.5s;
 }
 .price-tag:hover {
+	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
+.price-tag img {
+	border-radius: 2rem;
+}
+.price-tag img:hover {
+	cursor: pointer;
+	opacity: 0.9;
+}
 .price-tag h2 {
-	font-size: 1.4rem;
+	font-size: 2rem;
 	text-transform: uppercase;
-	margin: 0.5rem auto;
+	margin: 0 auto;
 	color: #4f4f6f;
 }
 .price-tag h4 {
-	margin: 0;
+	font-size: 2rem;
 	color: #4f4f6f;
 }
 
@@ -267,7 +275,8 @@ li:nth-last-of-type(n+2) a:hover {
 	color: rgba(255, 255, 255, 1);
 	cursor: pointer;
 }
-.footer {
+
+.footer-top {
 	font-size: 20px;
 	height: 10vh;
 	align-items: center;
@@ -278,15 +287,15 @@ li:nth-last-of-type(n+2) a:hover {
 	background-color: rgba(255, 255, 255, 1);
 	border-bottom: 1px solid  #6a6a77;
 }
-.footer-menu {
+.footer-top__menu {
 	width: 50%;
 }
-.footer-menu ul {
+.footer-top__menu ul {
 	display: flex;
 	justify-content: space-around;
 	list-style: none;
 }
-.footer-menu-link {
+.footer-top__menu__link {
 	font-style: 1.4rem;
 	text-decoration: none;
 	color: #6a6a77;

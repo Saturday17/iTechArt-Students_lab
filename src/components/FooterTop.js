@@ -8,11 +8,11 @@ class FooterTop extends Component {
     const { onHandleTriggerModal } = this.props;
     
     return (
-      <div className="footer">
+      <div className="footer-top">
         <div className="logo">
           <a href="#"> <img src={logo} alt="logo" /> </a>
         </div>
-        <div className="footer-menu">
+        <div className="footer-top__menu">
           <FooterNavigation onHandleTriggerModal={ onHandleTriggerModal }/>
         </div>
       </div>

@@ -46,37 +46,30 @@ body {
 	text-align: center;
 	justify-content: space-between;
 	width: 35rem;
+	height: 50rem;
 	transition: 0.5s;
 	margin: 0 0 5rem 0;
 }
 .price-tag:hover {
-	cursor: pointer;
+	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
 .price-tag img {
-	width: 100px;
+	border-radius: 2rem;
 }
-.price-tag span {
-	font-size: 1.4rem;
+.price-tag img:hover {
+	cursor: pointer;
+	opacity: 0.9;
+}
+.price-tag h2 {
+	font-size: 2rem;
 	text-transform: uppercase;
-	margin: 3rem auto 1rem;
+	margin: 0 auto;
+	color: #4f4f6f;
 }
 .price-tag h4 {
-	font-weight: 500px;
-	margin: 0;
+	font-size: 2rem;
 	color: #4f4f6f;
-	font-size: 3rem;
-}
-.price-tag h4 sub {
-	font-size: 1.4rem;
-}
-.price-tag h4 sup {
-	vertical-align: super;
-	font-size: 1.4rem;
-	margin-right: 0.5rem;
-}
-.price-tag p {
-	color: rgba(159, 164, 175, 1);
 }
 .price-btn {
 	background-color: rgba(255, 255, 255, 1);
