@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TextInfo() {
+function InformationColumn() {
   return (
     <div className="text-info">
       <h3>Cinema is cinema</h3>
@@ -13,4 +13,4 @@ function TextInfo() {
   );
 }
 
-export default TextInfo;
+export default InformationColumn;

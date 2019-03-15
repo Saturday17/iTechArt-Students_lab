@@ -4,7 +4,7 @@ import '../media.css';
 import Slider from './Slider';
 import ArrowDown from './ArrowDown';
 import TableOfPremiere from './TableOfPremiere';
-import TextInfo from './TextInfo';
+import InformationColumn from './InformationColumn';
 import SignInBlock from './SignInBlock';
 import Authorization from './Authorization';
 import Registration from './Registration';
@@ -72,7 +72,7 @@ onTriggerAuthorizationModal = e => {
           <ArrowDown />
         </div>
         <TableOfPremiere />
-        <TextInfo />
+        <InformationColumn />
         <SignInBlock onHandleOpenAuthorizationModal={ this.handleOpenAuthorizationModal } onHandleOpenRegistrationModal={ this.handleOpenRegistrationModal }/>
         { isOpenRegistrationModal && <Registration onTriggerModal={this.onTriggerAuthorizationModal} /> }
         { isOpenAuthorizationModal && <Authorization onTriggerModal={this.onTriggerRegistrationModal} /> }
