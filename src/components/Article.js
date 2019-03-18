@@ -13,7 +13,7 @@ class Article extends Component {
     const { movie: { poster_src, title, release_date } } = this.props;
     return (
       <div className="price-tag" key={ uniqueId('movie_') }>
-        <img className="movie-img" src={ poster_src } alt={title + ' poster'}/>
+        <img className="movie-img" onClick={this.viewMovie} src={ poster_src } alt={title + ' poster'}/>
         <h2 className="movie-title">{ title }</h2>
         <h4 className="movie-release">{ release_date }<sub>release</sub></h4>
         <button className="price-btn" onClick={this.viewMovie}>select a film</button>
