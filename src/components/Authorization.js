@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 class Authorization extends Component {
 
   render() {
-    const { onTriggerModal } = this.props;
+    const { onTriggerModal, onHandleCloseModal } = this.props;
 
     return (
       <div className="form-container">
         <form action="">
+          <div className="form-container__form--cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
           <h2>Authorization</h2>
           <div className="form-field input-right">
             <label htmlFor="email">E-mail</label>
@@ -31,7 +32,8 @@ class Authorization extends Component {
 }
 
 Authorization.propTypes = {
-  onTriggerModal: PropTypes.func.isRequired
+  onTriggerModal: PropTypes.func.isRequired,
+  onHandleCloseModal: PropTypes.func
 }
 
 export default Authorization;

@@ -2,14 +2,12 @@ import React, {Component} from 'react';
 import logo from '../img/logomin.png';
 import MiniMenu from './MiniMenu';
 import {Link} from 'react-router-dom';
-import SearchInput from './SearchInput';
 import PropTypes from 'prop-types';
 
 class Menu extends Component {
 
   state = {
-    isOpenMiniMenu: false,
-    isOpenSearchInput: false
+    isOpenMiniMenu: false
   }
 
   handleOpenMiniMenu = e => {
@@ -26,23 +24,14 @@ class Menu extends Component {
     });
   }
 
-  handleTriggerSearch = e => {
-    e.preventDefault();
-    this.setState ({
-      isOpenSearchInput: !this.state.isOpenSearchInput
-    })
-  }
-
   render(){
     const { onHandleTriggerModal } = this.props;
-    const { isOpenMiniMenu, isOpenSearchInput } =  this.state;
+    const { isOpenMiniMenu } =  this.state;
 
     return (
       <>
         { isOpenMiniMenu && ( <MiniMenu onHandleTriggerModal={ onHandleTriggerModal }
-          handleRemoveMiniMenu={ this.handleRemoveMiniMenu }
-          handleTriggerSearch={ this.handleTriggerSearch } 
-          isOpenSearchInput={ isOpenSearchInput } /> )}
+          handleRemoveMiniMenu={ this.handleRemoveMiniMenu } /> )}
         <div className="header">
           <div className="logo">
             <a href="#"><img src={logo} alt="logo" /> </a>
@@ -57,11 +46,7 @@ class Menu extends Component {
               <li><Link to="/" className="menu-link">Cinemas</Link></li>
               <li><Link to="/" className="menu-link">Food and Drinks</Link></li>
               <li><Link to="/" className="menu-link">Info</Link></li>
-              <li>
-                { isOpenSearchInput && <SearchInput />}
-              </li>
-              <li><i className="fa fa-search search-icon" onClick={ this.handleTriggerSearch }></i></li>
-              <li><a href="#" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</a></li>
+              <li><Link to="/" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</Link></li>
             </ul>
           </div>
         </div>

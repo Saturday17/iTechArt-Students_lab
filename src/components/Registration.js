@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 class Registration extends Component {
 
   render(){
-    const { onTriggerModal } = this.props;
+    const { onTriggerModal, onHandleCloseModal } = this.props;
 
     return (
       <div className="form-container">
         <form className="form-container__form" action="">
+          <div className="form-container__form--cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
           <h2>Registration</h2>
           <div className="form-field multi-input">
             <label htmlFor="name">Name</label>
@@ -36,7 +37,8 @@ class Registration extends Component {
 }
 
 Registration.propTypes = {
-  onTriggerModal: PropTypes.func.isRequired
+  onTriggerModal: PropTypes.func.isRequired,
+  onHandleCloseModal: PropTypes.func
 }
 
 export default Registration;

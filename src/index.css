@@ -64,27 +64,6 @@ i:hover {
 	font-weight: 500;
 }
 
-.input-search {
-	display: flex;
-	font-size: 0.9em;
-	background: #f4f4f4;
-	border: 1px solid #ccc;
-	border-radius: 0.3em;
-}
-
-.input-search:focus {
-	background: #fff;
-	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
-	outline: 0;
-}
-.search-icon {
-	cursor: pointer;
-	color: rgba(255, 255, 255, 1);
-}
-.search-icon:hover {
-	color: rgba(212, 7, 84, 1);
-	transition: 0.2s;
-}
 .sign-in-btn {
 	border: 1px solid rgba(212, 7, 84, 1);
 	border-radius: 100px;
@@ -154,7 +133,7 @@ i:hover {
 	background-image: linear-gradient(0, rgba(51, 51, 51, 1), rgba(128, 128, 128, 1));
 	padding: 10rem;
 }
-.table input {
+.table__input {
 	font-size: 3rem;
 	display: block;
 	width: 99%;
@@ -162,10 +141,13 @@ i:hover {
 	margin: 0 0 5rem 0;
 	border-radius: 0.5rem;
 }
-.table input:focus {
+.table__input:focus {
 	background: rgba(255, 255, 255, 1);
 	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
 	outline: 0;
+}
+.table__input:focus::placeholder {
+	color: transparent;
 }
 .table-header {
 	text-align: center;
@@ -381,6 +363,21 @@ i:hover {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
+}
+
+.form-container__form--cross {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+.form-container__form--cross h1 {
+	font-size: 5rem;
+	margin: 0 0;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.form-container__form--cross h1:hover {
+	color: rgba(212, 7, 84, 1);
 }
 .form-container h2 {
 	text-align: center;

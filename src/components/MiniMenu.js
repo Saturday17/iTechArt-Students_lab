@@ -1,27 +1,22 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import SearchInput from './SearchInput';
 import PropTypes from 'prop-types';
 
 class MiniMenu extends Component {
 
   render(){
 
-    const { onHandleTriggerModal, handleRemoveMiniMenu, handleTriggerSearch, isOpenSearchInput } = this.props;
+    const { onHandleTriggerModal, handleRemoveMiniMenu } = this.props;
 
     return (
       <ul className="m-menu" id="m-menu">
         <li className="close-menu" onClick={ handleRemoveMiniMenu }>&times;</li>
         <li><Link to="/" className="menu-link">Home</Link></li>
         <li><Link to="/affiche" className="menu-link">Affiche</Link></li>
-        <li><a href="#" className="menu-link">Cinemas</a></li>
-        <li><a href="#" className="menu-link">Food and Drinks</a></li>
-        <li><a href="#" className="menu-link">Info</a></li>
-        <li>
-          { isOpenSearchInput && <SearchInput />}
-        </li>
-        <li><i className="fa fa-search search-icon" style={{color: 'rgba(255, 255, 255, 1)'}} onClick={ handleTriggerSearch }></i></li>
-        <li><a href="#" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</a></li>
+        <li><Link to="/" className="menu-link">Cinemas</Link></li>
+        <li><Link to="/" className="menu-link">Food and Drinks</Link></li>
+        <li><Link to="/" className="menu-link">Info</Link></li>
+        <li><Link to="/" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</Link></li>
       </ul>
     );
   }
@@ -29,9 +24,7 @@ class MiniMenu extends Component {
 
 MiniMenu.propTypes = {
   onHandleTriggerModal: PropTypes.func,
-  handleRemoveMiniMenu: PropTypes.func,
-  handleTriggerSearch: PropTypes.func,
-  isOpenSearchInput: PropTypes.bool
+  handleRemoveMiniMenu: PropTypes.func
 }
 
 export default MiniMenu;
