@@ -30,13 +30,13 @@ body {
 	font-size: 6rem;
 	margin: 0;
 }
-.price-tags {
+.posters {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
 }
-.price-tag {
+.poster {
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 2rem;
 	padding: 2rem;
@@ -50,28 +50,28 @@ body {
 	transition: 0.5s;
 	margin: 0 0 5rem 0;
 }
-.price-tag:hover {
+.poster:hover {
 	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.price-tag .movie-img {
+.poster .movie-img {
 	border-radius: 2rem;
 }
-.price-tag .movie-img:hover {
+.poster .movie-img:hover {
 	cursor: pointer;
 	opacity: 0.9;
 }
-.price-tag .movie-title {
+.poster__title {
 	font-size: 2rem;
 	text-transform: uppercase;
 	margin: 0 auto;
 	color: #4f4f6f;
 }
-.price-tag .movie-release {
+.poster__release {
 	font-size: 2rem;
 	color: #4f4f6f;
 }
-.price-btn {
+.poster__btn {
 	background-color: rgba(255, 255, 255, 1);
 	border: rgba(159, 164, 175, 1) 1px solid;
 	color: rgba(159, 164, 175, 1);
@@ -81,7 +81,7 @@ body {
 	padding: 1rem 4rem;
 	border-radius: 100px;
 }
-.price-btn:hover {
+.poster__btn:hover {
 	background-color: rgba(212, 7, 84, 1);
 	color: rgba(255, 255, 255, 1);
 	transition: 0.3s;

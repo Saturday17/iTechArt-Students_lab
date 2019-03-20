@@ -10,13 +10,13 @@ class MiniMenu extends Component {
 
     return (
       <ul className="m-menu" id="m-menu">
-        <li className="close-menu" onClick={ handleRemoveMiniMenu }>&times;</li>
-        <li><Link to="/" className="menu-link">Home</Link></li>
-        <li><Link to="/affiche" className="menu-link">Affiche</Link></li>
-        <li><Link to="/" className="menu-link">Cinemas</Link></li>
-        <li><Link to="/" className="menu-link">Food and Drinks</Link></li>
-        <li><Link to="/" className="menu-link">Info</Link></li>
-        <li><Link to="/" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</Link></li>
+        <li className="m-menu__close-menu" onClick={ handleRemoveMiniMenu }>&times;</li>
+        <li><Link to="/" className="m-menu__menu-link">Home</Link></li>
+        <li><Link to="/affiche" className="m-menu__menu-link">Affiche</Link></li>
+        <li><Link to="/" className="m-menu__menu-link">Cinemas</Link></li>
+        <li><Link to="/" className="m-menu__menu-link">Food and Drinks</Link></li>
+        <li><Link to="/" className="m-menu__menu-link">Info</Link></li>
+        <li><Link to="/" className="m-menu__menu-link--sign-in-btn" onClick={ onHandleTriggerModal }>Sign in</Link></li>
       </ul>
     );
   }

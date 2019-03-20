@@ -52,26 +52,26 @@ i:hover {
 	list-style: none;
 }
 
-.menu-link {
+.menu-navigation__menu-link {
 	font-style: 1.4rem;
 	text-decoration: none;
 	color: rgba(255, 255, 255, 1);
 	font-weight: 500;
 }
-.menu-link:hover {
+.menu-navigation__menu-link:hover {
 	color: rgba(212, 7, 84, 1);
 	transition: 0.2s;
-	font-weight: 500;
 }
 
-.sign-in-btn {
+.menu-navigation__menu-link--sign-in-btn {
+	color: rgba(255, 255, 255, 1);
 	border: 1px solid rgba(212, 7, 84, 1);
 	border-radius: 100px;
 	padding: 10px 20px;
 	text-transform: uppercase;
+	text-decoration: none;
 }
-.sign-in-btn:hover {
-	color: rgba(255, 255, 255, 1);
+.menu-navigation__menu-link--sign-in-btn:hover {
 	background-color: rgba(212, 7, 84, 1);
 	transition: 0.4s;
 }
@@ -158,12 +158,12 @@ i:hover {
 	font-size: 6rem;
 	margin: 0;
 }
-.price-tags {
+.posters {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
-.price-tag {
+.poster {
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 2rem;
 	padding: 1rem;
@@ -175,29 +175,29 @@ i:hover {
 	height: 45rem;
 	transition: 0.5s;
 }
-.price-tag:hover {
+.poster:hover {
 	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.price-tag .movie-img {
+.poster__img {
 	border-radius: 2rem;
 }
-.price-tag .movie-img:hover {
+.poster__img:hover {
 	cursor: pointer;
 	opacity: 0.9;
 }
-.price-tag .movie-title {
+.poster__title {
 	font-size: 2rem;
 	text-transform: uppercase;
 	margin: 0 auto;
 	color: #4f4f6f;
 }
-.price-tag .movie-release {
+.poster__release {
 	font-size: 2rem;
 	color: #4f4f6f;
 }
 
-.price-btn {
+.poster__btn {
 	background-color: rgba(255, 255, 255, 1);
 	border: rgba(159, 164, 175, 1) 1px solid;
 	color: rgba(159, 164, 175, 1);
@@ -207,7 +207,7 @@ i:hover {
 	padding: 1rem auto;
 	border-radius: 100px;
 }
-.price-btn:hover {
+.poster__btn:hover {
 	cursor: pointer;
 	background-color: rgba(212, 7, 84, 1);
 	color: rgba(255, 255, 255, 1);
@@ -274,25 +274,26 @@ i:hover {
 	justify-content: space-around;
 	list-style: none;
 }
-.footer-top__menu--link {
+.footer-navigation__link{
 	font-style: 1.4rem;
 	text-decoration: none;
 	color: #6a6a77;
 	font-weight: 500;
 }
-.footer-top__menu--link:hover {
+.footer-navigation__link:hover {
 	color: rgba(212, 7, 84, 1);
 	transition: 0.2s;
 }
-.footer-sign-in {
+.footer-navigation__link--sign-in {
 	border: 1px solid rgba(212, 7, 84, 1);
 	background-color: rgba(212, 7, 84, 1);
 	border-radius: 100px;
 	color: rgba(255, 255, 255, 1);
 	padding: 10px 20px;
 	text-transform: uppercase;
+	text-decoration: none;
 }
-.footer-sign-in:hover {
+.footer-navigation__link--sign-in:hover {
 	color: rgba(212, 7, 84, 1);
 	background-color: rgba(255, 255, 255, 1);
 	transition: 0.4s;
@@ -338,17 +339,41 @@ i:hover {
 	justify-content: center;
 	transition: 0.2s;
 }
-
-.close-menu {
+.m-menu__menu-link {
+	font-style: 1.4rem;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
+	font-weight: 500;
+	transition: 0.2s;
+}
+.m-menu__menu-link:hover {
+	cursor: pointer;
+	color: rgba(212, 7, 84, 1);
+}
+.m-menu__menu-link--sign-in-btn {
+	color: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(212, 7, 84, 1);
+	border-radius: 100px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: 0.4s;
+}
+.m-menu__menu-link--sign-in-btn:hover {
+	background-color: rgba(212, 7, 84, 1);
+}
+.m-menu__close-menu {
 	position: fixed;
 	right: 5rem;
 	top: 5rem;
 	font-size: 5rem;
 	font-weight: 900;
 	color: rgba(255, 255, 255, 1);
+	transition: 0.2s;
 }
-.close-menu:hover {
+.m-menu__close-menu:hover {
 	cursor: pointer;
+	color: rgba(212, 7, 84, 1);
 }
 
 .form-container {
@@ -365,18 +390,18 @@ i:hover {
 	margin: 0 auto;
 }
 
-.form-container__form--cross {
+.form-container__formc-cross {
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
 }
-.form-container__form--cross h1 {
+.form-container__formc-cross h1 {
 	font-size: 5rem;
 	margin: 0 0;
 	cursor: pointer;
 	transition: 0.2s;
 }
-.form-container__form--cross h1:hover {
+.form-container__formc-cross h1:hover {
 	color: rgba(212, 7, 84, 1);
 }
 .form-container h2 {

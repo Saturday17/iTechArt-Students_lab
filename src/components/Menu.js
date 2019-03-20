@@ -41,12 +41,12 @@ class Menu extends Component {
           </a>
           <div className="menu visible-lg">
             <ul className="menu-navigation">
-              <li><Link to="/" className="menu-link">Home</Link></li>
-              <li><Link to="/affiche" className="menu-link">Affiche</Link></li>
-              <li><Link to="/" className="menu-link">Cinemas</Link></li>
-              <li><Link to="/" className="menu-link">Food and Drinks</Link></li>
-              <li><Link to="/" className="menu-link">Info</Link></li>
-              <li><Link to="/" className="sign-in-btn menu-link" onClick={ onHandleTriggerModal }>Sign in</Link></li>
+              <li><Link to="/" className="menu-navigation__menu-link">Home</Link></li>
+              <li><Link to="/affiche" className="menu-navigation__menu-link">Affiche</Link></li>
+              <li><Link to="/" className="menu-navigation__menu-link">Cinemas</Link></li>
+              <li><Link to="/" className="menu-navigation__menu-link">Food and Drinks</Link></li>
+              <li><Link to="/" className="menu-navigation__menu-link">Info</Link></li>
+              <li><Link to="/" className="menu-navigation__menu-link--sign-in-btn" onClick={ onHandleTriggerModal }>Sign in</Link></li>
             </ul>
           </div>
         </div>

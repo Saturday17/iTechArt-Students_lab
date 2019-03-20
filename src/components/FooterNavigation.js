@@ -8,12 +8,12 @@ class FooterNavigation extends Component {
     
     return (
       <ul className="footer-navigation">
-        <li><Link to="/" className="footer-top__menu--link">Home</Link></li>
-        <li><Link to="/affiche" className="footer-top__menu--link">Affiche</Link></li>
-        <li><Link to="/" className="footer-top__menu--link">Food and Drinks</Link></li>
-        <li><Link to="/" className="footer-top__menu--link">Cinemas</Link></li>
-        <li><Link to="/" className="footer-top__menu--link">Info</Link></li>
-        <li><Link to="/" className="footer-sign-in sign-in-btn footer-top__menu--link" onClick={ onHandleTriggerModal }>Sign in</Link></li>
+        <li><Link to="/" className="footer-navigation__link">Home</Link></li>
+        <li><Link to="/affiche" className="footer-navigation__link">Affiche</Link></li>
+        <li><Link to="/" className="footer-navigation__link">Food and Drinks</Link></li>
+        <li><Link to="/" className="footer-navigation__link">Cinemas</Link></li>
+        <li><Link to="/" className="footer-navigation__link">Info</Link></li>
+        <li><Link to="/" className="footer-navigation__link--sign-in" onClick={ onHandleTriggerModal }>Sign in</Link></li>
       </ul>
     );
   }

@@ -16,26 +16,21 @@ class Home extends Component {
     isOpenAuthorizationModal: false,
   }
 
+  closeModals = e => {
+    if(e.key === 'Escape'){
+      this.setState ({
+        isOpenAuthorizationModal: false,
+        isOpenRegistrationModal: false
+      })
+    }
+  }
+
   componentDidMount() {
-    window.addEventListener('keydown', e => {
-      if(e.key === 'Escape'){
-          this.setState ({
-          isOpenAuthorizationModal: false,
-          isOpenRegistrationModal: false
-        })
-      }
-    });
+    window.addEventListener('keydown', this.closeModals);
   } 
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', e => {
-      if(e.key === 'Escape'){
-          this.setState ({
-          isOpenAuthorizationModal: false,
-          isOpenRegistrationModal: false
-        })
-      }
-    });
+    window.removeEventListener('keydown', this.closeModals);
   }
 
   handleCloseModal = e => {

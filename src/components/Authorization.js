@@ -9,7 +9,7 @@ class Authorization extends Component {
     return (
       <div className="form-container">
         <form action="">
-          <div className="form-container__form--cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
+          <div className="form-container__formc-cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
           <h2>Authorization</h2>
           <div className="form-field input-right">
             <label htmlFor="email">E-mail</label>

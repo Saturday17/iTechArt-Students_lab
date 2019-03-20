@@ -3,14 +3,11 @@ import PropTypes from 'prop-types';
 
 class SearchBar extends Component {
 
-  handleFilterTextChange = e => {
-    this.props.onFilterTextChange(e.target.value);
-  }
-
   render() {
+    const { onFilterTextChange, filterText } = this.props;
     return (
       <div>
-        <input className="table__input" type="text" value={this.props.filterText} onChange={this.handleFilterTextChange} placeholder="Search" />
+        <input className="table__input" type="text" value={filterText} onChange={onFilterTextChange} placeholder="Search" />
       </div>
     );
   }

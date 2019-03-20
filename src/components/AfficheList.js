@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Article from './Article';
+import Poster from './Poster';
 import axios from 'axios';
 import uniqueId from 'lodash/uniqueId';
 import SearchBar from './SearchBar';
@@ -11,47 +11,51 @@ class AfficheList extends Component {
   }
 
   componentDidMount() {
-    this.pullMovies();
+    this.loadMovies();
   }
 
-  pullMovies() {
+  loadMovies() {
     axios.post('https://api.themoviedb.org/3/movie/now_playing?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
       .then(searchResults => { 
+        const { filterText } = this.state;
         console.log("success!");
         const movies = searchResults.data.results;
         let movieRows = [];
         movies.forEach( movie => {
-          if (movie.title.indexOf(this.state.filterText) === -1) {
+          if (movie.title.indexOf(filterText) === -1) {
             return;
           }
-          movie.poster_src = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
-          movieRows.push(<Article movie={movie} key={uniqueId('movie_')}/>)
+          movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
+          movie.releaseDate = movie.release_date;
+          movieRows.push(<Poster movie={movie} key={uniqueId('movie_')}/>)
         })
         this.setState ({
           movies: movies,
           movieRows: movieRows
         })
       })
-      .catch((xhr, status, err) => { 
+      .catch(() => { 
         console.error('faild!'); 
       })
   }
 
-  showMovies() {
-    const movies = this.state.movies;
+  findMovies() {
+    const { movies, filterText } = this.state;
     let movieRows = [];
-    if (this.state.filterText != '') {
-      movies.forEach( movie => {
-        if (movie.title.indexOf(this.state.filterText) === -1) {
+    if (filterText !== '') {
+      movies.map( movie => {
+        if (movie.title.indexOf(filterText) === -1) {
           return;
         }
-        movie.poster_src = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
-        movieRows.push(<Article movie={movie} key={uniqueId('movie_')}/>)
+        movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
+        movie.releaseDate = movie.release_date;
+        movieRows.push(<Poster movie={movie} key={uniqueId('movie_')}/>)
       })
     } else {
-      movies.forEach( movie => {
-        movie.poster_src = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
-        movieRows.push(<Article key={ uniqueId('movie_') } movie={ movie }/>);
+      movies.map( movie => {
+        movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
+        movie.releaseDate = movie.release_date;
+        movieRows.push(<Poster key={ uniqueId('movie_') } movie={ movie }/>);
       })
     }
     this.setState ({
@@ -61,9 +65,8 @@ class AfficheList extends Component {
 
   handleFilterTextChange = filterText => {
     this.setState ({
-      filterText: filterText
-    });
-    this.showMovies();
+      filterText: filterText.target.value
+    }, () => this.findMovies());
   }
 
   render() {
@@ -73,7 +76,7 @@ class AfficheList extends Component {
     return (
       <>
         <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />
-        <div className="price-tags">
+        <div className="posters">
           { movieRows }
         </div>
       </>

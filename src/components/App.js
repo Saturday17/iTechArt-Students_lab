@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Router} from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import Menu from './Menu';
 import Footer from './Footer';
@@ -19,26 +19,21 @@ class App extends Component {
     isOpenAuthorizationModal: false
   }
 
+  closeModals = e => {
+    if(e.key === 'Escape'){
+      this.setState ({
+        isOpenAuthorizationModal: false,
+        isOpenRegistrationModal: false
+      })
+    }
+  }
+
   componentDidMount(){
-    window.addEventListener('keydown', e => {
-      if(e.key === 'Escape'){
-        this.setState ({
-          isOpenAuthorizationModal: false,
-          isOpenRegistrationModal: false
-        })
-      }
-    });
+    window.addEventListener('keydown', this.closeModals);
   } 
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', e => {
-      if(e.key === 'Escape'){
-        this.setState ({
-          isOpenAuthorizationModal: false,
-          isOpenRegistrationModal: false
-        })
-      }
-    });
+    window.removeEventListener('keydown', this.closeModals);
   }
 
   handleTriggerModal = e => {

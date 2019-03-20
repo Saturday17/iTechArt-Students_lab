@@ -9,7 +9,7 @@ class Registration extends Component {
     return (
       <div className="form-container">
         <form className="form-container__form" action="">
-          <div className="form-container__form--cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
+          <div className="form-container__formc-cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
           <h2>Registration</h2>
           <div className="form-field multi-input">
             <label htmlFor="name">Name</label>
