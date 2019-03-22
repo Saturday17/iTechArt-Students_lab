@@ -34,7 +34,7 @@ class Menu extends Component {
           handleRemoveMiniMenu={ this.handleRemoveMiniMenu } /> )}
         <div className="header">
           <div className="logo">
-            <a href="#"><img src={logo} alt="logo" /> </a>
+            <a href="#"><img className="logo__img" src={logo} alt="logo" /> </a>
           </div>
           <a href="#" className="m-menu-link" onClick={ this.handleOpenMiniMenu }>
             <i className="fa fa-bars"></i>	

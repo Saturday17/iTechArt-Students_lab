@@ -8,22 +8,22 @@ class Authorization extends Component {
 
     return (
       <div className="form-container">
-        <form action="">
-          <div className="form-container__formc-cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
+        <form className="form-container__form" action="">
+          <div className="form-container__form-cross"><h1 onClick={ onHandleCloseModal }>&times;</h1></div>
           <h2>Authorization</h2>
           <div className="form-field input-right">
-            <label htmlFor="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="youremail@gamil.com"/>
+            <label className="form-field__label" htmlFor="email">E-mail</label>
+            <input className="form-container__input form-field__input" type="email" name="email" id="email" placeholder="youremail@gamil.com"/>
           </div>
           <div className="form-field input-right">
-            <label htmlFor="pass">Password</label>
-            <input type="password" name="pass" id="pass" placeholder="your password"/>
+            <label className="form-field__label" htmlFor="pass">Password</label>
+            <input className="form-container__input form-field__input" type="password" name="pass" id="pass" placeholder="your password"/>
           </div>
           <div className="submit-field input-right" value="Регистрация">
-            <button>Sign in</button>
+            <button className="form-container__button">Sign in</button>
           </div>
-          <div className="reg-link reg-btn">
-            <a href="#" onClick={ onTriggerModal }>Registration</a>
+          <div className="reg-link">
+            <a className="reg-link__reg-btn" href="#" onClick={ onTriggerModal }>Registration</a>
           </div>
         </form>
       </div>

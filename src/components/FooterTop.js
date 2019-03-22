@@ -10,7 +10,7 @@ class FooterTop extends Component {
     return (
       <div className="footer-top">
         <div className="logo">
-          <a href="#"> <img src={logo} alt="logo" /> </a>
+          <a href="#"> <img className="logo__img" src={logo} alt="logo" /> </a>
         </div>
         <div className="footer-top__menu">
           <FooterNavigation onHandleTriggerModal={ onHandleTriggerModal }/>

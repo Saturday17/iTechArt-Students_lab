@@ -17,17 +17,12 @@ class AfficheList extends Component {
   loadMovies() {
     axios.post('https://api.themoviedb.org/3/movie/now_playing?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
       .then(searchResults => { 
-        const { filterText } = this.state;
         console.log("success!");
         const movies = searchResults.data.results;
-        let movieRows = [];
-        movies.forEach( movie => {
-          if (movie.title.indexOf(filterText) === -1) {
-            return;
-          }
+        const movieRows = movies.map( movie => {
           movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
           movie.releaseDate = movie.release_date;
-          movieRows.push(<Poster movie={movie} key={uniqueId('movie_')}/>)
+          return <Poster movie={movie} key={uniqueId('movie_')}/>;
         })
         this.setState ({
           movies: movies,
@@ -41,21 +36,20 @@ class AfficheList extends Component {
 
   findMovies() {
     const { movies, filterText } = this.state;
-    let movieRows = [];
     if (filterText !== '') {
-      movies.map( movie => {
+      var movieRows = movies.map( movie => {
         if (movie.title.indexOf(filterText) === -1) {
           return;
         }
         movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
         movie.releaseDate = movie.release_date;
-        movieRows.push(<Poster movie={movie} key={uniqueId('movie_')}/>)
+        return <Poster movie={movie} key={uniqueId('movie_')}/>;
       })
     } else {
-      movies.map( movie => {
+      movieRows = movies.map( movie => {
         movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
         movie.releaseDate = movie.release_date;
-        movieRows.push(<Poster key={ uniqueId('movie_') } movie={ movie }/>);
+        return <Poster key={ uniqueId('movie_') } movie={ movie }/>;
       })
     }
     this.setState ({
@@ -71,7 +65,7 @@ class AfficheList extends Component {
 
   render() {
     
-    const { movieRows, filterText } = this.state;
+    const { filterText, movieRows } = this.state;
 
     return (
       <>

@@ -5,24 +5,24 @@ import uniqueId from 'lodash/uniqueId';
 
 class PremiereList extends Component {
   
+  state = {}
+
   componentDidMount() {
-    this.findMovies();
+    this.loadMovies();
   }
 
-  findMovies() { 
+  loadMovies() { 
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
       .then(searchResults => {
         const movies = searchResults.data.results;
-        var movieRows = [];
-        movies.map( movie => {
+        const movieRows = movies.map( movie => {
           movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
           movie.releaseDate = movie.release_date;
-          var movieRow = <Poster key={ uniqueId('movie_') } movie={ movie }/>;
-          movieRows.push(movieRow);
-          for (var i=0; i<3; i++) {
-            movieRows.splice(3, movieRows.length);
-          }
+          return <Poster key={ uniqueId('movie_') } movie={ movie }/>;
         })
+        for (var i=0; i<3; i++) {
+          movieRows.splice(3, movieRows.length);
+        }
         this.setState ({
           movieRows: movieRows
         })

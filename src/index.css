@@ -39,7 +39,7 @@ i:hover {
 	border-radius: 5px;
 	z-index: 2;
 }
-.logo img {
+.logo__img {
 	height: 30px;
 	cursor: pointer;
 }
@@ -92,7 +92,7 @@ i:hover {
 	transition: all 0.2s;
 	cursor: pointer;
 }
-.item span {
+.item__span {
 	font-size: 4rem;
 	text-shadow: 0px 0px 10px #000;
 }
@@ -133,28 +133,13 @@ i:hover {
 	background-image: linear-gradient(0, rgba(51, 51, 51, 1), rgba(128, 128, 128, 1));
 	padding: 10rem;
 }
-.table__input {
-	font-size: 3rem;
-	display: block;
-	width: 99%;
-	padding: 1rem 2rem;
-	margin: 0 0 5rem 0;
-	border-radius: 0.5rem;
-}
-.table__input:focus {
-	background: rgba(255, 255, 255, 1);
-	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
-	outline: 0;
-}
-.table__input:focus::placeholder {
-	color: transparent;
-}
+
 .table-header {
 	text-align: center;
 	margin-bottom: 5rem;
 }
 .table-header .table-header__title {
-	color: #4f4f6f;
+	color: rgba(79, 79, 111, 1);
 	font-size: 6rem;
 	margin: 0;
 }
@@ -190,11 +175,11 @@ i:hover {
 	font-size: 2rem;
 	text-transform: uppercase;
 	margin: 0 auto;
-	color: #4f4f6f;
+	color: rgba(79, 79, 111, 1);
 }
 .poster__release {
 	font-size: 2rem;
-	color: #4f4f6f;
+	color: rgba(79, 79, 111, 1);
 }
 
 .poster__btn {
@@ -264,7 +249,7 @@ i:hover {
 	justify-content: space-around;
 	align-items: center;
 	background-color: rgba(255, 255, 255, 1);
-	border-bottom: 1px solid  #6a6a77;
+	border-bottom: 1px solid  rgba(106, 106, 119, 1);
 }
 .footer-top__menu {
 	width: 50%;
@@ -277,7 +262,7 @@ i:hover {
 .footer-navigation__link{
 	font-style: 1.4rem;
 	text-decoration: none;
-	color: #6a6a77;
+	color: rgba(106, 106, 119, 1);
 	font-weight: 500;
 }
 .footer-navigation__link:hover {
@@ -308,10 +293,10 @@ i:hover {
 }
 .copy {
 	font-size: 1.4rem;
-	color: #6a6a77;
+	color: rgba(106, 106, 119, 1);
 }
 .social-links a{
-	color: #6a6a77;
+	color: rgba(106, 106, 119, 1);
 	font-size: 2rem;
 	display: inline-block;
 	margin-right: 1rem;
@@ -390,18 +375,18 @@ i:hover {
 	margin: 0 auto;
 }
 
-.form-container__formc-cross {
+.form-container__form-cross {
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
 }
-.form-container__formc-cross h1 {
+.form-container__form-cross h1 {
 	font-size: 5rem;
 	margin: 0 0;
 	cursor: pointer;
 	transition: 0.2s;
 }
-.form-container__formc-cross h1:hover {
+.form-container__form-cross h1:hover {
 	color: rgba(212, 7, 84, 1);
 }
 .form-container h2 {
@@ -416,10 +401,10 @@ i:hover {
 	border-radius: 2rem;
 	transition: 0.5s;
 }
-.form-container form:hover{
+.form-container__form:hover{
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.form-container input {
+.form-container__input {
 	padding: 0.5em;
 	font-size: 2em;
 	background: rgba(244, 244, 244, 1);
@@ -427,7 +412,7 @@ i:hover {
 	border-width: 1px 1px 1px 0;
 	border-radius: 0.5em;
 }
-.form-container input:focus {
+.form-container__input:focus {
 	background: rgba(255, 255, 255, 1);
 	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
 	outline: 0;
@@ -436,7 +421,7 @@ i:hover {
 	margin-bottom: 1em;
 	display: flex;
 }
-.form-container .form-field label {
+.form-container .form-field__label {
 	flex: 0 1 4em;
 	padding: 1em;
 	background: rgba(255, 255, 255, 1);
@@ -447,10 +432,10 @@ i:hover {
 	line-height: 1;
 	border-radius: 0.25em 0 0 0.25em;
 }
-.form-container .form-field input {
+.form-container .form-field__input {
 	flex-grow: 1;
 }
-.form-container .input-right input, .multi-input input:last-child {
+.form-container .form-field__input, .multi-input .form-field__input:last-child {
 	border-radius: 0 0.25em 0.25em 0;
 	flex-direction: row;
 	justify-content: center; 
@@ -462,7 +447,7 @@ i:hover {
 	display: flex;
 	justify-content: center;
 }
-.form-container button {
+.form-container__button {
 	flex: 0 1 40%;
 	padding: 0.5em;
 	font-size: 2rem;
@@ -474,7 +459,7 @@ i:hover {
 	cursor: pointer;
 	text-transform: uppercase;
 }
-.form-container button:hover {
+.form-container__button:hover {
 	color: rgba(212, 7, 84, 1);
 	background-color: rgba(255, 255, 255, 1);
 }
@@ -483,7 +468,7 @@ i:hover {
 	justify-content: center;
 	padding: 2rem;
 }
-.form-container .reg-link a {
+.form-container .reg-link .reg-link__reg-btn {
 	text-decoration: none;
 	font-size: 2rem;
 	width: 12rem;
@@ -491,7 +476,7 @@ i:hover {
 	border-radius: 0.5rem;
 	padding: 0.5rem 0.5rem;
 }
-.form-container .reg-link a:hover {
+.form-container .reg-link .reg-link__reg-btn:hover {
 	color: rgba(255, 255, 255, 1);
 	background-color: rgba(212, 7, 84, 1);
 	transition: 0.5s;
@@ -513,4 +498,72 @@ i:hover {
 	color: rgba(255, 255, 255, 1);
 	background-color: rgba(212, 7, 84, 1);
 	transition: 0.5s;
+}
+
+.movie {
+	display: flex;
+	z-index: 1;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.7);
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.movie-form {
+	flex-basis: 120vh;
+	padding: 6rem;
+	background: rgba(249, 250, 252, 1);
+	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+	border-radius: 2rem;
+	transition: 0.5s;
+}
+.movie-form:hover {
+	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
+}
+.movie-form__form-cross {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+.movie-form__form-cross h1 {
+	font-size: 5rem;
+	margin: 0 0;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.movie-form__form-cross h1:hover {
+	color: rgba(212, 7, 84, 1);
+}
+.movie-form__poster {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 4rem 0;
+}
+.poster__info {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 4rem 4rem;
+}
+.poster__info .info__title {
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin: 0 auto;
+	color: rgba(79, 79, 111, 1);
+}
+.poster__info .info__release {
+	font-size: 2rem;
+	color: rgba(79, 79, 111, 1);
+}
+.poster__info .info__overview {
+	font-size: 1.8rem;
+	color: rgba(79, 79, 111, 1);
 }
