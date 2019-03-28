@@ -6,47 +6,28 @@ import PropTypes from 'prop-types';
 
 class Menu extends Component {
 
-  state = {
-    isOpenMiniMenu: false
-  }
-
-  handleOpenMiniMenu = e => {
-    e.preventDefault();
-    this.setState ({
-      isOpenMiniMenu: true
-    });
-  }
-
-  handleRemoveMiniMenu = e => {
-    e.preventDefault();
-    this.setState ({
-      isOpenMiniMenu: false
-    });
-  }
 
   render(){
-    const { onHandleTriggerModal } = this.props;
-    const { isOpenMiniMenu } =  this.state;
+    const { openAuthorizationModal, openMiniMenu, closeMiniMenu, isOpenMiniMenu } = this.props;
 
     return (
       <>
-        { isOpenMiniMenu && ( <MiniMenu onHandleTriggerModal={ onHandleTriggerModal }
-          handleRemoveMiniMenu={ this.handleRemoveMiniMenu } /> )}
+        { isOpenMiniMenu && ( <MiniMenu openAuthorizationModal={ openAuthorizationModal } closeMiniMenu={ closeMiniMenu } /> )}
         <div className="header">
           <div className="logo">
             <a href="#"><img className="logo__img" src={logo} alt="logo" /> </a>
           </div>
-          <a href="#" className="m-menu-link" onClick={ this.handleOpenMiniMenu }>
+          <a href="#" className="m-menu-link" onClick={ openMiniMenu }>
             <i className="fa fa-bars"></i>	
           </a>
           <div className="menu visible-lg">
             <ul className="menu-navigation">
               <li><Link to="/" className="menu-navigation__menu-link">Home</Link></li>
               <li><Link to="/affiche" className="menu-navigation__menu-link">Affiche</Link></li>
-              <li><Link to="/" className="menu-navigation__menu-link">Cinemas</Link></li>
+              <li><Link to="/cinemas" className="menu-navigation__menu-link">Cinemas</Link></li>
               <li><Link to="/" className="menu-navigation__menu-link">Food and Drinks</Link></li>
               <li><Link to="/" className="menu-navigation__menu-link">Info</Link></li>
-              <li><Link to="/" className="menu-navigation__menu-link--sign-in-btn" onClick={ onHandleTriggerModal }>Sign in</Link></li>
+              <li><Link to="/" className="menu-navigation__menu-link--sign-in-btn" onClick={ openAuthorizationModal }>Sign in</Link></li>
             </ul>
           </div>
         </div>
@@ -56,7 +37,9 @@ class Menu extends Component {
 }
 
 Menu.propTypes = {
-  onHandleTriggerModal: PropTypes.func
+  onHandleTriggerModal: PropTypes.func,
+  openMiniMenu: PropTypes.func,
+  isOpenMiniMenu: PropTypes.bool
 }
 
 export default Menu;

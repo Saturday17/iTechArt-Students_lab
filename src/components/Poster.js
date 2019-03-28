@@ -42,12 +42,12 @@ class Poster extends Component {
     return (
       <>
         <div className="poster" key={ uniqueId('movie_') }>
-          <img className="poster__img" onClick={this.viewMovie} src={ poster } alt={title + ' poster'}/>
+          <img className="poster__img" onClick={ this.viewMovie } src={ poster } alt={ title + ' poster' }/>
           <h2 className="poster__title">{ title }</h2>
           <h4 className="poster__release">{ releaseDate }<sub>release</sub></h4>
-          <button className="poster__btn" onClick={this.viewMovie}>select a film</button>
+          <button className="poster__btn" onClick={ this.viewMovie }>select a film</button>
         </div>
-        { isOpenMovie && <Movie movie={this.props.movie} onCloseMovie={this.closeMovie} key={uniqueId('movie_')}/> }
+        { isOpenMovie && <Movie movie={ this.props.movie } onCloseMovie={ this.closeMovie } key={ uniqueId('movie_') }/> }
       </>
     );
   }

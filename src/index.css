@@ -76,14 +76,14 @@ i:hover {
 	transition: 0.4s;
 }
 .slider {
+	font-family: 'Bad Script', sans-serif;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 0;
 }
-.item {
-	font-family: 'Bad Script', cursive;
+.slider__item {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -92,27 +92,27 @@ i:hover {
 	transition: all 0.2s;
 	cursor: pointer;
 }
-.item__span {
-	font-size: 4rem;
-	text-shadow: 0px 0px 10px #000;
-}
 .item-1 {
-	background-image: url(img/hulk.jpg);
-	background-repeat: no-repeat;
+	background: url(img/hulk.jpg) no-repeat center center;
+	background-size: cover;
 }
 .item-2 {
-	background-image: url(img/ironman.jpg);
-	background-repeat: no-repeat;
+	background: url(img/ironman.jpg) no-repeat center center;
+	background-size: cover;
 }
 .item-3 {
-	background-image: url(img/tor.jpg);
-	background-repeat: no-repeat;
+	background: url(img/tor.jpg) no-repeat center center;
+	background-size: cover;
 }
 .item-4 {
-	background-image: url(img/america.jpg);
-	background-repeat: no-repeat;
+	background: url(img/america.jpg) no-repeat center center;
+	background-size: cover;
 }
-.item:hover {
+.item__span {
+	font-size: 6rem;
+	text-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 1);
+}
+.slider__item:hover {
 	flex-basis: 100%;
 }
 .main-arrow {
@@ -515,7 +515,7 @@ i:hover {
 }
 
 .movie-form {
-	flex-basis: 120vh;
+	flex-basis: 100vh;
 	padding: 6rem;
 	background: rgba(249, 250, 252, 1);
 	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
@@ -551,7 +551,7 @@ i:hover {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	padding: 4rem 4rem;
+	padding: 0rem 4rem;
 }
 .poster__info .info__title {
 	font-size: 2rem;
@@ -566,4 +566,25 @@ i:hover {
 .poster__info .info__overview {
 	font-size: 1.8rem;
 	color: rgba(79, 79, 111, 1);
+}
+.poster__info .info__vote {
+	margin: 0 0;
+	font-size: 1.5rem;
+	color: rgba(79, 79, 111, 1);
+}
+.info__btn {
+	background-color: rgba(255, 255, 255, 1);
+	border: rgba(159, 164, 175, 1) 1px solid;
+	color: rgba(159, 164, 175, 1);
+	text-transform: uppercase;
+	font-size: 3rem;
+	font-weight: 300;
+	padding: 1rem auto;
+	border-radius: 0.5rem;
+}
+.info__btn:hover {
+	cursor: pointer;
+	background-color: rgba(212, 7, 84, 1);
+	color: rgba(255, 255, 255, 1);
+	transition: 0.3s;
 }

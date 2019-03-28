@@ -18,6 +18,7 @@ class PremiereList extends Component {
         const movieRows = movies.map( movie => {
           movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
           movie.releaseDate = movie.release_date;
+          movie.vote = movie.vote_average;
           return <Poster key={ uniqueId('movie_') } movie={ movie }/>;
         })
         for (var i=0; i<3; i++) {

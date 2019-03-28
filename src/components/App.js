@@ -1,80 +1,76 @@
 import React, { Component } from 'react';
 import { Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Menu from './Menu';
 import Footer from './Footer';
 import Authorization from './Authorization';
 import Registration from './Registration';
 import AppRouting from './AppRouting';
+import { openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu } from '../store/actions';
+import PropTypes from 'prop-types';
 import '../index.css';
 import '../media.css';
 import '../affiche.css';
+import '../cinemas.css';
 
 const history = createBrowserHistory();
 
 class App extends Component {
 
-  state = {
-    isOpenRegistrationModal: false,
-    isOpenAuthorizationModal: false
-  }
-
-  closeModals = e => {
-    if(e.key === 'Escape'){
-      this.setState ({
-        isOpenAuthorizationModal: false,
-        isOpenRegistrationModal: false
-      })
-    }
-  }
-
   componentDidMount(){
-    window.addEventListener('keydown', this.closeModals);
+    window.addEventListener('keydown', this.props.closeModals);
   } 
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.closeModals);
+    window.removeEventListener('keydown', this.props.closeModals);
   }
 
-  handleTriggerModal = e => {
-    e.preventDefault();
-    this.setState ({
-      isOpenAuthorizationModal: true
-    })
-  }
-
-  handleCloseModal = e => {
-    e.preventDefault();
-    this.setState ({
-      isOpenAuthorizationModal: false,
-      isOpenRegistrationModal: false
-    })
-  }
-
-  onTriggerRegistrationModal = e => {
-    e.preventDefault();
-    this.setState (({ isOpenRegistrationModal }) => ({ isOpenAuthorizationModal: false, isOpenRegistrationModal: !isOpenRegistrationModal }))
-  }
-
-  onTriggerAuthorizationModal = e => {
-    e.preventDefault();
-    this.setState (({ isOpenAuthorizationModal }) => ({ isOpenRegistrationModal: false, isOpenAuthorizationModal: !isOpenAuthorizationModal }))
-  }
 
   render() {
-    const { isOpenRegistrationModal, isOpenAuthorizationModal } = this.state;
+    const { isOpenRegistrationModal, isOpenAuthorizationModal, openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu, isOpenMiniMenu } = this.props;
     return (
       <Router history={history}>
         <>
-          <Menu onHandleTriggerModal={ this.handleTriggerModal }/>
+          <Menu openAuthorizationModal={ openAuthorizationModal } openMiniMenu={ openMiniMenu } closeMiniMenu={ closeMiniMenu } isOpenMiniMenu={ isOpenMiniMenu }/>
           <AppRouting />
-          <Footer onHandleTriggerModal={ this.handleTriggerModal }/>
-          { isOpenRegistrationModal && <Registration onTriggerModal={this.onTriggerAuthorizationModal} onHandleCloseModal={this.handleCloseModal} /> }
-          { isOpenAuthorizationModal && <Authorization onTriggerModal={this.onTriggerRegistrationModal} onHandleCloseModal={this.handleCloseModal} /> }
+          <Footer openAuthorizationModal={ openAuthorizationModal }/>
+          { isOpenRegistrationModal && <Registration openAuthorizationModal={ openAuthorizationModal } closeModals={ closeModals } /> }
+          { isOpenAuthorizationModal && <Authorization openRegistrationModal={ openRegistrationModal } closeModals={ closeModals } /> }
         </>
       </Router>
     ); 
   }
 }
 
-export default App;
+App.propTypes = {
+  isOpenRegistrationModal: PropTypes.bool,
+  isOpenAuthorizationModal: PropTypes.bool,
+  openAuthorizationModal: PropTypes.func,
+  openRegistrationModal: PropTypes.func,
+  closeModals: PropTypes.func,
+  isOpenMiniMenu: PropTypes.bool,
+  openMiniMenu: PropTypes.func,
+  closeMiniMenu: PropTypes.func
+}
+
+const putStateToProps = state => {
+  return {
+      isOpenRegistrationModal: state.isOpenRegistrationModal,
+      isOpenAuthorizationModal: state.isOpenAuthorizationModal,
+      isOpenMiniMenu: state.isOpenMiniMenu
+  };
+}
+
+const putActionsToProps = dispatch => {
+  return {
+      openAuthorizationModal: bindActionCreators(openAuthorizationModal, dispatch),
+      openRegistrationModal: bindActionCreators(openRegistrationModal, dispatch),
+      closeModals:  bindActionCreators(closeModals, dispatch),
+      openMiniMenu: bindActionCreators(openMiniMenu, dispatch),
+      closeMiniMenu: bindActionCreators(closeMiniMenu, dispatch)
+  };
+}
+
+export default connect(putStateToProps, putActionsToProps)(App);

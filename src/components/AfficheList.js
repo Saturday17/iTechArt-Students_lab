@@ -22,6 +22,7 @@ class AfficheList extends Component {
         const movieRows = movies.map( movie => {
           movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
           movie.releaseDate = movie.release_date;
+          movie.vote = movie.vote_average;
           return <Poster movie={movie} key={uniqueId('movie_')}/>;
         })
         this.setState ({
@@ -38,18 +39,18 @@ class AfficheList extends Component {
     const { movies, filterText } = this.state;
     if (filterText !== '') {
       var movieRows = movies.map( movie => {
-        if (movie.title.indexOf(filterText) === -1) {
+        if (movie.title.toUpperCase().indexOf(filterText.toUpperCase()) === -1) {
           return;
         }
         movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
         movie.releaseDate = movie.release_date;
-        return <Poster movie={movie} key={uniqueId('movie_')}/>;
+        return <Poster movie={movie} key={uniqueId('movie_')} />;
       })
     } else {
       movieRows = movies.map( movie => {
         movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
         movie.releaseDate = movie.release_date;
-        return <Poster key={ uniqueId('movie_') } movie={ movie }/>;
+        return <Poster movie={ movie } key={ uniqueId('movie_') } />;
       })
     }
     this.setState ({
@@ -66,7 +67,6 @@ class AfficheList extends Component {
   render() {
     
     const { filterText, movieRows } = this.state;
-
     return (
       <>
         <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />
