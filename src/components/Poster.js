@@ -10,11 +10,11 @@ class Poster extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', this.closeMovie);
+    window.addEventListener('keydown', this.closeMovieByButton);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.closeMovie);
+    window.removeEventListener('keydown', this.closeMovieByButton);
   }
 
   viewMovie = e => {
@@ -24,11 +24,13 @@ class Poster extends Component {
     })
   }
 
-  closeMovie = e => {
+  closeMovie = () => {
     this.setState({
       isOpenMovie: false
     });
+  }
 
+  closeMovieByButton = e => {
     if(e.key === 'Escape') {
       this.setState({
         isOpenMovie: false
