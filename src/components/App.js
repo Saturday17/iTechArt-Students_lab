@@ -8,7 +8,7 @@ import Footer from './Footer';
 import Authorization from './Authorization';
 import Registration from './Registration';
 import AppRouting from './AppRouting';
-import { openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu } from '../store/actions';
+import { openAuthorizationModal, openRegistrationModal, closeModals, closeModalsByButton, openMiniMenu, closeMiniMenu } from '../store/actions';
 import PropTypes from 'prop-types';
 import '../index.css';
 import '../media.css';
@@ -20,13 +20,14 @@ const history = createBrowserHistory();
 class App extends Component {
 
   componentDidMount(){
-    window.addEventListener('keydown', this.props.closeModals);
+    window.addEventListener('keydown', this.props.closeModalsByButton);
   } 
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.props.closeModals);
+    window.removeEventListener('keydown', this.props.closeModalsByButton);
   }
 
+  
 
   render() {
     const { isOpenRegistrationModal, isOpenAuthorizationModal, openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu, isOpenMiniMenu } = this.props;
@@ -50,6 +51,7 @@ App.propTypes = {
   openAuthorizationModal: PropTypes.func,
   openRegistrationModal: PropTypes.func,
   closeModals: PropTypes.func,
+  closeModalsByButton: PropTypes.func,
   isOpenMiniMenu: PropTypes.bool,
   openMiniMenu: PropTypes.func,
   closeMiniMenu: PropTypes.func
@@ -68,6 +70,7 @@ const putActionsToProps = dispatch => {
       openAuthorizationModal: bindActionCreators(openAuthorizationModal, dispatch),
       openRegistrationModal: bindActionCreators(openRegistrationModal, dispatch),
       closeModals:  bindActionCreators(closeModals, dispatch),
+      closeModalsByButton: bindActionCreators(closeModalsByButton, dispatch),
       openMiniMenu: bindActionCreators(openMiniMenu, dispatch),
       closeMiniMenu: bindActionCreators(closeMiniMenu, dispatch)
   };

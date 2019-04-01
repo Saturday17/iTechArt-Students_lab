@@ -20,6 +20,14 @@ export const closeModals = () => {
   }
 }
 
+export const closeModalsByButton = e => {
+  return dispatch => {
+    if(e.key === 'Escape') {
+      dispatch(closeModals(e))
+    }
+  }
+}
+
 export const openMiniMenu = e => {
   e.preventDefault();
   return {

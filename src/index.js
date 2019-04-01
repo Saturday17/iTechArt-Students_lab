@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import { createStore} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { rootReducer } from './store/reducers';
+import thunk from 'redux-thunk';
 
 
 export const ACTION_OPEN_AUTHORIZATION_MODAL = 'ACTION_OPEN_AUTHORIZATION_MODAL';
@@ -14,7 +15,7 @@ export const ACTION_CLOSE_MINIMENU = 'ACTION_CLOSE_MINIMENU';
 export const ACTION_OPEN_MOVIE = 'ACTION_OPEN_MOVIE';
 export const ACTION_CLOSE_MOVIE = 'ACTION_CLOSE_MOVIE';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 
 ReactDOM.render(
