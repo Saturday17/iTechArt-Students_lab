@@ -8,7 +8,7 @@ import Footer from './Footer';
 import Authorization from './Authorization';
 import Registration from './Registration';
 import AppRouting from './AppRouting';
-import { openAuthorizationModal, openRegistrationModal, closeModals, closeModalsByButton, openMiniMenu, closeMiniMenu } from '../store/actions';
+import { openAuthorizationModal, openRegistrationModal, closeModals, closeModalsByButton, openMiniMenu, closeMiniMenu, removeSpinner } from '../store/actions';
 import PropTypes from 'prop-types';
 import '../index.css';
 import '../media.css';
@@ -30,12 +30,12 @@ class App extends Component {
   
 
   render() {
-    const { isOpenRegistrationModal, isOpenAuthorizationModal, openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu, isOpenMiniMenu } = this.props;
+    const { isOpenRegistrationModal, isOpenAuthorizationModal, openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu, isOpenMiniMenu, isShownSpinner  } = this.props;
     return (
       <Router history={history}>
         <>
           <Menu openAuthorizationModal={ openAuthorizationModal } openMiniMenu={ openMiniMenu } closeMiniMenu={ closeMiniMenu } isOpenMiniMenu={ isOpenMiniMenu }/>
-          <AppRouting />
+          <AppRouting isShownSpinner={ isShownSpinner } removeSpinner={ removeSpinner }/>
           <Footer openAuthorizationModal={ openAuthorizationModal }/>
           { isOpenRegistrationModal && <Registration openAuthorizationModal={ openAuthorizationModal } closeModals={ closeModals } /> }
           { isOpenAuthorizationModal && <Authorization openRegistrationModal={ openRegistrationModal } closeModals={ closeModals } /> }
@@ -54,14 +54,17 @@ App.propTypes = {
   closeModalsByButton: PropTypes.func,
   isOpenMiniMenu: PropTypes.bool,
   openMiniMenu: PropTypes.func,
-  closeMiniMenu: PropTypes.func
+  closeMiniMenu: PropTypes.func,
+  isShownSpinner: PropTypes.bool,
+  removeSpinner: PropTypes.func
 }
 
 const putStateToProps = state => {
   return {
       isOpenRegistrationModal: state.isOpenRegistrationModal,
       isOpenAuthorizationModal: state.isOpenAuthorizationModal,
-      isOpenMiniMenu: state.isOpenMiniMenu
+      isOpenMiniMenu: state.isOpenMiniMenu,
+      isShownSpinner: state.isShownSpinner
   };
 }
 
@@ -72,7 +75,8 @@ const putActionsToProps = dispatch => {
       closeModals:  bindActionCreators(closeModals, dispatch),
       closeModalsByButton: bindActionCreators(closeModalsByButton, dispatch),
       openMiniMenu: bindActionCreators(openMiniMenu, dispatch),
-      closeMiniMenu: bindActionCreators(closeMiniMenu, dispatch)
+      closeMiniMenu: bindActionCreators(closeMiniMenu, dispatch),
+      removeSpinner: bindActionCreators(removeSpinner, dispatch)
   };
 }
 

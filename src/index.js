@@ -14,6 +14,8 @@ export const ACTION_OPEN_MINIMENU = 'ACTION_OPEN_MINIMENU';
 export const ACTION_CLOSE_MINIMENU = 'ACTION_CLOSE_MINIMENU';
 export const ACTION_OPEN_MOVIE = 'ACTION_OPEN_MOVIE';
 export const ACTION_CLOSE_MOVIE = 'ACTION_CLOSE_MOVIE';
+export const ACTION_REMOVE_SPINNER ="ACTION_REMOVE_SPINNER";
+
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import Poster from './Poster';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { showMovieRows } from '../store/actions';
 import uniqueId from 'lodash/uniqueId';
 import SearchBar from './SearchBar';
+import Spinner from './Spinner'
+import PropTypes from 'prop-types';
 
 class AfficheList extends Component {
 
@@ -12,6 +17,7 @@ class AfficheList extends Component {
 
   componentDidMount() {
     this.loadMovies();
+    this.props.showMovieRows()
   }
 
   loadMovies() {
@@ -67,16 +73,33 @@ class AfficheList extends Component {
   render() {
     
     const { filterText, movieRows } = this.state;
+    const { isShownSpinner } = this.props;
     return (
       <>
         <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />
         <div className="posters">
-          { movieRows }
+          { isShownSpinner === true ? <Spinner /> : movieRows }
         </div>
       </>
     );
   }
 }
 
+AfficheList.propTypes = {
+  isShownSpinner: PropTypes.bool,
+  showMovieRows: PropTypes.func
+}
 
-export default AfficheList;
+const putStateToProps = state => {
+  return {
+      isShownSpinner: state.isShownSpinner
+  };
+}
+
+const putActionsToProps = dispatch => {
+  return {
+    showMovieRows: bindActionCreators(showMovieRows, dispatch)
+  };
+}
+
+export default connect(putStateToProps, putActionsToProps)(AfficheList);
