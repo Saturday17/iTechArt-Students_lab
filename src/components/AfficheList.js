@@ -11,9 +11,7 @@ import PropTypes from 'prop-types';
 
 class AfficheList extends Component {
 
-  state = {
-    filterText: ''
-  }
+  state = {}
 
   componentDidMount() {
     this.loadMovies();
@@ -72,8 +70,8 @@ class AfficheList extends Component {
 
   render() {
     
-    const { filterText, movieRows } = this.state;
-    const { isShownSpinner } = this.props;
+    const { movieRows } = this.state;
+    const { isShownSpinner, filterText } = this.props;
     return (
       <>
         <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />
@@ -92,7 +90,8 @@ AfficheList.propTypes = {
 
 const putStateToProps = state => {
   return {
-      isShownSpinner: state.isShownSpinner
+      isShownSpinner: state.isShownSpinner,
+      filterText: state.filterText
   };
 }
 

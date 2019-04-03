@@ -1,11 +1,12 @@
-import { ACTION_OPEN_AUTHORIZATION_MODAL, ACTION_OPEN_REGISTRATION_MODAL, ACTION_CLOSE_MODAL, ACTION_OPEN_MINIMENU, ACTION_CLOSE_MINIMENU, ACTION_OPEN_MOVIE, ACTION_CLOSE_MOVIE, ACTION_REMOVE_SPINNER } from '../index';
+import { ACTION_OPEN_AUTHORIZATION_MODAL, ACTION_OPEN_REGISTRATION_MODAL, ACTION_CLOSE_MODAL, ACTION_OPEN_MINIMENU, ACTION_CLOSE_MINIMENU, ACTION_OPEN_MOVIE, ACTION_CLOSE_MOVIE, ACTION_REMOVE_SPINNER, ACTION_LOAD_MOVIES } from '../index';
 
 const initialState = {
   isOpenRegistrationModal: false,
   isOpenAuthorizationModal: false,
   isOpenMiniMenu: false,
   isOpenMovie: false,
-  isShownSpinner: true
+  isShownSpinner: true,
+  movieRows: []
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -25,7 +26,7 @@ export const rootReducer = (state = initialState, action) => {
     case ACTION_CLOSE_MOVIE:
         return {...state, isOpenMovie: false };
     case ACTION_REMOVE_SPINNER:
-        return {...state, isShownSpinner: false};    
+        return {...state, isShownSpinner: false};   
   }
   
   return state;
