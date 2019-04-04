@@ -13,16 +13,16 @@ class Registration extends Component {
           <h2 className="registration-form__title">Registration</h2>
           <div className="registration-form__form-field multi-input">
             <label className="form-field__label" htmlFor="name">Name</label>
-            <input className="form-field__input" type="text" name="first-name" placeholder="Your name"/>
+            <input className="form-field__input" type="text" name="first-name" placeholder="Your name" required/>
             <input className="form-field__input" type="text" placeholder="Last name"/>
           </div>	
           <div className="registration-form__form-field">
             <label className="form-field__label" htmlFor="email">E-mail</label>
-            <input className="form-field__input" type="email" name="email" placeholder="youremail@gamil.com"/>
+            <input className="form-field__input" type="email" name="email" placeholder="youremail@gamil.com" required/>
           </div>
           <div className="registration-form__form-field">
             <label className="form-field__label" htmlFor="pass">Password</label>
-            <input className="form-field__input" type="password" name="pass" placeholder="your password"/>
+            <input className="form-field__input" type="password" name="pass" placeholder="your password" required/>
           </div>
           <div className="registration-form__submit-field">
             <button className="submit-field__button">Check in</button>

@@ -8,7 +8,7 @@ import Footer from './Footer';
 import Authorization from './Authorization';
 import Registration from './Registration';
 import AppRouting from './AppRouting';
-import { openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu } from '../store/actions';
+import { openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu, closeModalsByButton } from '../store/actions';
 import PropTypes from 'prop-types';
 
 const history = createBrowserHistory();
@@ -16,13 +16,12 @@ const history = createBrowserHistory();
 class Layout extends Component {
 
   componentDidMount(){
-    window.addEventListener('keydown', this.props.closeModals);
+    window.addEventListener('keydown', this.props.closeModalsByButton);
   } 
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.props.closeModals);
+    window.removeEventListener('keydown', this.props.closeModalsByButton);
   }
-
 
   render() {
     const { isOpenRegistrationModal, isOpenAuthorizationModal, openAuthorizationModal, openRegistrationModal, closeModals, openMiniMenu, closeMiniMenu, isOpenMiniMenu } = this.props;
@@ -46,6 +45,7 @@ Layout.propTypes = {
   openAuthorizationModal: PropTypes.func,
   openRegistrationModal: PropTypes.func,
   closeModals: PropTypes.func,
+  closeModalsByButton: PropTypes.func,
   isOpenMiniMenu: PropTypes.bool,
   openMiniMenu: PropTypes.func,
   closeMiniMenu: PropTypes.func
@@ -53,19 +53,20 @@ Layout.propTypes = {
 
 const putStateToProps = state => {
   return {
-      isOpenRegistrationModal: state.isOpenRegistrationModal,
-      isOpenAuthorizationModal: state.isOpenAuthorizationModal,
-      isOpenMiniMenu: state.isOpenMiniMenu
+    isOpenRegistrationModal: state.isOpenRegistrationModal,
+    isOpenAuthorizationModal: state.isOpenAuthorizationModal,
+    isOpenMiniMenu: state.isOpenMiniMenu
   };
 }
 
 const putActionsToProps = dispatch => {
   return {
-      openAuthorizationModal: bindActionCreators(openAuthorizationModal, dispatch),
-      openRegistrationModal: bindActionCreators(openRegistrationModal, dispatch),
-      closeModals:  bindActionCreators(closeModals, dispatch),
-      openMiniMenu: bindActionCreators(openMiniMenu, dispatch),
-      closeMiniMenu: bindActionCreators(closeMiniMenu, dispatch)
+    openAuthorizationModal: bindActionCreators(openAuthorizationModal, dispatch),
+    openRegistrationModal: bindActionCreators(openRegistrationModal, dispatch),
+    closeModals:  bindActionCreators(closeModals, dispatch),
+    closeModalsByButton: bindActionCreators(closeModalsByButton, dispatch),
+    openMiniMenu: bindActionCreators(openMiniMenu, dispatch),
+    closeMiniMenu: bindActionCreators(closeMiniMenu, dispatch)
   };
 }
 

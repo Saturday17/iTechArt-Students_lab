@@ -13,11 +13,11 @@ class Authorization extends Component {
           <h2 className="authorization-form__title">Authorization</h2>
           <div className="authorization-form__form-field">
             <label className="form-field__label" htmlFor="email">E-mail</label>
-            <input className="form-field__input" type="email" name="email" placeholder="youremail@gamil.com"/>
+            <input className="form-field__input" type="email" name="email" placeholder="youremail@gamil.com" required/>
           </div>
           <div className="authorization-form__form-field">
             <label className="form-field__label" htmlFor="pass">Password</label>
-            <input className="form-field__input" type="password" name="pass" placeholder="your password"/>
+            <input className="form-field__input" type="password" name="pass" placeholder="your password" required/>
           </div>
           <div className="authorization-form__submit-field">
             <button className="submit-field__button">Sign in</button>
