@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 
 class FooterTop extends Component {
   render() {
-    const { onHandleTriggerModal } = this.props;
+    const { openAuthorizationModal } = this.props;
     
     return (
       <div className="footer-top">
         <div className="logo">
-          <a href="#"> <img src={logo} alt="logo" /> </a>
+          <a href="#"> <img className="logo__img" src={logo} alt="logo" /> </a>
         </div>
         <div className="footer-top__menu">
-          <FooterNavigation onHandleTriggerModal={ onHandleTriggerModal }/>
+          <FooterNavigation openAuthorizationModal={ openAuthorizationModal }/>
         </div>
       </div>
     );
@@ -22,7 +22,7 @@ class FooterTop extends Component {
 
 
 FooterTop.propTypes = {
-  onHandleTriggerModal: PropTypes.func
+  openAuthorizationModal: PropTypes.func
 }
 
 export default FooterTop;

@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 
 class Footer extends Component {
   render() {
-    const { onHandleTriggerModal } = this.props;
+    const { openAuthorizationModal } = this.props;
 
     return (
       <div className="footer">
-        <FooterTop onHandleTriggerModal={ onHandleTriggerModal }/>
+        <FooterTop openAuthorizationModal={ openAuthorizationModal }/>
         <FooterBottom />
       </div>
     );
@@ -17,7 +17,7 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-  onHandleTriggerModal: PropTypes.func
+  openAuthorizationModal: PropTypes.func
 }
 
 export default Footer;

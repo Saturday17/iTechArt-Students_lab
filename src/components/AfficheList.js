@@ -1,57 +1,103 @@
 import React, {Component} from 'react';
-import Article from './Article';
-import $ from 'jquery';
+import Poster from './Poster';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { showMovieRows } from '../store/actions';
 import uniqueId from 'lodash/uniqueId';
+import SearchBar from './SearchBar';
+import PropTypes from 'prop-types';
 
 class AfficheList extends Component {
 
   state = {}
 
   componentDidMount() {
-    this.performSearch();
+    this.loadMovies();
+    this.props.showMovieRows()
   }
 
-  performSearch(searchWord) { 
-    console.log('Perform search using moviedb');
-    const urlString = 'https://api.themoviedb.org/3/search/movie?api_key=0db50d1e81184cc04e761a3e55b0ee62&query=' + searchWord;
-    $.ajax({ 
-        url: urlString,
-        success: searchResults => { 
-          console.log("success!");
-          const movies = searchResults.results;
-          var movieRows = [];
-          movies.forEach( movie => {
-            movie.poster_src = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
-            var movieRow = <Article key={ uniqueId('movie_') } movie={ movie }/>;
-            movieRows.push(movieRow);
-          })
-          this.setState({
-            rows: movieRows
-          })
-        }, 
-        error: (xhr, status, err) => { 
-            console.error('faild!'); 
-        } 
-    }) 
+  loadMovies() {
+    axios.post('https://api.themoviedb.org/3/movie/now_playing?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
+      .then(searchResults => { 
+        console.log("success!");
+        const movies = searchResults.data.results;
+        const movieRows = movies.map( movie => {
+          movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
+          movie.releaseDate = movie.release_date;
+          movie.vote = movie.vote_average;
+          return <Poster movie={movie} key={uniqueId('movie_')}/>;
+        })
+        this.setState ({
+          movies: movies,
+          movieRows: movieRows
+        })
+      })
+      .catch(() => { 
+        console.error('faild!'); 
+      })
   }
 
-  searchChangeHandler = e => {
-    const searchWord = e.target.value;
-    this.performSearch(searchWord)
+  findMovies() {
+    const { movies, filterText } = this.state;
+    if (filterText !== '') {
+      var movieRows = movies.map( movie => {
+        if (movie.title.toUpperCase().indexOf(filterText.toUpperCase()) === -1) {
+          return;
+        }
+        movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
+        movie.releaseDate = movie.release_date;
+        return <Poster movie={movie} key={uniqueId('movie_')} />;
+      })
+    } else {
+      movieRows = movies.map( movie => {
+        movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
+        movie.releaseDate = movie.release_date;
+        return <Poster movie={ movie } key={ uniqueId('movie_') } />;
+      })
+    }
+    this.setState ({
+      movieRows: movieRows
+    })
+  }
+ 
+  handleFilterTextChange = filterText => {
+    this.setState ({
+      filterText: filterText.target.value
+    }, () => this.findMovies());
   }
 
   render() {
-    const { rows } = this.state
+    
+    const { movieRows } = this.state;
+    const { filterText } = this.props;
     return (
       <>
-        <input onChange={this.searchChangeHandler} placeholder="Search"/>
-        <div className="price-tags">
-          { rows }
+        <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />
+        <div className="posters">
+          { movieRows }
         </div>
       </>
     );
   }
 }
 
+AfficheList.propTypes = {
+  isShownSpinner: PropTypes.bool,
+  showMovieRows: PropTypes.func
+}
 
-export default AfficheList;
+const putStateToProps = state => {
+  return {
+      isShownSpinner: state.isShownSpinner,
+      filterText: state.filterText
+  };
+}
+
+const putActionsToProps = dispatch => {
+  return {
+    showMovieRows: bindActionCreators(showMovieRows, dispatch)
+  };
+}
+
+export default connect(putStateToProps, putActionsToProps)(AfficheList);

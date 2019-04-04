@@ -1,16 +1,3 @@
-*, *:before, *:after {
-	box-sizing: border-box;
-}
-html {
-	min-height: 100%;
-	font-size: 10px;
-	scroll-behavior: smooth;
-}
-body {
-	font-family: 'Maven Pro', sans-serif;
-	margin: 0;
-	background-image: linear-gradient(0, rgba(51, 51, 51, 1), rgba(128, 128, 128, 1));
-}
 .table {
 	padding: 10rem;
 }
@@ -18,25 +5,34 @@ body {
 	text-align: center;
 	margin-bottom: 5rem;
 }
-.table-header p {
-	font-size: 1.8rem;
-	display: inline-block;
-	width: 40rem;
-	line-height: 1.4rem;
-	color: rgba(159, 164, 175, 1);
-}
 .table-header h2 {
-	color: #4f4f6f;
+	color: rgba(79, 79, 111, 1);
 	font-size: 6rem;
 	margin: 0;
 }
-.price-tags {
+.table__input {
+	font-size: 3rem;
+	display: block;
+	width: 100%;
+	padding: 1rem 2rem;
+	margin: 0 0 5rem 0;
+	border-radius: 0.5rem;
+}
+.table__input:focus {
+	background: rgba(255, 255, 255, 1);
+	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
+	outline: 0;
+}
+.table__input:focus::placeholder {
+	color: transparent;
+}
+.posters {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
 }
-.price-tag {
+.posters > .poster {
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 2rem;
 	padding: 2rem;
@@ -50,28 +46,28 @@ body {
 	transition: 0.5s;
 	margin: 0 0 5rem 0;
 }
-.price-tag:hover {
+.posters > .poster:hover {
 	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.price-tag img {
+.poster-img {
 	border-radius: 2rem;
 }
-.price-tag img:hover {
+.poster-img:hover {
 	cursor: pointer;
 	opacity: 0.9;
 }
-.price-tag h2 {
+.poster-info__title {
 	font-size: 2rem;
 	text-transform: uppercase;
 	margin: 0 auto;
-	color: #4f4f6f;
+	color: rgba(79, 79, 111, 1);
 }
-.price-tag h4 {
+.poster-info__release {
 	font-size: 2rem;
-	color: #4f4f6f;
+	color: rgba(79, 79, 111, 1);
 }
-.price-btn {
+.poster__btn {
 	background-color: rgba(255, 255, 255, 1);
 	border: rgba(159, 164, 175, 1) 1px solid;
 	color: rgba(159, 164, 175, 1);
@@ -81,7 +77,51 @@ body {
 	padding: 1rem 4rem;
 	border-radius: 100px;
 }
-.price-btn:hover {
+.poster__btn:hover {
+	background-color: rgba(212, 7, 84, 1);
+	color: rgba(255, 255, 255, 1);
+	transition: 0.3s;
+}
+
+.poster-info {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0rem 4rem;
+}
+.poster-info__title {
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin: 0 auto;
+	color: rgba(79, 79, 111, 1);
+}
+.poster-info__release {
+	font-size: 2rem;
+	color: rgba(79, 79, 111, 1);
+}
+.poster-info__overview {
+	font-size: 1.8rem;
+	color: rgba(79, 79, 111, 1);
+}
+.poster-info__vote {
+	margin: 0 0;
+	font-size: 1.5rem;
+	color: rgba(79, 79, 111, 1);
+}
+.info__btn {
+	background-color: rgba(255, 255, 255, 1);
+	border: rgba(159, 164, 175, 1) 1px solid;
+	color: rgba(159, 164, 175, 1);
+	text-transform: uppercase;
+	font-size: 3rem;
+	font-weight: 300;
+	padding: 1rem auto;
+	border-radius: 0.5rem;
+}
+.info__btn:hover {
+	cursor: pointer;
 	background-color: rgba(212, 7, 84, 1);
 	color: rgba(255, 255, 255, 1);
 	transition: 0.3s;
