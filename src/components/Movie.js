@@ -9,15 +9,15 @@ class Movie extends Component {
     return (
       <div className="movie" key={ uniqueId('movie_') }>
         <div className="movie-form">
-          <div className="movie-form__form-cross"><h1 onClick={onCloseMovie}>&times;</h1></div>
-          <div className="movie-form__poster">
-            <img className="poster__img" src={ poster } alt={title + ' poster'}/>
-            <div className="poster__info">
-              <h2 className="info__title">{ title }</h2>
-              <h4 className="info__release">Release date: { releaseDate }</h4>
-              <h5 className="info__vote">Average vote: { vote } <i className="fa fa-star"></i></h5>
-              <p className="info__overview">{ overview }</p>
-              <Link to="/affiche/moviepage" params={{movie: this.props.movie}}><button className="info__btn">View this movie</button></Link>
+          <div className="movie-form__close-btn"><h1 onClick={onCloseMovie}>&times;</h1></div>
+          <div className="poster">
+            <img className="poster-img" src={ poster } alt={title + ' poster'}/>
+            <div className="poster-info">
+              <h2 className="poster-info__title">{ title }</h2>
+              <h4 className="poster-info__release">Release date: { releaseDate }</h4>
+              <h5 className="poster-info__vote">Average vote: { vote } <i className="fa fa-star"></i></h5>
+              <p className="poster-info__overview">{ overview }</p>
+              <Link to="/affiche/moviepage"><button className="info__btn">View this movie</button></Link>
             </div>
           </div> 
         </div>

@@ -32,7 +32,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
-.poster {
+.posters > .poster {
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 2rem;
 	padding: 2rem;
@@ -46,24 +46,24 @@
 	transition: 0.5s;
 	margin: 0 0 5rem 0;
 }
-.poster:hover {
+.posters > .poster:hover {
 	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.poster .movie-img {
+.poster-img {
 	border-radius: 2rem;
 }
-.poster .movie-img:hover {
+.poster-img:hover {
 	cursor: pointer;
 	opacity: 0.9;
 }
-.poster__title {
+.poster-info__title {
 	font-size: 2rem;
 	text-transform: uppercase;
 	margin: 0 auto;
 	color: rgba(79, 79, 111, 1);
 }
-.poster__release {
+.poster-info__release {
 	font-size: 2rem;
 	color: rgba(79, 79, 111, 1);
 }
@@ -78,6 +78,50 @@
 	border-radius: 100px;
 }
 .poster__btn:hover {
+	background-color: rgba(212, 7, 84, 1);
+	color: rgba(255, 255, 255, 1);
+	transition: 0.3s;
+}
+
+.poster-info {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0rem 4rem;
+}
+.poster-info__title {
+	font-size: 2rem;
+	text-transform: uppercase;
+	margin: 0 auto;
+	color: rgba(79, 79, 111, 1);
+}
+.poster-info__release {
+	font-size: 2rem;
+	color: rgba(79, 79, 111, 1);
+}
+.poster-info__overview {
+	font-size: 1.8rem;
+	color: rgba(79, 79, 111, 1);
+}
+.poster-info__vote {
+	margin: 0 0;
+	font-size: 1.5rem;
+	color: rgba(79, 79, 111, 1);
+}
+.info__btn {
+	background-color: rgba(255, 255, 255, 1);
+	border: rgba(159, 164, 175, 1) 1px solid;
+	color: rgba(159, 164, 175, 1);
+	text-transform: uppercase;
+	font-size: 3rem;
+	font-weight: 300;
+	padding: 1rem auto;
+	border-radius: 0.5rem;
+}
+.info__btn:hover {
+	cursor: pointer;
 	background-color: rgba(212, 7, 84, 1);
 	color: rgba(255, 255, 255, 1);
 	transition: 0.3s;

@@ -6,7 +6,7 @@ import uniqueId from 'lodash/uniqueId';
 class Cinemas extends Component {
   render() {
     const cinemaRows = cinemas.map(cinema => {
-      return <Cinema cinemas={cinema} key={uniqueId('cinema_')} />
+      return <Cinema cinema={cinema} key={uniqueId('cinema_')} />
     });
 
     return (

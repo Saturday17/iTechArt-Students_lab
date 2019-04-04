@@ -16,6 +16,7 @@ export const ACTION_CLOSE_MOVIE = 'ACTION_CLOSE_MOVIE';
 export const ACTION_REMOVE_SPINNER ="ACTION_REMOVE_SPINNER";
 export const ACTION_LOAD_MOVIES ="ACTION_LOAD_MOVIES";
 
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 

@@ -61,7 +61,7 @@ class AfficheList extends Component {
       movieRows: movieRows
     })
   }
-
+ 
   handleFilterTextChange = filterText => {
     this.setState ({
       filterText: filterText.target.value
@@ -72,6 +72,7 @@ class AfficheList extends Component {
     
     const { movieRows } = this.state;
     const { isShownSpinner, filterText } = this.props;
+
     return (
       <>
         <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />

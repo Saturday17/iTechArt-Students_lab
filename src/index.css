@@ -148,7 +148,7 @@ i:hover {
 	justify-content: space-around;
 	align-items: center;
 }
-.poster {
+.posters > .poster {
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 2rem;
 	padding: 1rem;
@@ -160,7 +160,7 @@ i:hover {
 	height: 45rem;
 	transition: 0.5s;
 }
-.poster:hover {
+.posters > .poster:hover {
 	cursor: default;
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
@@ -361,145 +361,6 @@ i:hover {
 	color: rgba(212, 7, 84, 1);
 }
 
-.form-container {
-	display: flex;
-	z-index: 4;
-	position: fixed;
-	background-color: rgba(0, 0, 0, 0.7);
-	top: 0;
-	left: 0;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	width: 100%;
-	margin: 0 auto;
-}
-
-.form-container__form-cross {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-}
-.form-container__form-cross h1 {
-	font-size: 5rem;
-	margin: 0 0;
-	cursor: pointer;
-	transition: 0.2s;
-}
-.form-container__form-cross h1:hover {
-	color: rgba(212, 7, 84, 1);
-}
-.form-container h2 {
-	text-align: center;
-	font-size: 3rem;
-}
-.form-container form {
-	flex-basis: 100vh;
-	padding: 6rem;
-	background: rgba(249, 250, 252, 1);
-	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
-	border-radius: 2rem;
-	transition: 0.5s;
-}
-.form-container__form:hover{
-	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
-}
-.form-container__input {
-	padding: 0.5em;
-	font-size: 2em;
-	background: rgba(244, 244, 244, 1);
-	border: 1px solid rgba(204, 204, 204, 1);
-	border-width: 1px 1px 1px 0;
-	border-radius: 0.5em;
-}
-.form-container__input:focus {
-	background: rgba(255, 255, 255, 1);
-	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
-	outline: 0;
-}
-.form-container .form-field {
-	margin-bottom: 1em;
-	display: flex;
-}
-.form-container .form-field__label {
-	flex: 0 1 4em;
-	padding: 1em;
-	background: rgba(255, 255, 255, 1);
-	border: 1px solid #ccc;
-	font-size: 1.5em;
-	text-align: center;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
-	line-height: 1;
-	border-radius: 0.25em 0 0 0.25em;
-}
-.form-container .form-field__input {
-	flex-grow: 1;
-}
-.form-container .form-field__input, .multi-input .form-field__input:last-child {
-	border-radius: 0 0.25em 0.25em 0;
-	flex-direction: row;
-	justify-content: center; 
-}
-.form-container .multi-input > input {
-	border-radius: 0;
-}
-.form-container .submit-field {
-	display: flex;
-	justify-content: center;
-}
-.form-container__button {
-	flex: 0 1 40%;
-	padding: 0.5em;
-	font-size: 2rem;
-	color: rgba(255, 255, 255, 1);
-	background-color: rgba(212, 7, 84, 1);
-	border-radius:  0.5em;
-	border: 1px solid rgba(212, 7, 84, 1);
-	transition: 0.3s;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-.form-container__button:hover {
-	color: rgba(212, 7, 84, 1);
-	background-color: rgba(255, 255, 255, 1);
-}
-.form-container .reg-link {
-	display: flex;
-	justify-content: center;
-	padding: 2rem;
-}
-.form-container .reg-link .reg-link__reg-btn {
-	text-decoration: none;
-	font-size: 2rem;
-	width: 12rem;
-	border: 1px solid rgba(212, 7, 84, 1);
-	border-radius: 0.5rem;
-	padding: 0.5rem 0.5rem;
-}
-.form-container .reg-link .reg-link__reg-btn:hover {
-	color: rgba(255, 255, 255, 1);
-	background-color: rgba(212, 7, 84, 1);
-	transition: 0.5s;
-}
-.auto-link {
-	display: flex;
-	justify-content: center;
-	padding: 2rem;
-}
-.auto-link a {
-	text-decoration: none;
-	font-size: 2rem;
-	width: 13rem;
-	border: 1px solid rgba(212, 7, 84, 1);
-	border-radius: 0.5rem;
-	padding: 0.5rem 0.5rem;
-}
-.auto-link a:hover {
-	color: rgba(255, 255, 255, 1);
-	background-color: rgba(212, 7, 84, 1);
-	transition: 0.5s;
-}
-
 .movie {
 	display: flex;
 	z-index: 1;
@@ -525,66 +386,23 @@ i:hover {
 .movie-form:hover {
 	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
 }
-.movie-form__form-cross {
+.movie-form__close-btn {
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
 }
-.movie-form__form-cross h1 {
+.movie-form__close-btn h1 {
 	font-size: 5rem;
 	margin: 0 0;
 	cursor: pointer;
 	transition: 0.2s;
 }
-.movie-form__form-cross h1:hover {
+.movie-form__close-btn h1:hover {
 	color: rgba(212, 7, 84, 1);
 }
-.movie-form__poster {
+.movie-form > .poster {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 0 4rem 0;
-}
-.poster__info {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0rem 4rem;
-}
-.poster__info .info__title {
-	font-size: 2rem;
-	text-transform: uppercase;
-	margin: 0 auto;
-	color: rgba(79, 79, 111, 1);
-}
-.poster__info .info__release {
-	font-size: 2rem;
-	color: rgba(79, 79, 111, 1);
-}
-.poster__info .info__overview {
-	font-size: 1.8rem;
-	color: rgba(79, 79, 111, 1);
-}
-.poster__info .info__vote {
-	margin: 0 0;
-	font-size: 1.5rem;
-	color: rgba(79, 79, 111, 1);
-}
-.info__btn {
-	background-color: rgba(255, 255, 255, 1);
-	border: rgba(159, 164, 175, 1) 1px solid;
-	color: rgba(159, 164, 175, 1);
-	text-transform: uppercase;
-	font-size: 3rem;
-	font-weight: 300;
-	padding: 1rem auto;
-	border-radius: 0.5rem;
-}
-.info__btn:hover {
-	cursor: pointer;
-	background-color: rgba(212, 7, 84, 1);
-	color: rgba(255, 255, 255, 1);
-	transition: 0.3s;
 }
