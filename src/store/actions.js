@@ -1,4 +1,4 @@
-import { ACTION_OPEN_AUTHORIZATION_MODAL, ACTION_OPEN_REGISTRATION_MODAL, ACTION_CLOSE_MODAL, ACTION_OPEN_MINIMENU, ACTION_CLOSE_MINIMENU, ACTION_OPEN_MOVIE, ACTION_CLOSE_MOVIE } from '../index';
+import { ACTION_OPEN_AUTHORIZATION_MODAL, ACTION_OPEN_REGISTRATION_MODAL, ACTION_CLOSE_MODAL, ACTION_OPEN_MINIMENU, ACTION_CLOSE_MINIMENU, ACTION_OPEN_MOVIE, ACTION_CLOSE_MOVIE, ACTION_SHOW_MOVIEROWS } from '../index';
 
 export const openAuthorizationModal = newStateModal => {
   newStateModal.preventDefault();
@@ -43,5 +43,11 @@ export const openMovie = () => {
 export const closeMovie = () => {
   return {
     type: ACTION_CLOSE_MOVIE
+  }
+}
+
+export const showMovieRows = () => {
+  return {
+    type: ACTION_SHOW_MOVIEROWS
   }
 }

@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
 import Poster from './Poster';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { showMovieRows } from '../store/actions';
 import uniqueId from 'lodash/uniqueId';
 import SearchBar from './SearchBar';
+import PropTypes from 'prop-types';
 
 class AfficheList extends Component {
 
-  state = {
-    filterText: ''
-  }
+  state = {}
 
   componentDidMount() {
     this.loadMovies();
+    this.props.showMovieRows()
   }
 
   loadMovies() {
@@ -57,7 +60,7 @@ class AfficheList extends Component {
       movieRows: movieRows
     })
   }
-
+ 
   handleFilterTextChange = filterText => {
     this.setState ({
       filterText: filterText.target.value
@@ -66,7 +69,8 @@ class AfficheList extends Component {
 
   render() {
     
-    const { filterText, movieRows } = this.state;
+    const { movieRows } = this.state;
+    const { filterText } = this.props;
     return (
       <>
         <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />
@@ -78,5 +82,22 @@ class AfficheList extends Component {
   }
 }
 
+AfficheList.propTypes = {
+  isShownSpinner: PropTypes.bool,
+  showMovieRows: PropTypes.func
+}
 
-export default AfficheList;
+const putStateToProps = state => {
+  return {
+      isShownSpinner: state.isShownSpinner,
+      filterText: state.filterText
+  };
+}
+
+const putActionsToProps = dispatch => {
+  return {
+    showMovieRows: bindActionCreators(showMovieRows, dispatch)
+  };
+}
+
+export default connect(putStateToProps, putActionsToProps)(AfficheList);

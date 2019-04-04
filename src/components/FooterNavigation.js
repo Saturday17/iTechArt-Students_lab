@@ -13,7 +13,7 @@ class FooterNavigation extends Component {
         <li><Link to="/cinemas" className="footer-navigation__link">Cinemas</Link></li>
         <li><Link to="/" className="footer-navigation__link">Food and Drinks</Link></li>
         <li><Link to="/" className="footer-navigation__link">Info</Link></li>
-        <li><Link to="/" className="footer-navigation__link--sign-in" onClick={ openAuthorizationModal }>Sign in</Link></li>
+        <li><Link to="/" className="footer-navigation__link footer-navigation__link--sign-in" onClick={ openAuthorizationModal }>Sign in</Link></li>
       </ul>
     );
   }
