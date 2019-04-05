@@ -51,7 +51,7 @@ Layout.propTypes = {
   closeMiniMenu: PropTypes.func
 }
 
-const putStateToProps = state => {
+const mapStateToProps = state => {
   return {
     isOpenRegistrationModal: state.isOpenRegistrationModal,
     isOpenAuthorizationModal: state.isOpenAuthorizationModal,
@@ -59,7 +59,7 @@ const putStateToProps = state => {
   };
 }
 
-const putActionsToProps = dispatch => {
+const mapActionsToProps = dispatch => {
   return {
     openAuthorizationModal: bindActionCreators(openAuthorizationModal, dispatch),
     openRegistrationModal: bindActionCreators(openRegistrationModal, dispatch),
@@ -70,4 +70,4 @@ const putActionsToProps = dispatch => {
   };
 }
 
-export default connect(putStateToProps, putActionsToProps)(Layout);
+export default connect(mapStateToProps, mapActionsToProps)(Layout);
