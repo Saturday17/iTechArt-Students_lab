@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Poster from '../components/Poster';
 import uniqueId from 'lodash/uniqueId';
-import { showMovieRows, loadMovies } from '../store/actions';
+import { loadMovies } from '../store/actions';
 import SearchBar from './SearchBar';
 import Spinner from './Spinner'
 import PropTypes from 'prop-types';
@@ -16,11 +16,7 @@ class AfficheList extends Component {
 
 
   componentDidMount() {
-    this.props.loadMovies();
     this.showMovies();
-    window.onload = () => {
-      this.props.showMovieRows();
-    }
   }
 
   showMovies() {
@@ -33,7 +29,7 @@ class AfficheList extends Component {
     })
     this.setState({
       movieRows: movieRows
-    })
+    }, () => this.props.loadMovies());
   }
 
   findMovies() {
@@ -68,8 +64,8 @@ class AfficheList extends Component {
 
   render() {
     
-    const { isShownSpinner } = this.props;
     const { filterText, movieRows } = this.state;
+    const { isShownSpinner } = this.props;
     return (
       <>
         <SearchBar filterText={filterText} onFilterTextChange={this.handleFilterTextChange} />
@@ -99,7 +95,6 @@ const mapStateToProps = state => {
 
 const mapActionsToProps = dispatch => {
   return {
-    showMovieRows: bindActionCreators(showMovieRows, dispatch),
     loadMovies: bindActionCreators(loadMovies, dispatch)
   };
 }

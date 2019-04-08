@@ -7,7 +7,6 @@ import {
   ACTION_CLOSE_MINIMENU, 
   ACTION_OPEN_MOVIE, 
   ACTION_CLOSE_MOVIE, 
-  ACTION_REMOVE_SPINNER, 
   LOAD_MOVIES, 
   LOAD_MOVIES_SUCCESS,
   LOAD_MOVIES_FAILURE
@@ -64,18 +63,6 @@ export const openMovie = () => {
 export const closeMovie = () => {
   return {
     type: ACTION_CLOSE_MOVIE
-  }
-}
-
-export const removeSpinner = () => {
-  return {
-    type: ACTION_REMOVE_SPINNER
-  }
-}
-
-export const showMovieRows = () => {
-  return dispatch => {
-    dispatch(removeSpinner())
   }
 }
 

@@ -6,7 +6,6 @@ import {
     ACTION_CLOSE_MINIMENU,
     ACTION_OPEN_MOVIE,
     ACTION_CLOSE_MOVIE,
-    ACTION_REMOVE_SPINNER,
     LOAD_MOVIES,
     LOAD_MOVIES_SUCCESS,
     LOAD_MOVIES_FAILURE
@@ -17,7 +16,7 @@ const initialState = {
     isOpenAuthorizationModal: false,
     isOpenMiniMenu: false,
     isOpenMovie: false,
-    isShownSpinner: true,
+    isShownSpinner: false,
     loaded: false,
     loading: false,
     error: null,
@@ -41,14 +40,12 @@ export const rootReducer = (state = initialState, action) => {
             return { ...state, isOpenMovie: true };
         case ACTION_CLOSE_MOVIE:
             return { ...state, isOpenMovie: false };
-        case ACTION_REMOVE_SPINNER:
-            return { ...state, isShownSpinner: false };
         case LOAD_MOVIES:
-            return { ...state, loading: true, loaded: false };
+            return { ...state, loading: true, loaded: false, isShownSpinner: true };
         case LOAD_MOVIES_SUCCESS:
-            return { ...state, movies: action.payload, loading: false, loaded: true, error: null };
+            return { ...state, movies: action.payload, loading: false, loaded: true, error: null, isShownSpinner: false };
         case LOAD_MOVIES_FAILURE:
-            return { ...state, loading: false, loaded: true, error: action.payload };
+            return { ...state, loading: false, loaded: true, error: action.payload, isShownSpinner: false };
 }
 
     return state;
