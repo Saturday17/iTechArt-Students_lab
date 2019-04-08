@@ -75,9 +75,7 @@ export const removeSpinner = () => {
 
 export const showMovieRows = () => {
   return dispatch => {
-    setTimeout(() => {
-      dispatch(removeSpinner())
-    }, 3000)
+    dispatch(removeSpinner())
   }
 }
 

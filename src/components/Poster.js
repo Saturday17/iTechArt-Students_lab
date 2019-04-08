@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import uniqueId from 'lodash/uniqueId';
 import PropTypes from 'prop-types';
 import Movie from './Movie';
+import uniqueId from 'lodash/uniqueId';
 
 class Poster extends Component {
 
@@ -41,6 +41,7 @@ class Poster extends Component {
   render() {
     const { movie: { poster, title, releaseDate } } = this.props;
     const { isOpenMovie } = this.state;
+
     return (
       <>
         <div className="poster" key={ uniqueId('movie_') }>

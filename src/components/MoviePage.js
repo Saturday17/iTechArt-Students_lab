@@ -3,7 +3,9 @@ import uniqueId from 'lodash/uniqueId';
 import PropTypes from 'prop-types';
 
 class MoviePage extends Component {
+
   render() {
+    console.log(this.props)
     const { movie: { poster, title, releaseDate, overview } } = this.props;
     return(
       <>

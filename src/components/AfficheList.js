@@ -14,10 +14,13 @@ class AfficheList extends Component {
     filterText: ''
   }
 
+
   componentDidMount() {
     this.props.loadMovies();
     this.showMovies();
-    this.props.showMovieRows()
+    window.onload = () => {
+      this.props.showMovieRows();
+    }
   }
 
   showMovies() {
@@ -26,7 +29,7 @@ class AfficheList extends Component {
       movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
       movie.releaseDate = movie.release_date;
       movie.vote = movie.vote_average;
-      return <Poster movie={movie} key={uniqueId('movie_')}/>;
+      return <Poster movie={ movie } key={ uniqueId('movie_') }/>;
     })
     this.setState({
       movieRows: movieRows
@@ -43,7 +46,7 @@ class AfficheList extends Component {
         }
         movie.poster = 'https://image.tmdb.org/t/p/w185' + movie.poster_path;
         movie.releaseDate = movie.release_date;
-        return <Poster movie={movie} key={uniqueId('movie_')} />;
+        return <Poster movie={ movie } key={ uniqueId('movie_') } />;
       })
     } else {
       movieRows = movies.map( movie => {
