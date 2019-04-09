@@ -5,7 +5,7 @@ import Poster from '../components/Poster';
 import uniqueId from 'lodash/uniqueId';
 import { loadMovies } from '../store/actions';
 import SearchBar from './SearchBar';
-import Spinner from './Spinner'
+import Spinner from './Spinner';
 import PropTypes from 'prop-types';
 
 class AfficheList extends Component {

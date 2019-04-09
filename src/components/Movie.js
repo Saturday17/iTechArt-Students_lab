@@ -10,13 +10,13 @@ class Movie extends Component {
         <div className="movie-form">
           <div className="movie-form__close-btn"><h1 onClick={ onCloseMovie }>&times;</h1></div>
           <div className="poster">
-            <img className="poster-img" src={ poster } alt={title + ' poster'}/>
+          <Link to={`affiche/moviepage/${this.props.movie.id}`}><img className="poster-img" src={ poster } alt={title + ' poster'}/></Link>
             <div className="poster-info">
               <h2 className="poster-info__title">{ title }</h2>
               <h4 className="poster-info__release">Release date: { releaseDate }</h4>
               <h5 className="poster-info__vote">Average vote: { vote } <i className="fa fa-star"></i></h5>
               <p className="poster-info__overview">{ overview }</p>
-              <Link params={{movie: this.props.movie}} to={`affiche/moviepage/:${this.props.movie.id}`}><button className="info__btn">View this movie</button></Link>
+              <Link to={`affiche/moviepage/${this.props.movie.id}`}><button className="info__btn">View this movie</button></Link>
             </div>
           </div> 
         </div>
