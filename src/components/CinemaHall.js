@@ -1,73 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
+import HallRows from './HallRows';
 
-function CinemaHall() {
-  return (
-    <div className="hall">
-      <div className="hall__screen"></div>
-      <div className="hall__rows">
-        <div className="rows__row">
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-        </div>
-        <div className="rows__row">
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-        </div>
-        <div className="rows__row">
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-        </div>
-        <div className="rows__row">
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-        </div>
-        <div className="rows__row">
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
-          <div className="row__chair"></div>
+class CinemaHall extends Component {
+  render() {
+    const { closeHall } = this.props;
+    return (
+      <div className="hall-page">
+        <div className="hall-page__hall">
+          <div className="hall__close-btn"><h1 onClick={ closeHall }>&times;</h1></div>
+          <div className="hall__screen">Screen</div>
+          <HallRows />
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default CinemaHall;
