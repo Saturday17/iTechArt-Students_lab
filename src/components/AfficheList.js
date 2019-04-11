@@ -14,7 +14,6 @@ class AfficheList extends Component {
     filterText: ''
   }
 
-
   componentDidMount() {
     this.showMovies();
   }

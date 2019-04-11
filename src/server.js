@@ -1,13 +1,19 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+import express from 'express';
+import bodyParser from 'body-parser';
+import routes from './routes';
+
 const app = express();
 
-mongoose.connect('mongodb://localhost/users-db', { useNewUrlParser: true });
-
-app.use(bodyParser.json());
-app.get('/api', require('./api'));
-
-app.listen(4000, () => {
+app.use('/api/auth/register', bodyParser.urlencoded({ 
+  extended: true 
+}));
+// app.use(bodyParser.json());
+app.listen(3000, () => {
   console.log('server')
 });
+
+//app.get('/api/auth', routes.auth);
+app.post('/api/auth/register', function(req, res){
+  console.log(req.body.pass);
+})
+

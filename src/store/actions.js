@@ -71,7 +71,7 @@ export const closeMovie = () => {
 export function loadMovies() {
   return dispatch => {
     dispatch({ type: LOAD_MOVIES });
-    axios.post('https://api.themoviedb.org/3/movie/now_playing?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
+    axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
       .then( res => {
         const movies = res.data.results;
         dispatch({ type: LOAD_MOVIES_SUCCESS, payload: movies});
