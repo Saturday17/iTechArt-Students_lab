@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function Chair() {
-  return (
-    <div className="row__chair"></div>
-  );
+
+class Chair extends Component {
+  render() {
+    
+    return (
+      <div className="row__chair"></div>
+    );
+  }
 }
 
 export default Chair;

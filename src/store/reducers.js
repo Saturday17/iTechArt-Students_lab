@@ -8,7 +8,9 @@ import {
     ACTION_CLOSE_MOVIE,
     LOAD_MOVIES,
     LOAD_MOVIES_SUCCESS,
-    LOAD_MOVIES_FAILURE
+    LOAD_MOVIES_FAILURE,
+    ACTION_OPEN_HALL,
+    ACTION_CLOSE_HALL
 } from '../index';
 
 const initialState = {
@@ -20,7 +22,8 @@ const initialState = {
     loaded: false,
     loading: false,
     error: null,
-    movies: []
+    movies: [],
+    isOpenHall: false
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -46,6 +49,10 @@ export const rootReducer = (state = initialState, action) => {
             return { ...state, movies: action.payload, loading: false, loaded: true, error: null, isShownSpinner: false };
         case LOAD_MOVIES_FAILURE:
             return { ...state, loading: false, loaded: true, error: action.payload, isShownSpinner: false };
+        case ACTION_OPEN_HALL:
+            return { ...state, isOpenHall: true };
+        case ACTION_CLOSE_HALL:
+            return { ...state, isOpenHall: false };
 }
 
     return state;

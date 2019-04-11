@@ -9,7 +9,7 @@ class OrderMenu extends Component {
       return <option className="cinema-choose__choose" value={ cinema.name } key={ uniqueId('cinema_') }>{ cinema.name }</option>
     });
     const sessionList = cinemas[0].sessions.map(session => {
-        return <option className="cinema-choose__choose" value={ session } key={ uniqueId('cinema_') }>{ session }</option>
+        return <option className="cinema-choose__choose" value={ session } key={ uniqueId('session_') }>{ session }</option>
     });
     
     const { openHall } = this.props;

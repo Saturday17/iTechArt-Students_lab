@@ -9,7 +9,9 @@ import {
   ACTION_CLOSE_MOVIE, 
   LOAD_MOVIES, 
   LOAD_MOVIES_SUCCESS,
-  LOAD_MOVIES_FAILURE
+  LOAD_MOVIES_FAILURE,
+  ACTION_OPEN_HALL,
+  ACTION_CLOSE_HALL
 } from '../index';
 
 export const openAuthorizationModal = newStateModal => {
@@ -77,5 +79,17 @@ export function loadMovies() {
       .catch( error => {
         dispatch({ type: LOAD_MOVIES_FAILURE, payload: error});
       })
+  }
+}
+
+export const openHall = () => {
+  return {
+    type: ACTION_OPEN_HALL
+  }
+}
+
+export const closeHall = () => {
+  return {
+    type: ACTION_CLOSE_HALL
   }
 }

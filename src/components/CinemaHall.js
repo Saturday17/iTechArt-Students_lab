@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import HallRows from './HallRows';
+import PropTypes from 'prop-types';
 
 class CinemaHall extends Component {
   render() {
@@ -14,6 +15,10 @@ class CinemaHall extends Component {
       </div>
     );
   }
+}
+
+CinemaHall.propTypes = {
+  closeHall: PropTypes.func
 }
 
 export default CinemaHall;

@@ -1,13 +1,22 @@
 import React from 'react';
-import RowOfChairs from './RowOfChairs';
+import Chair from './Chair';
 import uniqueId from 'lodash/uniqueId';
 
 function HallRows() {
-  const rowsOfChairs = new Array(5);
-  rowsOfChairs.fill(<RowOfChairs key={ uniqueId('rowOfChairs_') }/>)
+  const chairs = new Array(50);
+  chairs.fill(0);
+  chairs.forEach( chair => {
+    chairs.shift(chair)
+    chairs.push(<Chair key={ uniqueId('chair_') }/>);
+  });
+  console.log(chairs)
   return (
     <div className="hall__rows">
-      { rowsOfChairs }
+      <div className="rows__row">{ chairs.slice(0, 10) }</div>
+      <div className="rows__row">{ chairs.slice(10, 20) }</div>
+      <div className="rows__row">{ chairs.slice(20, 30) }</div>
+      <div className="rows__row">{ chairs.slice(30, 40) }</div>
+      <div className="rows__row">{ chairs.slice(40) }</div>
     </div>
   );
 }

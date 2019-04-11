@@ -1,32 +1,23 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import uniqueId from 'lodash/uniqueId';
 import axios from 'axios';
 import Spinner from './Spinner';
 import OrderMenu from './OrderMenu';
 import CinemaHall from './CinemaHall';
+import { openHall, closeHall } from '../store/actions';
+import PropTypes from 'prop-types';
 
 class MoviePage extends Component {
 
   state = {
     movie: {},
-    isShownSpinner: true,
-    isOpenHall: false
+    isShownSpinner: true
   }
 
   componentDidMount() {
     this.loadMovie();
-  }
-
-  handleOpenHall = () => {
-    this.setState({
-      isOpenHall: true
-    })
-  }
-
-  handleCloseHall = () => {
-    this.setState({
-      isOpenHall: false
-    })
   }
 
   loadMovie() {
@@ -64,7 +55,8 @@ class MoviePage extends Component {
   }
 
   render() {
-    const { movie: { poster, title, releaseDate, overview, vote, genres, runtime, productionCountry }, isShownSpinner, isOpenHall } = this.state;
+    const { movie: { poster, title, releaseDate, overview, vote, genres, runtime, productionCountry }, isShownSpinner } = this.state;
+    const { isOpenHall, openHall, closeHall } = this.props;
     return(
       <>
         <div className="movie-page" key={ uniqueId('movie_') }>
@@ -79,20 +71,38 @@ class MoviePage extends Component {
                 <p className="info__overview">{ overview }</p>
                 <h4 className="info__release">Release date: { releaseDate }</h4>
                 <h5 className="info__vote">Average vote: { vote } <i className="fa fa-star"></i></h5>
-                <h5 className="info__production">Production country: { productionCountry }</h5>
+                <h5 className="info__production">Production country: { productionCountry.join(', ') }</h5>
                 <div className="order-menu">
-                  <OrderMenu openHall={ this.handleOpenHall } />
+                  <OrderMenu openHall={ openHall } />
                 </div>
               </div>
             </div> 
           }
           </div>
         </div>
-        { isOpenHall && <CinemaHall closeHall={ this.handleCloseHall }/> }
+        { isOpenHall && <CinemaHall closeHall={ closeHall }/> }
       </>
     );
   }
 }
 
+MoviePage.propTypes = {
+  isOpenHall: PropTypes.bool,
+  openHall: PropTypes.func,
+  closeHall: PropTypes.func
+}
 
-export default MoviePage;
+const mapStateToProps = state => {
+  return {
+    isOpenHall: state.isOpenHall
+  };
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    openHall: bindActionCreators(openHall, dispatch),
+    closeHall: bindActionCreators(closeHall, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(MoviePage);
