@@ -132,6 +132,10 @@
 	display: flex;
 	justify-content: center;
 }
+.authorization-form__submit-field {
+	display: flex;
+	justify-content: center;
+}
 .submit-field__button {
 	flex: 0 1 40%;
 	padding: 0.5em;

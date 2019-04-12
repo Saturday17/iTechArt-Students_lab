@@ -2,6 +2,10 @@
 	html {
 		font-size: 7px;
 	}
+	.movie__img {
+		width: 400px;
+		margin: 2rem;
+	}
 }
 @media (max-width: 640px) {
 	.slider {
@@ -14,6 +18,9 @@
 	}
 	.slider__item:hover {
 		flex-grow: 30%;
+	}
+	.movie__img {
+		width: 300px;
 	}
 }
 @media (max-width: 1299px) {

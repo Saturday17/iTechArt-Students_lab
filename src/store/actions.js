@@ -1,4 +1,18 @@
-import { ACTION_OPEN_AUTHORIZATION_MODAL, ACTION_OPEN_REGISTRATION_MODAL, ACTION_CLOSE_MODAL, ACTION_OPEN_MINIMENU, ACTION_CLOSE_MINIMENU, ACTION_OPEN_MOVIE, ACTION_CLOSE_MOVIE, ACTION_SHOW_MOVIEROWS } from '../index';
+import axios from 'axios';
+import { 
+  ACTION_OPEN_AUTHORIZATION_MODAL, 
+  ACTION_OPEN_REGISTRATION_MODAL, 
+  ACTION_CLOSE_MODAL, 
+  ACTION_OPEN_MINIMENU, 
+  ACTION_CLOSE_MINIMENU, 
+  ACTION_OPEN_MOVIE, 
+  ACTION_CLOSE_MOVIE, 
+  LOAD_MOVIES, 
+  LOAD_MOVIES_SUCCESS,
+  LOAD_MOVIES_FAILURE,
+  ACTION_OPEN_HALL,
+  ACTION_CLOSE_HALL
+} from '../index';
 
 export const openAuthorizationModal = newStateModal => {
   newStateModal.preventDefault();
@@ -17,6 +31,14 @@ export const openRegistrationModal = newStateModal => {
 export const closeModals = () => {
   return {
     type: ACTION_CLOSE_MODAL
+  }
+}
+
+export const closeModalsByButton = e => {
+  return dispatch => {
+    if(e.key === 'Escape') {
+      dispatch(closeModals(e))
+    }
   }
 }
 
@@ -46,8 +68,28 @@ export const closeMovie = () => {
   }
 }
 
-export const showMovieRows = () => {
+export function loadMovies() {
+  return dispatch => {
+    dispatch({ type: LOAD_MOVIES });
+    axios.post('https://api.themoviedb.org/3/movie/now_playing?api_key=0db50d1e81184cc04e761a3e55b0ee62&language=en-US&page=1')
+      .then( res => {
+        const movies = res.data.results;
+        dispatch({ type: LOAD_MOVIES_SUCCESS, payload: movies});
+      })
+      .catch( error => {
+        dispatch({ type: LOAD_MOVIES_FAILURE, payload: error});
+      })
+  }
+}
+
+export const openHall = () => {
   return {
-    type: ACTION_SHOW_MOVIEROWS
+    type: ACTION_OPEN_HALL
+  }
+}
+
+export const closeHall = () => {
+  return {
+    type: ACTION_CLOSE_HALL
   }
 }

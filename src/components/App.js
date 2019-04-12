@@ -5,6 +5,8 @@ import '../media.css';
 import '../affiche.css';
 import '../cinemas.css';
 import '../modals.css';
+import '../moviePage.css';
+import '../cinemaHall.css';
 
 class App extends Component {
 
