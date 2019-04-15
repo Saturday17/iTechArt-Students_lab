@@ -16,8 +16,9 @@ export const ACTION_CLOSE_MOVIE = 'ACTION_CLOSE_MOVIE';
 export const LOAD_MOVIES = 'LOAD_MOVIES';
 export const LOAD_MOVIES_SUCCESS = 'LOAD_MOVIES_SUCCESS';
 export const LOAD_MOVIES_FAILURE = 'LOAD_MOVIES_FAILURE';
-export const ACTION_OPEN_HALL= 'ACTION_OPEN_HALL';
-export const ACTION_CLOSE_HALL= 'ACTION_CLOSE_HALL';
+export const ACTION_OPEN_HALL = 'ACTION_OPEN_HALL';
+export const ACTION_CLOSE_HALL = 'ACTION_CLOSE_HALL';
+export const CHANGE_SEAT_SELECTION = 'CHANGE_SEAT_SELECTION';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

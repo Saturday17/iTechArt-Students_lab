@@ -60,14 +60,33 @@
   width: 90%;
   height: 5rem;
 }
-.row__chair {
+.row__seat {
   border: 0.1rem solid rgba(79, 79, 111, 1);
   border-radius: 0.3rem;
-  width: 5%;
+  width: 7%;
   margin: 1rem 0.5rem;
   cursor: pointer;
   transition: 0.3s;
 }
-.row__chair:hover {
+.row__seat--selected {
+  background-color: rgba(212, 7, 84, 1);
+  border: 0.1rem solid rgba(79, 79, 111, 1);
+  border-radius: 0.3rem;
+  width: 7%;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.row__seat--reserved {
+  background-color: rgba(79, 79, 111, 1);
+  border: 0.1rem solid rgba(79, 79, 111, 1);
+  border-radius: 0.3rem;
+  width: 7%;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  cursor: default;
+}
+.row__seat:hover {
   background-color: rgba(212, 7, 84, 1);
 }

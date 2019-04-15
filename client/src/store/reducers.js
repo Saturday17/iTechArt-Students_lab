@@ -10,7 +10,8 @@ import {
     LOAD_MOVIES_SUCCESS,
     LOAD_MOVIES_FAILURE,
     ACTION_OPEN_HALL,
-    ACTION_CLOSE_HALL
+    ACTION_CLOSE_HALL,
+    CHANGE_SEAT_SELECTION
 } from '../index';
 
 const initialState = {
@@ -23,7 +24,8 @@ const initialState = {
     loading: false,
     error: null,
     movies: [],
-    isOpenHall: false
+    isOpenHall: false,
+    seats: []
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -53,6 +55,8 @@ export const rootReducer = (state = initialState, action) => {
             return { ...state, isOpenHall: true };
         case ACTION_CLOSE_HALL:
             return { ...state, isOpenHall: false };
+        case CHANGE_SEAT_SELECTION:
+            return { ...state, seats: action.payload };
 }
 
     return state;

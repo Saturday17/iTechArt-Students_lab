@@ -1,24 +1,63 @@
-import React from 'react';
-import Chair from './Chair';
-import uniqueId from 'lodash/uniqueId';
+import React, {Component} from 'react';
+import Seat from './Seat';
 
-function HallRows() {
-  const chairs = new Array(50);
-  chairs.fill(0);
-  chairs.forEach( chair => {
-    chairs.shift(chair)
-    chairs.push(<Chair key={ uniqueId('chair_') }/>);
-  });
-  console.log(chairs)
-  return (
-    <div className="hall__rows">
-      <div className="rows__row">{ chairs.slice(0, 10) }</div>
-      <div className="rows__row">{ chairs.slice(10, 20) }</div>
-      <div className="rows__row">{ chairs.slice(20, 30) }</div>
-      <div className="rows__row">{ chairs.slice(30, 40) }</div>
-      <div className="rows__row">{ chairs.slice(40) }</div>
-    </div>
-  );
+class HallRows extends Component {
+  
+  cinema = {
+    halls: [
+      {
+        rows: 5,
+        seatsInRow: 10
+      }
+    ],
+    reserved: ['1-1-1', '1-4-3']
+  }
+
+  renderHall = halls => {
+    let arr = [];
+    for (let i in halls) {
+      arr[i] = (
+        <div className="hall__rows">
+          { this.renderRows(halls[i].rows, halls[i].seatsInRow, i) }
+        </div>
+      );
+    }
+    return arr;
+  };
+
+  renderRows = (rows, seatInRow, hallId) => {
+    let arr = [];
+    for (let i = 0; i < rows; i++) {
+      arr[i] = (
+        <div className="rows__row">
+          { this.renderSeats(seatInRow, i, hallId) }
+        </div>
+      );
+    }
+    return arr;
+  }
+
+  renderSeats = (seat, rowId, hallId) => {
+    let arr = [];
+    for (let j = 0; j < seat; j++) {
+      let id = `${Number(hallId)+1}-${rowId+1}-${j+1}`;
+      let status = 'available';
+
+      if (this.cinema.reserved.indexOf(id) !== -1) {
+        status = 'reserved';
+      }
+      arr[j] = <Seat key={ id } id={ id } status={ status } />
+    }
+    return arr;
+  }
+
+  render() {
+    return (
+      <>
+        { this.renderHall(this.cinema.halls) }
+      </>
+    );
+  }
 }
 
 export default HallRows;

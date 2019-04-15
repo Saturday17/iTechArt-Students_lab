@@ -11,7 +11,8 @@ import {
   LOAD_MOVIES_SUCCESS,
   LOAD_MOVIES_FAILURE,
   ACTION_OPEN_HALL,
-  ACTION_CLOSE_HALL
+  ACTION_CLOSE_HALL,
+  CHANGE_SEAT_SELECTION
 } from '../index';
 
 export const openAuthorizationModal = newStateModal => {
@@ -92,4 +93,11 @@ export const closeHall = () => {
   return {
     type: ACTION_CLOSE_HALL
   }
+}
+
+export function changeSeatSelection(payload) {
+  console.log(payload)
+  return {
+    type: CHANGE_SEAT_SELECTION, payload
+  };
 }

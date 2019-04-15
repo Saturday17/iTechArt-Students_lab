@@ -13,8 +13,11 @@ class Registration extends Component {
       password: this.refs.userPassword.value
     }
 
-    axios.post('http://localhost:4000/api/auth/register')
-      .then(JSON.stringify(data))
+    axios
+      .post('http://localhost:4000/api/auth/register')
+      .then( res => {
+        JSON.stringify(data)
+      })
       .catch(error => {
         console.error(error);
       })
