@@ -88,5 +88,5 @@
   cursor: default;
 }
 .row__seat:hover {
-  background-color: rgba(212, 7, 84, 1);
+  background-color: rgba(212, 7, 84, 0.7);
 }

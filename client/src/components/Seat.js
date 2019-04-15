@@ -12,8 +12,7 @@ class Seat extends Component {
   }
 
   handleClick = () => {
-    let { seats } = this.props;
-    console.log(seats.length)
+    let { seats, status } = this.props;
     // if( seats.length === viewer.length && !this.state.selected) {
     //   return;
     // }
@@ -24,7 +23,7 @@ class Seat extends Component {
       }
     });
 
-    !this.state.selected ? seats.push(this.props.id) : seats.splice(seats.indexOf(this.props.id), 1);
+    !this.state.selected && status !== "reserved" ? seats.push(this.props.id) : seats.splice(seats.indexOf(this.props.id), 1);
     this.props.changeSeatSelection(seats);
   }
 
