@@ -1,8 +1,30 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit
+  },
+  dense: {
+    marginTop: 16,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 class Registration extends Component {
+
+  state = {
+    name: ''
+  }
 
   signUp = e => {
     e.preventDefault();
@@ -17,29 +39,25 @@ class Registration extends Component {
     console.log(data);
   }
 
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
   render(){
     const { openAuthorizationModal, closeModals } = this.props;
-
+    
     return (
       <div className="registration">
         <form className="registration-form" action="">
           <div className="registration-form__close-btn"><h1 onClick={ closeModals }>&times;</h1></div>
           <h2 className="registration-form__title">Registration</h2>
-          <div className="registration-form__form-field multi-input">
-            <label className="form-field__label" htmlFor="name">Name</label>
-            <input className="form-field__input" ref="userName" type="text" name="name" placeholder="your name on the system" required/>
-          </div>	
           <div className="registration-form__form-field">
-            <label className="form-field__label" htmlFor="login">Login</label>
-            <input className="form-field__input" ref="userLogin" type="login" name="login" placeholder="your login" required/>
-          </div>
-          <div className="registration-form__form-field">
-            <label className="form-field__label" htmlFor="pass">Password</label>
-            <input className="form-field__input" ref="userPassword" type="password" name="pass" placeholder="make up your password" required/>
-          </div>
-          <div className="registration-form__form-field">
-            <label className="form-field__label" htmlFor="pass">Password</label>
-            <input className="form-field__input" ref="repeatedPassword" type="password" name="pass" placeholder="repeat your password" required/>
+          <TextField id="outlined-name" label="Name" className="form-field__input" value={this.state.name} onChange={this.handleChange('name')} margin="normal" variant="outlined" />
+          <TextField id="outlined-email-input" label="Email" className="form-field__input" type="email" name="email" autoComplete="email" margin="normal" variant="outlined" />
+          <TextField id="outlined-password-input" label="Password" className="form-field__input" type="password" autoComplete="current-password" margin="normal" variant="outlined" />
+          <TextField id="outlined-password-input" label="Repeat password" className="form-field__input" type="password" autoComplete="repeat-password" margin="normal" variant="outlined" />
           </div>
           <div className="registration-form__submit-field">
             <button className="submit-field__button" onClick={ this.signUp }>Sign up</button>
@@ -58,4 +76,4 @@ Registration.propTypes = {
   closeModals: PropTypes.func
 }
 
-export default Registration;
+export default withStyles(styles)(Registration);
