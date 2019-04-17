@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import Layout from './Layout';
-import '../index.css';
-import '../media.css';
-import '../affiche.css';
-import '../cinemas.css';
-import '../modals.css';
-import '../moviePage.css';
-import '../cinemaHall.css';
+import '../assets/scss/style.scss';
 
 class App extends Component {
 

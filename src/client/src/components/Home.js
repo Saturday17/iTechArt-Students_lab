@@ -10,8 +10,6 @@ import Authorization from './Authorization';
 import Registration from './Registration';
 import { openAuthorizationModal, openRegistrationModal, closeModals } from '../store/actions';
 import PropTypes from 'prop-types';
-import '../index.css';
-import '../media.css';
 
 class Home extends Component {
 

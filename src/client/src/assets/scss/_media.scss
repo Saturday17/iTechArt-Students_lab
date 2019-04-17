@@ -6,6 +6,15 @@
 		width: 400px;
 		margin: 2rem;
 	}
+	.visible-lg {
+		display: none;
+	}
+	.footer-top__menu {
+		display: none;
+	}
+	.m-menu-link {
+		display: block;
+	}
 }
 @media (max-width: 640px) {
 	.slider {
@@ -34,9 +43,6 @@
 		justify-content: center;
 		margin-top: 1rem;
 	}
-	.footer-top__menu {
-		display: none;
-	}
 	.legal {
 		flex-direction: column;
 		padding-bottom: 5rem;
@@ -46,13 +52,5 @@
 	}
 	.social-links a{
 		font-size: 3rem;
-	}
-}
-@media (max-width: 1090px) {
-	.visible-lg {
-		display: none;
-	}
-	.m-menu-link {
-		display: block;
 	}
 }

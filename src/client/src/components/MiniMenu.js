@@ -13,9 +13,6 @@ class MiniMenu extends Component {
         <li className="m-menu__close-menu" onClick={ closeMiniMenu }>&times;</li>
         <li onClick={ closeMiniMenu }><Link to="/" className="m-menu__menu-link">Home</Link></li>
         <li onClick={ closeMiniMenu }><Link to="/affiche" className="m-menu__menu-link">Affiche</Link></li>
-        <li onClick={ closeMiniMenu }><Link to="/cinemas" className="m-menu__menu-link">Cinemas</Link></li>
-        <li onClick={ closeMiniMenu }><Link to="/" className="m-menu__menu-link">Food and Drinks</Link></li>
-        <li onClick={ closeMiniMenu }><Link to="/" className="m-menu__menu-link">Info</Link></li>
         <li><Link to="/" className="m-menu__menu-link--sign-in-btn" onClick={ openAuthorizationModal }>Sign in</Link></li>
       </ul>
     );

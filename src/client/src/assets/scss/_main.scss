@@ -11,7 +11,7 @@ body {
 	margin: 0;
 }
 i:hover {
-	color: rgba(212, 7, 84, 1);
+	color: $secondaryColor;
 	transition: 0.2s;
 }
 .main {
@@ -23,12 +23,12 @@ i:hover {
 	align-items: center;
 	height: 100vh;
 	min-height: 600px;
-	background-image: linear-gradient(0, rgba(51, 51, 51, 1), rgba(128, 128, 128, 1));
+	background-color: $secondaryColor;
 	background-size: cover;
 	position: relative;
 }
 .header {
-	background-color: rgba(51, 51, 51, 1);
+	background-color: $primaryColor;
 	font-size: 20px;
 	display: flex;
 	height: 10vh;
@@ -36,7 +36,6 @@ i:hover {
 	align-items: center;
 	position: fixed;
 	width: 100%;
-	border-radius: 5px;
 	z-index: 2;
 }
 .logo__img {
@@ -55,24 +54,23 @@ i:hover {
 .menu-navigation__menu-link {
 	font-style: 1.4rem;
 	text-decoration: none;
-	color: rgba(255, 255, 255, 1);
-	font-weight: 500;
+	color: $pFontColor;
 }
 .menu-navigation__menu-link:hover {
-	color: rgba(212, 7, 84, 1);
+	color: $secondaryColor;
 	transition: 0.2s;
 }
 
 .menu-navigation__menu-link--sign-in-btn {
-	color: rgba(255, 255, 255, 1);
-	border: 1px solid rgba(212, 7, 84, 1);
-	border-radius: 100px;
+	color: $secondaryColor;
+	border: 1px solid $secondaryColor;
 	padding: 10px 20px;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 .menu-navigation__menu-link--sign-in-btn:hover {
-	background-color: rgba(212, 7, 84, 1);
+	background-color: $secondaryColor;
+	color: $primaryColor;
 	transition: 0.4s;
 }
 .slider {
@@ -93,19 +91,19 @@ i:hover {
 	cursor: pointer;
 }
 .item-1 {
-	background: url(img/hulk.jpg) no-repeat center center;
+	background: url(../../img/hulk.jpg) no-repeat center center;
 	background-size: cover;
 }
 .item-2 {
-	background: url(img/ironman.jpg) no-repeat center center;
+	background: url(../../img/ironman.jpg) no-repeat center center;
 	background-size: cover;
 }
 .item-3 {
-	background: url(img/tor.jpg) no-repeat center center;
+	background: url(../../img/tor.jpg) no-repeat center center;
 	background-size: cover;
 }
 .item-4 {
-	background: url(img/america.jpg) no-repeat center center;
+	background: url(../../img/america.jpg) no-repeat center center;
 	background-size: cover;
 }
 .item__span {
@@ -130,12 +128,12 @@ i:hover {
 	height: 50px;
 }
 .table {
-	background-image: linear-gradient(0, rgba(51, 51, 51, 1), rgba(128, 128, 128, 1));
+	background-color: $secondaryColor;
 	padding: 10rem;
 }
 .table__title {
 	text-align: center;
-	color: rgba(79, 79, 111, 1);
+	color: $primaryColor;
 	font-size: 5rem;
 	margin: 9rem;
 }
@@ -145,65 +143,64 @@ i:hover {
 	margin-bottom: 5rem;
 }
 .table-header .table-header__title {
-	color: rgba(79, 79, 111, 1);
+	color: $primaryColor;
 	font-size: 6rem;
 	margin: 0;
 }
+
 .posters {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-}
-.posters > .poster {
-	background-color: rgba(255, 255, 255, 1);
-	border-radius: 2rem;
-	padding: 1rem;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	text-align: center;
-	width: 35rem;
-	height: 45rem;
-	transition: 0.5s;
-}
-.posters > .poster:hover {
-	cursor: default;
-	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
-}
-.poster__img {
-	border-radius: 2rem;
-}
-.poster__img:hover {
-	cursor: pointer;
-	opacity: 0.9;
-}
-.poster__title {
-	font-size: 2rem;
-	text-transform: uppercase;
-	margin: 0 auto;
-	color: rgba(79, 79, 111, 1);
-}
-.poster__release {
-	font-size: 2rem;
-	color: rgba(79, 79, 111, 1);
+	flex-wrap: wrap;
+	.poster {
+		background-color: $pLightColor;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+		padding: 1rem;
+		width: 35rem;
+		height: 50rem;
+		transition: 0.5s;
+		margin: 2rem 0;
+		&:hover {
+			box-shadow: 0px 0px 60px 10px $pLightColor;
+		}
+		.poster__img {
+			&:hover {
+				cursor: pointer;
+				opacity: 0.9;
+			}
+		}
+		.poster__title {
+			font-size: 2rem;
+			text-transform: uppercase;
+			color: $secondaryColor;
+		}
+		.poster__release {
+			font-size: 2rem;
+			color: $secondaryColor;
+		}
+		.poster__btn {
+			background-color: $secondaryColor;
+			border: 1px solid $primaryColor;
+			color: $primaryColor;
+			text-transform: uppercase;
+			font-size: 1rem;
+			font-weight: 300;
+			padding: 1rem auto;
+			transition: 0.3s;
+			&:hover {
+				cursor: pointer;
+				background-color: $primaryColor;
+				color: $secondaryColor;
+			}
+		}
+	}
 }
 
-.poster__btn {
-	background-color: rgba(255, 255, 255, 1);
-	border: rgba(159, 164, 175, 1) 1px solid;
-	color: rgba(159, 164, 175, 1);
-	text-transform: uppercase;
-	font-size: 1rem;
-	font-weight: 300;
-	padding: 1rem auto;
-	border-radius: 100px;
-}
-.poster__btn:hover {
-	cursor: pointer;
-	background-color: rgba(212, 7, 84, 1);
-	color: rgba(255, 255, 255, 1);
-	transition: 0.3s;
-}
 .text-info {
 	padding: 2rem;
 	font-size: 1.5rem;
@@ -212,9 +209,9 @@ i:hover {
 .call-to-action {
 	position: relative;
 	text-align: center;
-	padding: 15rem;
-	background-image: linear-gradient(0, rgba(51, 51, 51, 1), rgba(128, 128, 128, 1));
-	color: rgba(255, 255, 255, 1);
+	padding: 10rem;
+	background-color: $secondaryColor;
+	color: $primaryColor;
 }
 .call-to-action span {
 	font-size: 1.5rem;
@@ -228,11 +225,9 @@ i:hover {
 }
 .cta-btn {
 	text-transform: uppercase;
-	font-weight: bold;
-	border: 2px solid rgba(212, 7, 84, 1);
-	border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(212, 7, 84, 1);
+	border: 2px solid $primaryColor;
+  background-color: $secondaryColor;
+  color: $primaryColor;
   font-size: 1.5rem;
   transition: 0.5s;
   cursor: pointer;
@@ -245,7 +240,7 @@ i:hover {
 	margin: 2rem 5rem;
 }
 .cta-btn:hover {
-	color: rgba(255, 255, 255, 1);
+	color: $secondaryColor;
 }
 
 .cta-btn::before, .cta-btn::after {
@@ -253,7 +248,7 @@ i:hover {
   content: '';
   width: 100%;
   height: 100%;
-  background-color: rgba(212, 7, 84, 1);
+  background-color: $primaryColor;
   top: 0;
   left: -100%;
   opacity: 0.5;
@@ -276,8 +271,8 @@ i:hover {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 1);
-	border-bottom: 1px solid  rgba(106, 106, 119, 1);
+	background-color: $primaryColor;
+	border-bottom: 0.1rem solid  $secondaryColor;
 }
 .footer-top__menu {
 	width: 50%;
@@ -290,25 +285,22 @@ i:hover {
 .footer-navigation__link{
 	font-style: 1.4rem;
 	text-decoration: none;
-	color: rgba(106, 106, 119, 1);
-	font-weight: 500;
+	color: $pFontColor;
 }
 .footer-navigation__link:hover {
-	color: rgba(212, 7, 84, 1);
+	color: $secondaryColor;
 	transition: 0.2s;
 }
 .footer-navigation__link--sign-in {
-	border: 1px solid rgba(212, 7, 84, 1);
-	background-color: rgba(212, 7, 84, 1);
-	border-radius: 100px;
-	color: rgba(255, 255, 255, 1);
+	border: 1px solid $secondaryColor;
+	color: $secondaryColor;
 	padding: 10px 20px;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 .footer-navigation__link--sign-in:hover {
-	color: rgba(212, 7, 84, 1);
-	background-color: rgba(255, 255, 255, 1);
+	color: $primaryColor;
+	background-color: $secondaryColor;
 	transition: 0.4s;
 }
 .legal {
@@ -317,21 +309,23 @@ i:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 1);
+	background-color: $primaryColor;
 }
 .copy {
 	font-size: 1.4rem;
-	color: rgba(106, 106, 119, 1);
+	color: $pFontColor;
 }
-.social-links a{
-	color: rgba(106, 106, 119, 1);
-	font-size: 2rem;
-	display: inline-block;
-	margin-right: 1rem;
+.social-links {
+	a {
+		color: $pFontColor;
+		font-size: 2rem;
+		display: inline-block;
+		margin-right: 1rem;
+	}
 }
 .m-menu-link {
 	display: none;
-	color: rgba(255, 255, 255, 1);
+	color: $pFontColor;
 	font-size: 3rem;
 }
 .m-menu {
@@ -344,7 +338,7 @@ i:hover {
 	list-style: none;
 	font-size: 3rem;
 	line-height: 6rem;
-	background-color: rgba(51, 51, 51, 1);
+	background-color: $primaryColor;
 	z-index: 3;
 	display: flex;
 	flex-direction: column;
@@ -355,25 +349,25 @@ i:hover {
 .m-menu__menu-link {
 	font-style: 1.4rem;
 	text-decoration: none;
-	color: rgba(255, 255, 255, 1);
+	color: $pFontColor;
 	font-weight: 500;
 	transition: 0.2s;
 }
 .m-menu__menu-link:hover {
 	cursor: pointer;
-	color: rgba(212, 7, 84, 1);
+	color: $secondaryColor;
 }
 .m-menu__menu-link--sign-in-btn {
-	color: rgba(255, 255, 255, 1);
-	border: 1px solid rgba(212, 7, 84, 1);
-	border-radius: 100px;
+	color: $secondaryColor;
+	border: 1px solid $secondaryColor;
 	padding: 10px 20px;
 	text-transform: uppercase;
 	text-decoration: none;
 	transition: 0.4s;
 }
 .m-menu__menu-link--sign-in-btn:hover {
-	background-color: rgba(212, 7, 84, 1);
+	background-color: $secondaryColor;
+	color: $primaryColor;
 }
 .m-menu__close-menu {
 	position: fixed;
@@ -381,19 +375,19 @@ i:hover {
 	top: 5rem;
 	font-size: 5rem;
 	font-weight: 900;
-	color: rgba(255, 255, 255, 1);
+	color: $pFontColor;
 	transition: 0.2s;
 }
 .m-menu__close-menu:hover {
 	cursor: pointer;
-	color: rgba(212, 7, 84, 1);
+	color: $secondaryColor;
 }
 
 .movie {
 	display: flex;
 	z-index: 1;
 	position: fixed;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: $primaryColor;
 	top: 0;
 	left: 0;
 	justify-content: center;
@@ -404,11 +398,10 @@ i:hover {
 }
 
 .movie-form {
-	flex-basis: 100vh;
+	flex-basis: 80vh;
 	padding: 6rem;
 	background: rgba(249, 250, 252, 1);
-	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
-	border-radius: 2rem;
+	box-shadow: 0 0 2em $primaryColor;
 	transition: 0.5s;
 }
 .movie-form:hover {
@@ -426,11 +419,13 @@ i:hover {
 	transition: 0.2s;
 }
 .movie-form__close-btn h1:hover {
-	color: rgba(212, 7, 84, 1);
+	color: $secondaryColor;
 }
-.movie-form > .poster {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0 0 4rem 0;
+.movie-form {
+	.poster {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 0 4rem 0;
+	}
 }

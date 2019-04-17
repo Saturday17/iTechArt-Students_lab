@@ -24,9 +24,6 @@ class Menu extends Component {
             <ul className="menu-navigation">
               <li><Link to="/" className="menu-navigation__menu-link">Home</Link></li>
               <li><Link to="/affiche" className="menu-navigation__menu-link">Affiche</Link></li>
-              <li><Link to="/cinemas" className="menu-navigation__menu-link">Cinemas</Link></li>
-              <li><Link to="/" className="menu-navigation__menu-link">Food and Drinks</Link></li>
-              <li><Link to="/" className="menu-navigation__menu-link">Info</Link></li>
               <li><Link to="/" className="menu-navigation__menu-link--sign-in-btn" onClick={ openAuthorizationModal }>Sign in</Link></li>
             </ul>
           </div>
