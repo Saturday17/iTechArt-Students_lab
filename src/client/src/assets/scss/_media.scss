@@ -1,4 +1,4 @@
-@media (max-width: 991px) {
+@media (max-width: 1029px) {
 	html {
 		font-size: 7px;
 	}
@@ -11,6 +11,9 @@
 	}
 	.footer-top__menu {
 		display: none;
+	}
+	.footer-top {
+		justify-content: center;
 	}
 	.m-menu-link {
 		display: block;
@@ -41,11 +44,10 @@
 	}
 	.footer {
 		justify-content: center;
-		margin-top: 1rem;
 	}
 	.legal {
 		flex-direction: column;
-		padding-bottom: 5rem;
+		padding-bottom: 1rem;
 	}
 	.social-links {
 		padding-top: 3rem;

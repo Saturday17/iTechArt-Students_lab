@@ -37,7 +37,17 @@ i:hover {
 	position: fixed;
 	width: 100%;
 	z-index: 2;
+	.menu {
+		.menu-navigation{
+			display: flex;
+			justify-content: flex-end;
+			li {
+				margin: 0 5rem;
+			}
+		}
+	}
 }
+
 .logo__img {
 	height: 30px;
 	cursor: pointer;
@@ -128,78 +138,79 @@ i:hover {
 	height: 50px;
 }
 .table {
-	background-color: $secondaryColor;
-	padding: 10rem;
-}
-.table__title {
-	text-align: center;
-	color: $primaryColor;
-	font-size: 5rem;
-	margin: 9rem;
-}
-
-.table-header {
-	text-align: center;
-	margin-bottom: 5rem;
-}
-.table-header .table-header__title {
-	color: $primaryColor;
-	font-size: 6rem;
-	margin: 0;
-}
-
-.posters {
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-wrap: wrap;
-	.poster {
-		background-color: $pLightColor;
+	flex-direction: column;
+	background-color: $secondaryColor;
+	padding: 5rem;
+	.table__title {
+		text-align: center;
+		color: $primaryColor;
+		font-size: 5rem;
+		margin: 9rem;
+	}
+	.table-header {
+		text-align: center;
+		margin-bottom: 5rem;
+	}
+	.table-header .table-header__title {
+		color: $primaryColor;
+		font-size: 6rem;
+		margin: 0;
+	}
+	.posters {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		flex-direction: column;
-		text-align: center;
-		padding: 1rem;
-		width: 35rem;
-		height: 50rem;
-		transition: 0.5s;
-		margin: 2rem 0;
-		&:hover {
-			box-shadow: 0px 0px 60px 10px $pLightColor;
-		}
-		.poster__img {
+		flex-wrap: wrap;
+		.poster {
+			background-color: $pLightColor;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			flex-direction: column;
+			text-align: center;
+			padding: 1rem;
+			width: 35rem;
+			height: 50rem;
+			transition: 0.5s;
+			margin: 2rem 0;
 			&:hover {
-				cursor: pointer;
-				opacity: 0.9;
+				box-shadow: 0px 0px 60px 10px $pLightColor;
 			}
-		}
-		.poster__title {
-			font-size: 2rem;
-			text-transform: uppercase;
-			color: $secondaryColor;
-		}
-		.poster__release {
-			font-size: 2rem;
-			color: $secondaryColor;
-		}
-		.poster__btn {
-			background-color: $secondaryColor;
-			border: 1px solid $primaryColor;
-			color: $primaryColor;
-			text-transform: uppercase;
-			font-size: 1rem;
-			font-weight: 300;
-			padding: 1rem auto;
-			transition: 0.3s;
-			&:hover {
-				cursor: pointer;
-				background-color: $primaryColor;
+			.poster__img {
+				&:hover {
+					cursor: pointer;
+					opacity: 0.9;
+				}
+			}
+			.poster__title {
+				font-size: 2rem;
+				text-transform: uppercase;
 				color: $secondaryColor;
+			}
+			.poster__release {
+				font-size: 2rem;
+				color: $secondaryColor;
+			}
+			.poster__btn {
+				background-color: $secondaryColor;
+				border: 1px solid $primaryColor;
+				color: $primaryColor;
+				text-transform: uppercase;
+				font-size: 1rem;
+				font-weight: 300;
+				padding: 1rem auto;
+				transition: 0.3s;
+				&:hover {
+					cursor: pointer;
+					background-color: $primaryColor;
+					color: $secondaryColor;
+				}
 			}
 		}
 	}
 }
+
 
 .text-info {
 	padding: 2rem;
@@ -269,23 +280,23 @@ i:hover {
 	align-items: center;
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	padding: 0 10rem;
 	align-items: center;
 	background-color: $primaryColor;
 	border-bottom: 0.1rem solid  $secondaryColor;
 }
-.footer-top__menu {
-	width: 50%;
-}
+
 .footer-top__menu .footer-navigation {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-end;
 	list-style: none;
 }
 .footer-navigation__link{
 	font-style: 1.4rem;
 	text-decoration: none;
 	color: $pFontColor;
+	margin: 0 5rem;
 }
 .footer-navigation__link:hover {
 	color: $secondaryColor;
@@ -304,8 +315,11 @@ i:hover {
 	transition: 0.4s;
 }
 .legal {
+	width: 100%;
 	padding-left: 5%;
 	padding-right: 5%;
+	position: relative;
+	bottom: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
