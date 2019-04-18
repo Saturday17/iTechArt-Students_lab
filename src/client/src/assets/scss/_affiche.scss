@@ -1,96 +1,27 @@
 .table {
 	padding: 1rem;
-}
-.table-header {
-	text-align: center;
-	margin: 10rem;
-}
-.table-header h2 {
-	color: rgba(79, 79, 111, 1);
-	font-size: 6rem;
-	margin: 0;
-}
-.table__input {
-	display: flex;
-	justify-content: center;
-}
-.input__search {
-	font-size: 3rem;
-	display: block;
-	width: 70%;
-	padding: 1rem 2rem;
-	margin: 0 0 5rem 0;
-	border-radius: 0.5rem;
-}
-.input__search:focus {
-	background: rgba(255, 255, 255, 1);
-	box-shadow: inset 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.2);
-	outline: 0;
-}
-.input__search:focus::placeholder {
-	color: transparent;
-}
-
-
-
-
-
-
-.poster__btn {
-	background-color: rgba(255, 255, 255, 1);
-	border: rgba(159, 164, 175, 1) 1px solid;
-	color: rgba(159, 164, 175, 1);
-	text-transform: uppercase;
-	font-size: 1rem;
-	font-weight: 300;
-	padding: 1rem 4rem;
-}
-.poster__btn:hover {
-	background-color: rgba(212, 7, 84, 1);
-	color: rgba(255, 255, 255, 1);
-	transition: 0.3s;
-}
-
-.poster-info {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0rem 4rem;
-}
-.poster-info__title {
-	font-size: 2rem;
-	text-transform: uppercase;
-	margin: 0 auto;
-	color: rgba(79, 79, 111, 1);
-}
-.poster-info__release {
-	font-size: 2rem;
-	color: rgba(79, 79, 111, 1);
-}
-.poster-info__overview {
-	font-size: 1.8rem;
-	color: rgba(79, 79, 111, 1);
-}
-.poster-info__vote {
-	margin: 0 0;
-	font-size: 1.5rem;
-	color: rgba(79, 79, 111, 1);
-}
-.info__btn {
-	background-color: rgba(255, 255, 255, 1);
-	border: rgba(159, 164, 175, 1) 1px solid;
-	color: rgba(159, 164, 175, 1);
-	text-transform: uppercase;
-	font-size: 3rem;
-	font-weight: 300;
-	padding: 1rem auto;
-	border-radius: 0.5rem;
-}
-.info__btn:hover {
-	cursor: pointer;
-	background-color: rgba(212, 7, 84, 1);
-	color: rgba(255, 255, 255, 1);
-	transition: 0.3s;
+	.table-header {
+		text-align: center;
+		margin: 10rem;
+	}
+	.table__input {
+		display: flex;
+		justify-content: center;
+		.input__search {
+			font-size: 3rem;
+			display: block;
+			width: 70%;
+			padding: 1rem 2rem;
+			margin: 0 0 5rem 0;
+			border-radius: 0.5rem;
+			&:focus {
+				background: $whiteColor;
+				box-shadow: inset 0.1em 0.1em 0.25em $primaryColor;
+				outline: 0;
+				&::placeholder {
+					color: transparent;
+				}
+			}
+		}
+	}
 }

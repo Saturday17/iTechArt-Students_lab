@@ -1,0 +1,56 @@
+@mixin modal {
+  display: flex;
+	z-index: 1;
+	position: fixed;
+	background-color: $bgColor;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+  margin: 0 auto;
+}
+@mixin modalForm {
+  flex-basis: 90vh;
+  padding: 3rem;
+  background: $bgColor;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  &:hover {
+    box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
+  }
+}
+@mixin modalCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  h1 {
+    color: $secondaryColor;
+    font-size: 5rem;
+    margin: 0 0;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+}
+@mixin modalTitle {
+  text-align: center;
+  font-size: 3rem;
+  color: $secondaryColor;
+}
+@mixin modalFormField {
+  margin-bottom: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@mixin modalSubmitField {
+  display: flex;
+	justify-content: center;
+}
+@mixin modalLink {
+  display: flex;
+	justify-content: center;
+	padding: 2rem;
+}

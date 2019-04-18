@@ -1,13 +1,46 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    width: '70%'
+  },
+  input: {
+    color: 'white'
+  },
+  dense: {
+    marginTop: 16,
+  },
+  menu: {
+    width: 200,
+  },
+  notchedOutline: {
+    borderWidth: '0.2rem',
+    borderColor: '#000000 !important'
+  }
+});
 
 class SearchBar extends Component {
 
   render() {
-    const { onFilterTextChange, filterText } = this.props;
+    const { onFilterTextChange, filterText, classes } = this.props;
     return (
       <div className="table__input">
-        <input className="input__search" type="text" value={filterText} onChange={onFilterTextChange} placeholder="Search" />
+        <TextField 
+        value={filterText} 
+        onChange={onFilterTextChange} 
+        label="Search" 
+        style={{ width: '70%' }} 
+        InputLabelProps={{style: { color: '#000000', fontSize: '2rem' }}} 
+        InputProps={{style: { color: '#000000', fontSize: '2rem' }, classes: { notchedOutline: classes.notchedOutline }}} 
+        margin="normal" 
+        variant="outlined" />
       </div>
     );
   }
@@ -15,7 +48,8 @@ class SearchBar extends Component {
 
 SearchBar.propTypes = {
   onFilterTextChange: PropTypes.func,
-  filterText: PropTypes.string
+  filterText: PropTypes.string,
+  classes: PropTypes.object.isRequired
 }
 
-export default SearchBar;
+export default withStyles(styles)(SearchBar);

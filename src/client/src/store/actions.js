@@ -95,6 +95,14 @@ export const closeHall = () => {
   }
 }
 
+export const closeHallByButton = e => {
+  return dispatch => {
+    if(e.key === 'Escape') {
+      dispatch(closeHall(e));
+    }
+  }
+}
+
 export function changeSeatSelection(payload) {
   console.log(payload)
   return {

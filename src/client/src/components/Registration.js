@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import amber from '@material-ui/core/colors/amber';
 
 const styles = theme => ({
   container: {
@@ -18,6 +20,20 @@ const styles = theme => ({
   menu: {
     width: 200,
   },
+  notchedOutline: {
+    borderRadius: '0rem',
+    borderWidth: '0.1rem',
+    borderColor: '#FFC107 !important'
+  }
+});
+
+const theme = createMuiTheme({
+  palette: {
+    primary: amber,
+  },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 class Registration extends Component {
@@ -29,14 +45,6 @@ class Registration extends Component {
   signUp = e => {
     e.preventDefault();
 
-    const data = {
-      name: this.refs.userName.value,
-      login: this.refs.userLogin.value,
-      password: this.refs.userPassword.value,
-      repeatedPassword: this.refs.repeatedPassword.value
-    }
-
-    console.log(data);
   }
 
   handleChange = name => event => {
@@ -46,7 +54,7 @@ class Registration extends Component {
   };
 
   render(){
-    const { openAuthorizationModal, closeModals } = this.props;
+    const { openAuthorizationModal, closeModals, classes } = this.props;
     
     return (
       <div className="registration">
@@ -54,16 +62,20 @@ class Registration extends Component {
           <div className="registration-form__close-btn"><h1 onClick={ closeModals }>&times;</h1></div>
           <h2 className="registration-form__title">Registration</h2>
           <div className="registration-form__form-field">
-          <TextField id="outlined-name" label="Name" className="form-field__input" value={this.state.name} onChange={this.handleChange('name')} margin="normal" variant="outlined" />
-          <TextField id="outlined-email-input" label="Email" className="form-field__input" type="email" name="email" autoComplete="email" margin="normal" variant="outlined" />
-          <TextField id="outlined-password-input" label="Password" className="form-field__input" type="password" autoComplete="current-password" margin="normal" variant="outlined" />
-          <TextField id="outlined-password-input" label="Repeat password" className="form-field__input" type="password" autoComplete="repeat-password" margin="normal" variant="outlined" />
+            <TextField id="outlined-name" label="Name" style={{ width: '70%' }} InputLabelProps={{style: { color: '#FFC107', fontSize: '2rem' }}} InputProps={{style: { color: '#FFC107', fontSize: '2rem' }, classes: { notchedOutline: classes.notchedOutline }}} value={this.state.name} onChange={this.handleChange('name')} margin="normal" variant="outlined" />
+            <TextField id="outlined-email-input" label="Email" style={{ width: '70%' }} InputLabelProps={{style: { color: '#FFC107', fontSize: '2rem' }}} InputProps={{style: { color: '#FFC107', fontSize: '2rem' }, classes: { notchedOutline: classes.notchedOutline }}} type="email" name="email" autoComplete="email" margin="normal" variant="outlined" />
+            <TextField id="outlined-password-input" label="Password" style={{ width: '70%' }} InputLabelProps={{style: { color: '#FFC107', fontSize: '2rem' }}} InputProps={{style: { color: '#FFC107', fontSize: '2rem' }, classes: { notchedOutline: classes.notchedOutline }}} type="password" autoComplete="current-password" margin="normal" variant="outlined" />
+            <TextField id="outlined-password-input" label="Repeat password" style={{ width: '70%' }} InputLabelProps={{style: { color: '#FFC107', fontSize: '2rem' }}} InputProps={{style: { color: '#FFC107', fontSize: '2rem' }, classes: { notchedOutline: classes.notchedOutline }}} type="password" autoComplete="repeat-password" margin="normal" variant="outlined" />
           </div>
           <div className="registration-form__submit-field">
-            <button className="submit-field__button" onClick={ this.signUp }>Sign up</button>
+            <MuiThemeProvider theme={theme}>
+              <Button variant="contained" color="primary" style={{ width: '30%', borderRadius: '0rem', fontSize: '2rem', fontWeight: 'bold' }} onClick={ this.signUp }>Sign up</Button>
+            </MuiThemeProvider>
           </div>
           <div className="registration-form__auto-link">
-            <a className="auto-link__auto-btn" href="#" onClick={ openAuthorizationModal }>Authorization</a>
+            <MuiThemeProvider theme={theme}>
+              <Button color="primary" style={{ width: '30%', borderRadius: '0rem', fontSize: '1.5rem', fontWeight: 'bold' }} onClick={ openAuthorizationModal }>Authorization</Button>
+            </MuiThemeProvider>
           </div>
         </form>
       </div>
@@ -73,7 +85,8 @@ class Registration extends Component {
 
 Registration.propTypes = {
   openAuthorizationModal: PropTypes.func,
-  closeModals: PropTypes.func
+  closeModals: PropTypes.func,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Registration);

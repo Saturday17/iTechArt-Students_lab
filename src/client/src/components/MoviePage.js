@@ -6,7 +6,7 @@ import axios from 'axios';
 import Spinner from './Spinner';
 import OrderMenu from './OrderMenu';
 import CinemaHall from './CinemaHall';
-import { openHall, closeHall } from '../store/actions';
+import { openHall, closeHall, closeHallByButton } from '../store/actions';
 import PropTypes from 'prop-types';
 
 class MoviePage extends Component {
@@ -18,6 +18,11 @@ class MoviePage extends Component {
 
   componentDidMount() {
     this.loadMovie();
+    window.addEventListener('keydown', this.props.closeHallByButton);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.props.closeHallByButton);
   }
 
   loadMovie() {
@@ -101,7 +106,8 @@ const mapStateToProps = state => {
 const mapActionsToProps = dispatch => {
   return {
     openHall: bindActionCreators(openHall, dispatch),
-    closeHall: bindActionCreators(closeHall, dispatch)
+    closeHall: bindActionCreators(closeHall, dispatch),
+    closeHallByButton: bindActionCreators(closeHallByButton, dispatch)
   };
 }
 

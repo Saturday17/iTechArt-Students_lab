@@ -10,6 +10,13 @@ body {
 	font-family: 'Maven Pro', sans-serif;
 	margin: 0;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+    transition-delay: background-color 5000s, color 5000s;
+}
 i:hover {
 	color: $secondaryColor;
 	transition: 0.2s;
@@ -54,35 +61,34 @@ i:hover {
 }
 .menu {
 	width: 60%;
-}
-.menu .menu-navigation{
-	display: flex;
-	justify-content: space-around;
-	list-style: none;
+	.menu-navigation{
+		display: flex;
+		justify-content: space-around;
+		list-style: none;
+		.menu-navigation__menu-link {
+			font-style: 1.4rem;
+			text-decoration: none;
+			color: $pFontColor;
+			&:hover {
+				color: $secondaryColor;
+				transition: 0.2s;
+			}
+		}
+		.menu-navigation__menu-link--sign-in-btn {
+			color: $secondaryColor;
+			border: 1px solid $secondaryColor;
+			padding: 10px 20px;
+			text-transform: uppercase;
+			text-decoration: none;
+			&:hover {
+				background-color: $secondaryColor;
+				color: $primaryColor;
+				transition: 0.4s;
+			}
+		}
+	}
 }
 
-.menu-navigation__menu-link {
-	font-style: 1.4rem;
-	text-decoration: none;
-	color: $pFontColor;
-}
-.menu-navigation__menu-link:hover {
-	color: $secondaryColor;
-	transition: 0.2s;
-}
-
-.menu-navigation__menu-link--sign-in-btn {
-	color: $secondaryColor;
-	border: 1px solid $secondaryColor;
-	padding: 10px 20px;
-	text-transform: uppercase;
-	text-decoration: none;
-}
-.menu-navigation__menu-link--sign-in-btn:hover {
-	background-color: $secondaryColor;
-	color: $primaryColor;
-	transition: 0.4s;
-}
 .slider {
 	font-family: 'Bad Script', sans-serif;
 	width: 100%;
@@ -99,6 +105,13 @@ i:hover {
 	flex-basis: 25%;
 	transition: all 0.2s;
 	cursor: pointer;
+	&:hover {
+		flex-basis: 100%;
+	}
+	.item__span {
+		font-size: 6rem;
+		text-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 1);
+	}
 }
 .item-1 {
 	background: url(../../img/hulk.jpg) no-repeat center center;
@@ -116,13 +129,8 @@ i:hover {
 	background: url(../../img/america.jpg) no-repeat center center;
 	background-size: cover;
 }
-.item__span {
-	font-size: 6rem;
-	text-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 1);
-}
-.slider__item:hover {
-	flex-basis: 100%;
-}
+
+
 .main-arrow {
 	position: relative;
 	height: 20vh;
@@ -178,6 +186,7 @@ i:hover {
 				box-shadow: 0px 0px 60px 10px $pLightColor;
 			}
 			.poster__img {
+				border: 0.1rem solid $secondaryColor;
 				&:hover {
 					cursor: pointer;
 					opacity: 0.9;
@@ -193,18 +202,18 @@ i:hover {
 				color: $secondaryColor;
 			}
 			.poster__btn {
-				background-color: $secondaryColor;
-				border: 1px solid $primaryColor;
-				color: $primaryColor;
+				background-color: $primaryColor;
+				border: 1px solid $secondaryColor;
+				color: $secondaryColor;
 				text-transform: uppercase;
 				font-size: 1rem;
 				font-weight: 300;
-				padding: 1rem auto;
+				padding: 1rem 4rem;
 				transition: 0.3s;
 				&:hover {
 					cursor: pointer;
-					background-color: $primaryColor;
-					color: $secondaryColor;
+					background-color: $secondaryColor;
+					color: $primaryColor;
 				}
 			}
 		}
@@ -221,57 +230,57 @@ i:hover {
 	position: relative;
 	text-align: center;
 	padding: 10rem;
-	background-color: $secondaryColor;
+	background-color: $whiteColor;
 	color: $primaryColor;
-}
-.call-to-action span {
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	font-weight: 500;
-}
-.call-to-action h4 {
-	font-weight: 500;
-	font-size: 5rem;
-	margin: 1rem auto 2rem;
-}
-.cta-btn {
-	text-transform: uppercase;
-	border: 2px solid $primaryColor;
-  background-color: $secondaryColor;
-  color: $primaryColor;
-  font-size: 1.5rem;
-  transition: 0.5s;
-  cursor: pointer;
-  height: 4rem;
-  position: relative;
-  z-index: 1;
-	overflow: hidden;
-	width: 20rem;
-	height: 5rem;
-	margin: 2rem 5rem;
-}
-.cta-btn:hover {
-	color: $secondaryColor;
-}
-
-.cta-btn::before, .cta-btn::after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-color: $primaryColor;
-  top: 0;
-  left: -100%;
-  opacity: 0.5;
-  transition: 0.3s;
-  z-index: -1;
-}
-.cta-btn::after {
-  opacity: 1;
-  transition-delay: 0.2s;
-}
-.cta-btn:hover::before, .cta-btn:hover::after {
-  left: 0;
+	border-top: 0.1rem solid $primaryColor;
+	span {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+	h4 {
+		font-weight: 500;
+		font-size: 5rem;
+		margin: 1rem auto 2rem;
+	}
+	.cta-btn {
+		text-transform: uppercase;
+		border: 2px solid $primaryColor;
+		background-color: $whiteColor;
+		color: $primaryColor;
+		font-size: 1.5rem;
+		transition: 0.5s;
+		cursor: pointer;
+		height: 4rem;
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		width: 20rem;
+		height: 5rem;
+		margin: 2rem 10rem;
+		&:hover {
+			color: $secondaryColor;
+			&:before, &:after {
+				left: 0;
+			}
+		}
+		&:before, &:after {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: $primaryColor;
+			top: 0;
+			left: -100%;
+			opacity: 0.5;
+			transition: 0.3s;
+			z-index: -1;
+		}
+		&:after {
+			opacity: 1;
+			transition-delay: 0.2s;
+		}
+	}
 }
 
 .footer-top {
@@ -285,35 +294,35 @@ i:hover {
 	align-items: center;
 	background-color: $primaryColor;
 	border-bottom: 0.1rem solid  $secondaryColor;
+	.footer-top__menu .footer-navigation {
+		display: flex;
+		justify-content: flex-end;
+		list-style: none;
+		.footer-navigation__link{
+			font-style: 1.4rem;
+			text-decoration: none;
+			color: $pFontColor;
+			margin: 0 5rem;
+			&:hover {
+				color: $secondaryColor;
+				transition: 0.2s;
+			}
+		}
+		.footer-navigation__link--sign-in {
+			border: 1px solid $secondaryColor;
+			color: $secondaryColor;
+			padding: 10px 20px;
+			text-transform: uppercase;
+			text-decoration: none;
+			&:hover {
+				color: $primaryColor;
+				background-color: $secondaryColor;
+				transition: 0.4s;
+			}
+		}
+	}
 }
 
-.footer-top__menu .footer-navigation {
-	display: flex;
-	justify-content: flex-end;
-	list-style: none;
-}
-.footer-navigation__link{
-	font-style: 1.4rem;
-	text-decoration: none;
-	color: $pFontColor;
-	margin: 0 5rem;
-}
-.footer-navigation__link:hover {
-	color: $secondaryColor;
-	transition: 0.2s;
-}
-.footer-navigation__link--sign-in {
-	border: 1px solid $secondaryColor;
-	color: $secondaryColor;
-	padding: 10px 20px;
-	text-transform: uppercase;
-	text-decoration: none;
-}
-.footer-navigation__link--sign-in:hover {
-	color: $primaryColor;
-	background-color: $secondaryColor;
-	transition: 0.4s;
-}
 .legal {
 	width: 100%;
 	padding-left: 5%;
@@ -359,49 +368,49 @@ i:hover {
 	align-items: center;
 	justify-content: center;
 	transition: 0.2s;
-}
-.m-menu__menu-link {
-	font-style: 1.4rem;
-	text-decoration: none;
-	color: $pFontColor;
-	font-weight: 500;
-	transition: 0.2s;
-}
-.m-menu__menu-link:hover {
-	cursor: pointer;
-	color: $secondaryColor;
-}
-.m-menu__menu-link--sign-in-btn {
-	color: $secondaryColor;
-	border: 1px solid $secondaryColor;
-	padding: 10px 20px;
-	text-transform: uppercase;
-	text-decoration: none;
-	transition: 0.4s;
-}
-.m-menu__menu-link--sign-in-btn:hover {
-	background-color: $secondaryColor;
-	color: $primaryColor;
-}
-.m-menu__close-menu {
-	position: fixed;
-	right: 5rem;
-	top: 5rem;
-	font-size: 5rem;
-	font-weight: 900;
-	color: $pFontColor;
-	transition: 0.2s;
-}
-.m-menu__close-menu:hover {
-	cursor: pointer;
-	color: $secondaryColor;
+	.m-menu__menu-link {
+		font-style: 1.4rem;
+		text-decoration: none;
+		color: $pFontColor;
+		font-weight: 500;
+		transition: 0.2s;
+		&:hover {
+			cursor: pointer;
+			color: $secondaryColor;
+		}
+	}
+	.m-menu__menu-link--sign-in-btn {
+		color: $secondaryColor;
+		border: 1px solid $secondaryColor;
+		padding: 10px 20px;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: 0.4s;
+		&:hover {
+			background-color: $secondaryColor;
+			color: $primaryColor;
+		}
+	}
+	.m-menu__close-menu {
+		position: fixed;
+		right: 5rem;
+		top: 5rem;
+		font-size: 5rem;
+		font-weight: 900;
+		color: $pFontColor;
+		transition: 0.2s;
+		&:hover {
+			cursor: pointer;
+			color: $secondaryColor;
+		}
+	}
 }
 
 .movie {
 	display: flex;
 	z-index: 1;
 	position: fixed;
-	background-color: $primaryColor;
+	background-color: $bgColor;
 	top: 0;
 	left: 0;
 	justify-content: center;
@@ -409,37 +418,83 @@ i:hover {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
-}
-
-.movie-form {
-	flex-basis: 80vh;
-	padding: 6rem;
-	background: rgba(249, 250, 252, 1);
-	box-shadow: 0 0 2em $primaryColor;
-	transition: 0.5s;
-}
-.movie-form:hover {
-	box-shadow: 0px 0px 60px 10px rgba(204, 204, 223, 0.71);
-}
-.movie-form__close-btn {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-}
-.movie-form__close-btn h1 {
-	font-size: 5rem;
-	margin: 0 0;
-	cursor: pointer;
-	transition: 0.2s;
-}
-.movie-form__close-btn h1:hover {
-	color: $secondaryColor;
-}
-.movie-form {
-	.poster {
+	.movie-form {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin: 0 0 4rem 0;
+		flex-direction: column;
+		flex-basis: 80vh;
+		height: 60vh;
+		padding: 6rem;
+		background: $whiteColor;
+		box-shadow: 0 0 2em $primaryColor;
+		transition: 0.5s;
+		&:hover {
+			box-shadow: 0px 0px 60px 10px $pFontColor;
+		}
+		.poster {
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			background-color: $whiteColor;
+			&:hover {
+				box-shadow: none;
+			}
+			.poster-info {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0rem 4rem;
+			}
+			.poster-info__title {
+				font-size: 2rem;
+				text-transform: uppercase;
+				margin: 0 auto;
+				color: $primaryColor;
+			}
+			.poster-info__release {
+				font-size: 2rem;
+				color: $primaryColor;
+			}
+			.poster-info__overview {
+				font-size: 1.8rem;
+				color: $primaryColor;
+			}
+			.poster-info__vote {
+				margin: 0 0;
+				font-size: 1.5rem;
+				color: $primaryColor;
+			}
+			.info__btn {
+				background-color: rgba(255, 255, 255, 1);
+				border: 1px solid $primaryColor;
+				color: $primaryColor;
+				text-transform: uppercase;
+				font-size: 3rem;
+				font-weight: 300;
+				padding: 1rem auto;
+				&:hover {
+					cursor: pointer;
+					background-color: $secondaryColor;
+					transition: 0.3s;
+				}
+			}
+		}
+		.movie-form__close-btn {
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			h1 {
+				font-size: 5rem;
+				margin: 0 0;
+				cursor: pointer;
+				transition: 0.2s;
+				&:hover {
+					color: $secondaryColor;
+				}
+			}
+		}
 	}
 }
