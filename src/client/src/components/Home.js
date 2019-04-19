@@ -6,8 +6,6 @@ import ArrowDown from './ArrowDown';
 import TableOfPremiere from './TableOfPremiere';
 import InformationColumn from './InformationColumn';
 import SignInBlock from './SignInBlock';
-import Authorization from './Authorization';
-import Registration from './Registration';
 import { openAuthorizationModal, openRegistrationModal, closeModals } from '../store/actions';
 import PropTypes from 'prop-types';
 
@@ -22,7 +20,7 @@ class Home extends Component {
   }
   
   render() {
-    const { isOpenRegistrationModal, isOpenAuthorizationModal, openAuthorizationModal, openRegistrationModal, closeModals } = this.props;
+    const { openAuthorizationModal, openRegistrationModal } = this.props;
     return (
       <>
         <div className="main" id="main">
@@ -32,8 +30,6 @@ class Home extends Component {
         <TableOfPremiere />
         <InformationColumn />
         <SignInBlock openAuthorizationModal={ openAuthorizationModal } openRegistrationModal={ openRegistrationModal} />
-        { isOpenRegistrationModal && <Registration openAuthorizationModal={ openAuthorizationModal } closeModals={ closeModals } /> }
-        { isOpenAuthorizationModal && <Authorization openRegistrationModal={ openRegistrationModal } closeModals={ closeModals } /> }
       </>
     );
   }
